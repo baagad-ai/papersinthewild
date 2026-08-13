@@ -1,0 +1,9 @@
+<svg viewBox="0 0 240 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="papers in the wild compact wordmark">
+  <!--
+    PITW compact wordmark. IBM Plex Mono 500 lowercase, per BRAND.md §5.
+    Use at ≤ 20px height in nav, footer, small spaces.
+    Palette: ink #1A1612 on transparent. Single oxblood dot at end = the seal in miniature.
+  -->
+  <text x="0" y="18" font-family="'IBM Plex Mono', monospace" font-size="16" font-weight="500" fill="#1A1612" letter-spacing="0.5">papers in the wild</text>
+  <circle cx="223" cy="14" r="2.5" fill="#7C2D2D" />
+</svg>

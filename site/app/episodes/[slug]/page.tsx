@@ -26,6 +26,20 @@ export async function generateMetadata({
       type: "article",
       publishedTime: ep.date,
       authors: ["Baagad"],
+      images: [
+        {
+          url: `/og/${ep.slug}.png`,
+          width: 1200,
+          height: 630,
+          alt: ep.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ep.title,
+      description: ep.teaser,
+      images: [`/og/${ep.slug}.png`],
     },
   };
 }

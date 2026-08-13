@@ -1,0 +1,10 @@
+<svg viewBox="0 0 480 12" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PITW ink rule divider">
+  <!--
+    PITW signature InkRule as a standalone SVG.
+    Used in: OG images, slide-wand carousels (as a section divider), email footer, PDF decks.
+    On the Next.js site, the <InkRule /> React component renders this same pattern inline.
+    Palette: oxblood square #7C2D2D, rule #C9BFA7.
+  -->
+  <rect x="0" y="3" width="6" height="6" fill="#7C2D2D" />
+  <line x1="10" y1="6" x2="480" y2="6" stroke="#C9BFA7" stroke-width="1" />
+</svg>

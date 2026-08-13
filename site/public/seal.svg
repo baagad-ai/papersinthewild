@@ -1,6 +1,29 @@
 <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Papers in the Wild seal">
+  <!--
+    PITW seal mark per BRAND.md §5. Circular ink seal, oxblood on paper.
+    - Outer ring: 2px solid oxblood
+    - Tiny crosshair + at top center (registration mark of a printed form)
+    - Inner: "PITW" IBM Plex Mono 500 uppercase + "IN THE WILD" subtitle
+    Never scaled below 24×24. Never inverted. Always oxblood on paper.
+  -->
+  <!-- Outer ring -->
   <circle cx="32" cy="32" r="29" fill="none" stroke="#7C2D2D" stroke-width="2" />
-  <circle cx="32" cy="6" r="1.5" fill="#7C2D2D" />
-  <text x="32" y="36" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="500" letter-spacing="1" fill="#7C2D2D">PITW</text>
-  <text x="32" y="48" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="6" letter-spacing="2" fill="#7C2D2D" opacity="0.7">IN THE WILD</text>
+  <!-- Registration crosshair at top center (tiny + signifying a printed-form seal) -->
+  <line x1="32" y1="2" x2="32" y2="10" stroke="#7C2D2D" stroke-width="1" />
+  <line x1="28" y1="6" x2="36" y2="6" stroke="#7C2D2D" stroke-width="1" />
+  <!-- Inner micro-ring (suggests an ink stamp's secondary border) -->
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#7C2D2D" stroke-width="0.5" opacity="0.4" />
+  <!-- Main mark: PITW -->
+  <text x="32" y="35" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="500" letter-spacing="1.5" fill="#7C2D2D">PITW</text>
+  <!-- Subtitle: IN THE WILD -->
+  <text x="32" y="46" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="5.5" letter-spacing="2" fill="#7C2D2D" opacity="0.75">IN THE WILD</text>
+  <!-- Tiny corner ticks (suggests print registration marks at all four corners) -->
+  <line x1="14" y1="14" x2="17" y2="14" stroke="#7C2D2D" stroke-width="0.6" opacity="0.5" />
+  <line x1="14" y1="14" x2="14" y2="17" stroke="#7C2D2D" stroke-width="0.6" opacity="0.5" />
+  <line x1="50" y1="14" x2="47" y2="14" stroke="#7C2D2D" stroke-width="0.6" opacity="0.5" />
+  <line x1="50" y1="14" x2="50" y2="17" stroke="#7C2D2D" stroke-width="0.6" opacity="0.5" />
+  <line x1="14" y1="50" x2="17" y2="50" stroke="#7C2D2D" stroke-width="0.6" opacity="0.5" />
+  <line x1="14" y1="50" x2="14" y2="47" stroke="#7C2D2D" stroke-width="0.6" opacity="0.5" />
+  <line x1="50" y1="50" x2="47" y2="50" stroke="#7C2D2D" stroke-width="0.6" opacity="0.5" />
+  <line x1="50" y1="50" x2="50" y2="47" stroke="#7C2D2D" stroke-width="0.6" opacity="0.5" />
 </svg>

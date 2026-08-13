@@ -1,3 +1,12 @@
-<svg viewBox="0 0 480 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Papers in the Wild wordmark">
-  <text x="0" y="44" font-family="'Fraunces', Georgia, serif" font-size="36" font-weight="500" fill="#1A1612" letter-spacing="-0.5">Papers in the Wild</text>
+<svg viewBox="0 0 560 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Papers in the Wild wordmark">
+  <!--
+    PITW primary wordmark. Fraunces 500 title case + signature ink-rule below
+    (oxblood seal square at left, hairline rule extending right).
+    Safe to render at any size ≥ 48px wide. Below that, use wordmark-compact.svg.
+    Palette: ink #1A1612 on paper (transparent bg). Accent: oxblood #7C2D2D seal square.
+  -->
+  <text x="0" y="48" font-family="'Fraunces', Georgia, serif" font-size="44" font-weight="500" fill="#1A1612" letter-spacing="-0.6">Papers in the Wild</text>
+  <!-- Signature ink-rule: small oxblood square at left + hairline rule extending right -->
+  <rect x="2" y="68" width="6" height="6" fill="#7C2D2D" />
+  <line x1="12" y1="71" x2="560" y2="71" stroke="#C9BFA7" stroke-width="1" />
 </svg>

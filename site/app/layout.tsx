@@ -29,11 +29,34 @@ export const metadata: Metadata = {
   description:
     "I read a paper. I tried it. Here are the receipts. Weekly experiments on AI research papers — curious explorer, not guru.",
   metadataBase: new URL("https://papersinthewild.io"),
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Papers in the Wild",
     description: "I read a paper. I tried it. Here are the receipts.",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Papers in the Wild — weekly experiments on real AI papers",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Papers in the Wild",
+    description: "Weekly experiments on real AI papers. Curious explorer, not guru.",
+    images: ["/og-default.png"],
   },
   authors: [{ name: "Baagad" }],
   keywords: ["ai", "papers", "research", "experiments", "build_to_think"],
