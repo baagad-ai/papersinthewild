@@ -22,6 +22,9 @@ docs/
 # ── Personal study guides (never public) ──
 **/EXPLANATION.md
 
+# ── Maintainer-only deploy script (used by sibling publish folder) ──
+publish.sh
+
 # ── Next.js / Node ──
 node_modules/
 .next/
@@ -65,4 +68,3 @@ venv/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
-publish.sh
