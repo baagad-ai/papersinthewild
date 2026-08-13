@@ -29,14 +29,6 @@ jobs:
           cache: npm
           cache-dependency-path: projects/ai-papers-explained/site/package-lock.json
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          # Tell Next.js the site is served at /papersinthewild/.
-          # This MUST match `basePath` in next.config.mjs.
-          static_site_generator: next
-          generator_config_file: projects/ai-papers-explained/site/next.config.mjs
-
       - name: Install dependencies
         working-directory: projects/ai-papers-explained/site
         run: npm ci
