@@ -1,0 +1,9 @@
+import re
+
+def slugify(text: str) -> str:
+    if not text:
+        return ""
+    text = text.lower()
+    text = re.sub(r'[^a-z0-9]+', '-', text)
+    text = text.strip('-')
+    return text

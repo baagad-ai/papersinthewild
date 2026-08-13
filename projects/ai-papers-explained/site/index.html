@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papers in the Wild — AI research explained with bizarre real use cases</title>
+  <meta name="description" content="Every week: one AI research paper. I read it, find a bizarre-but-real use case, build it, and write about what happened.">
+  <style>
+    :root {
+      --bg: #0d0d14;
+      --fg: #f5f5f7;
+      --muted: #9ca3af;
+      --accent: #6b6beb;
+      --border: #2a2a3a;
+      --max-width: 680px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--bg); }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", system-ui, sans-serif;
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.6;
+      padding: 4rem 1.5rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .tagline {
+      font-size: 1.125rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .intro {
+      margin-bottom: 3rem;
+      padding: 1.5rem;
+      border-left: 3px solid var(--accent);
+      background: rgba(107, 107, 235, 0.05);
+      border-radius: 0 8px 8px 0;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      color: var(--fg);
+    }
+    .episode-list { list-style: none; }
+    .episode-list li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .episode-list a {
+      color: var(--fg);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .episode-list a:hover { color: var(--accent); }
+    .episode-date {
+      color: var(--muted);
+      font-size: 0.875rem;
+      margin-right: 0.75rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .empty-state {
+      color: var(--muted);
+      padding: 2rem;
+      text-align: center;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    .footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Papers in the Wild</h1>
+  <p class="tagline">AI research, explained through bizarre-but-real applications.</p>
+
+  <div class="intro">
+    Every week I take one AI research paper from
+    <a href="https://github.com/dair-ai/AI-Papers-of-the-Week" target="_blank" rel="noopener">dair-ai/AI-Papers-of-the-Week</a>,
+    actually read it, find a weird-but-feasible use case, build it, and write about what happened.
+    <br><br>
+    No "this changes everything" hype. No "researchers just discovered" clickbait.
+    Just curious explorations with real code, real screenshots, and honest failures.
+    <br><br>
+    <a class="cta" href="#subscribe">Follow along →</a>
+  </div>
+
+  <h2>Latest episodes</h2>
+  <div class="empty-state">
+    Episode 1 ships this week. Check back soon.
+  </div>
+
+  <h2>What you'll find here</h2>
+  <p>Each episode includes:</p>
+  <ul>
+    <li>The paper explained at 3 levels: ELI5, practitioner, researcher</li>
+    <li>A bizarre-but-real use case I actually tried</li>
+    <li>Screenshots + GitHub repo so you can replicate</li>
+    <li>Honest results — including when it failed</li>
+  </ul>
+
+  <h2 id="subscribe">Follow along</h2>
+  <p>
+    Subscribe via:
+    <a href="#" target="_blank" rel="noopener">RSS</a> ·
+    <a href="#" target="_blank" rel="noopener">LinkedIn</a> ·
+    <a href="#" target="_blank" rel="noopener">Instagram</a> ·
+    <a href="#" target="_blank" rel="noopener">Newsletter (coming soon)</a>
+  </p>
+
+  <div class="footer">
+    Built by <a href="#">[your name]</a> · Powered by GitHub Pages ·
+    Source: <a href="https://github.com/dair-ai/AI-Papers-of-the-Week" target="_blank" rel="noopener">dair-ai/AI-Papers-of-the-Week</a>
+    <br>
+    Working title — rename freely.
+  </div>
+</body>
+</html>

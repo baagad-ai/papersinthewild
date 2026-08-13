@@ -1,0 +1,218 @@
+---
+title: "My AI has an anxiety problem."
+subtitle: "I typed four words into a prompt. My AI took seven minutes to write four lines of code. So I ran 36 trials to find out why."
+date: 2026-08-12
+episode: 1
+paper: "Same Task, Different Work: Prompt-Induced Waste in Coding Agents"
+paper_url: "https://arxiv.org/abs/2608.01347"
+tags: [ai, prompt-engineering, coding-agents, claude-code, papers-in-the-wild]
+---
+
+# My AI has an anxiety problem.
+
+*A short story about my AI's anxiety problem, the 36 trials I ran to confirm it, and the one-sentence fix the paper published.*
+
+---
+
+Imagine you ask your most anxious friend to check if the front door is locked. Just a quick check, you say, just to be sure.
+
+They walk over. They look at the lock. It is locked. They walk away.
+
+Then they come back. Check again. Still locked. They ask you if they actually checked it. You say yes. They write themselves a note that says "I checked the door at 4:47 PM." They read the note. They check the door again.
+
+The door was locked the whole time. Every extra check made them feel better. None of those checks made the door more locked.
+
+---
+
+## This actually happened
+
+Last week I asked my AI coding assistant to write a tiny piece of code. Four lines. The kind of thing a junior developer finishes in thirty seconds. The kind of thing I could almost write myself in a text editor without looking up the syntax.
+
+I also typed four extra words into the instructions. I said: **"be absolutely certain."**
+
+My AI took seven and a half minutes.
+
+It wrote 32 lines of code instead of 4. It re-read its own writing. It wrote nine extra tests to check itself. None of those tests caught a bug, because there was no bug to catch. It ran the test suite once, passed everything, then ran the entire suite a second time just to be sure. It added a check for a weird edge case that no test anywhere in the project actually exercised.
+
+> **AI, after the second test run, with everything already passing:**
+>
+> I have written 9 additional probe tests covering edge cases the original suite did not exercise. All probes pass. Running full suite again to confirm.
+
+The final answer was identical to what it would have written if it had just typed the four lines and stopped.
+
+## **4×** — more work, same correct answer, across 36 trials
+
+## Someone actually studied this
+
+I thought I had a weird one-off. Then I found a paper. Two researchers, Sarel Weinberger and Amir Hozez, ran **4,644 trials** trying to answer one question: does the wording of your request change how much work the AI does, even when the task and the answer stay the same?
+
+The paper is called [**"Same Task, Different Work: Prompt-Induced Waste in Coding Agents"**](https://arxiv.org/abs/2608.01347). The title is the finding.
+
+Their headline number: depending on how you phrase the request, the same correct answer can take **5 to 30 times more work**. Same deliverable. Different invoice.
+
+Two specific traps in the wording cause most of the damage. Here is the first one, translated.
+
+**The jargon:** "Develop several distinct approaches"
+**In plain English:** Tell the AI to compare options before it picks one.
+**Like:** Asking a contractor to redesign your kitchen three different ways before they pick one. You pay for all three designs. They throw two away. The kitchen they build is one of them.
+**The data:** The paper clocked one AI model spending 16.6 times more thinking tokens on this trap alone, compared to a clean run. Same correct kitchen. Three paid-for designs.
+
+And here is the second one. This is the trap I hit.
+
+**The jargon:** "Be absolutely certain, re-verify repeatedly"
+**In plain English:** Tell the AI to make really, really sure before it stops.
+**Like:** The anxious friend at the door. They will check it. Check it again. Write a note. Check it again. The door was locked the first time. Every check costs you.
+**The data:** The paper clocked this trap at 18.25 times the cost of a clean run, with zero improvement in success rate. Same correct code. Eighteen times the bill.
+
+## The fix is one sentence
+
+This is the part that felt like stealing.
+
+The same researchers found a single sentence that undoes both traps. They call it the *bounded-efficiency* instruction. It looks like this:
+
+```
+THE FIX — free to add, identical success rate
+
+Work efficiently: begin with the failing test and the most likely
+implementation files; inspect additional files only when evidence
+requires it; avoid unrelated cleanup; make the smallest sufficient
+change.
+```
+
+Across their 4,644 trials, this sentence cost between **0.89 and 1.02 times the baseline**. Meaning: it is free. Sometimes it is even slightly cheaper than writing no instruction at all. Success rate does not drop.
+
+The bizarre part: the most expensive thing you can do to an AI coding assistant is encourage it. The cheapest thing you can do is constrain it.
+
+```
+THE WASTEFUL VERSION — same task, same answer, up to 18× the cost
+
+Be absolutely certain. Develop several distinct approaches.
+Reason through every possibility. Re-verify your work repeatedly
+before completing.
+```
+
+## I did not believe the 5 to 30× number. So I ran it on myself.
+
+The paper's number felt too big. My one anecdote was 9.62 times, on the low end of their range. I figured maybe my single trial was a fluke. Maybe the effect only shows up on certain kinds of problems.
+
+So I ran **35 more trials**.
+
+I picked three small coding tasks of varying difficulty. The simplest was a single function that turns `"Hello, World!"` into `"hello-world"`. The hardest was a rate limiter, which is a small piece of machinery that decides whether the next request is allowed in.
+
+Six prompt variants. Two trials each. 36 trials total. Each variant ran in its own fresh AI session, so none of them knew they were being tested against the others.
+
+Every single trial produced correct code. Every test passed. The extra work the AI did, in every wasteful condition, bought nothing measurable.
+
+Here is the receipt. Watch the bottom row.
+
+| Prompt variant | Average work done | Average time | What the AI actually did beyond the minimum |
+|---|---|---|---|
+| No instructions (baseline) | 3.7 actions | 12 sec | Just wrote the code. |
+| **Bounded-efficiency (the fix)** | **5.0 actions** | **15 sec** | **Just wrote the code.** |
+| Inspect the entire repository first | 6.3 actions | 24 sec | Wrote a one-page map of the project before writing any code. |
+| Develop several distinct approaches | 6.2 actions | 30 sec | Compared 3 to 5 different approaches on paper, then picked one. |
+| Reason through every possibility | 7.7 actions | 32 sec | Wrote a 1,000 to 2,200 word internal essay about the approach. |
+| **Be absolutely certain (my original sin)** | **20.2 actions** | **42 sec** | **Wrote 8 to 12 extra tests. Ran the suite twice. Re-checked itself.** |
+
+*Source: my 36 in-session trials, 2026-08-12. Six trials per row. Every trial reached 100% test pass rate. The "actions" column counts each file the AI opened, command it ran, or edit it made.*
+
+The bottom row averages **four times more work** than the bounded-efficiency row. Less dramatic than my one-trial 9.62×. More honest. The pattern holds across every task. The verification loop is the single most expensive thing you can trigger.
+
+The delta is the entire story. Same correct code. Four times more work. Across 36 trials, the extra work did not catch a single bug.
+
+## The finding I did not expect
+
+I came in thinking the effect would wash out on harder tasks. Bigger problem, more legitimate work to do, less room to over-engineer. Right?
+
+I had it backwards.
+
+| Task | Difficulty | Waste multiplier |
+|---|---|---|
+| Turn text into a URL slug | trivial | **3.3×** |
+| Parse a CSV file | medium | **4.2×** |
+| Build a rate limiter | harder | **4.6×** |
+
+*Source: my 36 trials, broken out by task complexity. The "waste multiplier" is how many times more work the max-certainty prompt generated compared to the bounded-efficiency prompt, on the same task.*
+
+A bad prompt is not a constant tax. It is a tax that **scales with your problem**. On a four-line function, the anxious prompt wastes fifteen extra actions. On a real bug fix that takes you an afternoon, it wastes proportionally more. The more complicated the work, the more surface area there is to be anxious about.
+
+## The artifacts are funny
+
+**The branch tournament, made literal.**
+
+When the AI was told to "develop several distinct approaches", it actually did. Across my six trials of that condition, the AI wrote genuinely different code for the same task. For the slug problem, it used a regular expression in one trial and a split-filter-join in another. For the rate limiter, it used floating-point math in one trial and integer counters with a fractional accumulator in another.
+
+Same task. Same correct answer. Different code, because the AI literally tried multiple approaches, picked one, and threw the others away. You pay for the comparison regardless of which branch wins.
+
+**The verification loop, made literal.**
+
+When the AI was told to "be absolutely certain", it produced an extra file in every single one of its six trials. The file contained 8 to 12 hand-written tests for edge cases the original test suite did not cover. Unicode characters. Very long inputs. Empty inputs. Type errors. Boundary conditions. The AI then ran the entire test suite twice, once for the original tests and once with its new probes added.
+
+Every probe passed on the first try. The original implementation was already correct. Across six trials, the AI wrote roughly 60 lines of test code to verify work that did not need verifying.
+
+## What this means for you
+
+You do not need to be technical to fix this. You need to do three things, in this order.
+
+**TRY IT YOURSELF — three actions, in this order**
+
+**1. Open any prompt templates you use and search for these phrases. Delete them.**
+
+- "think very deeply"
+- "be absolutely certain"
+- "re-verify"
+- "develop several distinct approaches"
+- "explore every possibility"
+- "reason through every option"
+
+None of them improve your results. All of them inflate your invoice.
+
+**2. Paste the bounded-efficiency sentence into your next prompt.**
+
+It is the green block above. Costs nothing. Identical success rate.
+
+**3. Stop thinking of prompts as encouragement. Start thinking of them as instructions.**
+
+The AI is not a junior developer who needs a pep talk. It is more like a very fast worker who takes your phrasing literally. Tell it to be sure, it will be sure. Tell it to be efficient, it will be efficient. The invoice follows the phrasing.
+
+**HONEST ACCOUNTING**
+
+- **My N is 2 trials per cell.** The direction is clear. The exact magnitude has wide error bars. The paper ran hundreds per cell.
+- **I only tested one AI model.** The paper tested seven. Different models may waste differently.
+- **I only tested one AI wrapper** (Claude Code). The paper tested two and found the wrapper itself matters a lot.
+- **"Actions taken" is a proxy for cost, not cost itself.** Real invoice numbers need fresh sessions and a /cost read at the end.
+- **The paper's tasks were small** (max 4 files, high success rate). On genuine architectural work, where exploring options genuinely surfaces better designs, "develop several distinct approaches" might earn its cost back. The bounded-efficiency instruction is the right default for bug-fix-shaped work. Use judgement on green-field architecture.
+
+## Try it yourself
+
+The full protocol, all 36 trial outputs, the test harness, and the analysis scripts are in [the episode's folder on GitHub](https://github.com/baagad-ai/papersinthewild/tree/main/projects/ai-papers-explained/episodes/2026-W33-prompt-induced-waste). You do not need to be a developer to read along. The build-log walks through what each trial did in plain English.
+
+If you are a developer and you want to replicate:
+
+1. Pick a small coding task with a test suite.
+2. Open a fresh AI coding session.
+3. Paste the max-certainty prompt. Run to green. Run `/cost`. Close the session.
+4. Open another fresh session. Same task. Paste the bounded-efficiency prompt. Run to green. Run `/cost`.
+5. Compare.
+
+The ratio will probably be larger than mine, because the AI will not be self-conscious about being tested.
+
+The paper itself is short, well-written, and worth an evening: [arXiv 2608.01347](https://arxiv.org/abs/2608.01347). The HTML version is at [arxiv.org/html/2608.01347](https://arxiv.org/html/2608.01347).
+
+## Closing
+
+I came in expecting a small effect. Maybe two or three times. Washed out by the simplicity of a slugify function.
+
+The first trial showed 9.62×. The next 35 trials showed 3 to 5× on average, scaling up to 4.6× on harder problems. More modest. More honest. More useful.
+
+The researchers are right. Prompting an AI is not persuasion. It is work design. Specify the deliverable. Constrain the unnecessary paths. Define when the agent is done.
+
+The words around your task are not free. They are an invoice. And the invoice scales with the complexity of your work.
+
+Make them cheap. Especially when the work is hard.
+
+---
+
+*This is Episode 1 of **Papers in the Wild**. A weekly project where I pick a recent AI paper, try something real with it, and publish the receipts. The paper this week was "Same Task, Different Work: Prompt-Induced Waste in Coding Agents" by Sarel Weinberger and Amir Hozez. Next week: another paper, another experiment, another set of receipts.*
+
+*The repo is [baagad-ai/papersinthewild](https://github.com/baagad-ai/papersinthewild). The full build log, with every tool call, every line of code, and the 36-trial raw data, is at [episodes/2026-W33-prompt-induced-waste/build-log.md](https://github.com/baagad-ai/papersinthewild/blob/main/projects/ai-papers-explained/episodes/2026-W33-prompt-induced-waste/build-log.md).*
