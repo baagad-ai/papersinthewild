@@ -31,7 +31,10 @@ jobs:
 
       - name: Install dependencies
         working-directory: projects/ai-papers-explained/site
-        run: npm ci
+        # --legacy-peer-deps because framer-motion@11 peer-deps react@^18
+        # while the project is on react@19. Local installs work because
+        # npm install is more lenient than npm ci.
+        run: npm ci --legacy-peer-deps
 
       - name: Build with Next.js
         working-directory: projects/ai-papers-explained/site
