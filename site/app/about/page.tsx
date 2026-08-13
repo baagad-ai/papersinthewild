@@ -4,7 +4,7 @@ import { SealMark } from "@/components/seal-mark";
 export const metadata = {
   title: "About — Papers in the Wild",
   description:
-    "Papers in the Wild is a weekly publication of experiments on real AI research papers. Curious explorer, not guru.",
+    "A weekly publication of experiments on real AI research papers. Curious explorer, not guru.",
 };
 
 export default function AboutPage() {
@@ -22,32 +22,35 @@ export default function AboutPage() {
       <InkRule />
 
       <p className="mb-6 text-h3 text-ink">
-        Every week I pick a recent AI paper, try something real with it, and
-        publish the receipts.
+        A weekly publication of experiments on real AI research papers.
+        Every Friday: one paper, one real test, the receipts.
       </p>
 
       <p className="mb-6 text-body text-ink-soft">
-        I got tired of two kinds of AI content. The first is the explainer
-        blog: dry summary of the paper, no opinions, no attempt to do anything
-        with it. The second is the hype thread: &quot;this changes
-        everything&quot;, no specifics, no source. Neither teaches me anything.
+        Papers in the Wild sits between two common kinds of AI writing. On
+        one side: the explainer post, a dry summary that never tries anything
+        with the paper. On the other: the hype thread, big claims with no
+        specifics and no source. Neither teaches the reader anything they
+        can use.
       </p>
 
       <p className="mb-6 text-body text-ink-soft">
-        Papers in the Wild is the third thing. I read a paper carefully, find
-        a bizarre-but-real use case, build it, and write up what happened.
-        Failures are content. Numbers are real. Every claim is cited.
+        This publication is the third thing. Each episode takes a recent AI
+        paper, finds a use case worth testing for real, builds it, and writes
+        up what happened. Failures are content. Numbers are sourced. Every
+        claim is cited. The work is replicable from the artifacts in the
+        repository.
       </p>
 
       <h2 className="mt-16 mb-4 font-display text-h2 text-ink">
-        Voice commitments
+        Editorial commitments
       </h2>
       <ul className="mb-6 list-disc space-y-2 pl-6 text-body text-ink-soft marker:text-oxblood">
         <li>Curious explorer, not guru on a stage.</li>
         <li>Receipts over rhetoric. Every number has a source.</li>
         <li>Honest about failures. They teach more than wins.</li>
         <li>Cite every paper. Link every repo. Show every diff.</li>
-        <li>Terser, not longer. Cut anything that doesn&apos;t carry weight.</li>
+        <li>Terser, not longer. Cut anything that does not carry weight.</li>
       </ul>
 
       <h2 className="mt-16 mb-4 font-display text-h2 text-ink">
@@ -65,13 +68,7 @@ export default function AboutPage() {
         </a>
         , a community-curated weekly list. Filters: free arXiv link, accessible
         topic, bonus points for memeable or culturally relevant. If a paper
-        looks worth a real-world test, it is.
-      </p>
-
-      <h2 className="mt-16 mb-4 font-display text-h2 text-ink">Author</h2>
-      <p className="mb-6 text-body text-ink-soft">
-        Baagad. India-based builder. One paper per week, every week, shipped in
-        public.
+        looks worth a real-world test, it goes in.
       </p>
 
       <h2 className="mt-16 mb-4 font-display text-h2 text-ink">Colophon</h2>
@@ -79,9 +76,8 @@ export default function AboutPage() {
         Set in <strong className="text-ink">Fraunces</strong> (display),{" "}
         <strong className="text-ink">Source Serif 4</strong> (body), and{" "}
         <strong className="text-ink">IBM Plex Mono</strong> (numbers, code,
-        timestamps). Built on Next.js 15 with shadcn/ui primitives. Owned
-        components, no UI kit. Static-exported to GitHub Pages. The site code
-        is in the{" "}
+        timestamps). Built on Next.js 15 with owned shadcn-style components.
+        Static-exported to GitHub Pages. The site code is in the{" "}
         <a
           href="https://github.com/baagad-ai/papersinthewild/tree/main/site"
           target="_blank"
@@ -90,14 +86,20 @@ export default function AboutPage() {
         >
           site/
         </a>{" "}
-        directory of the repo.
+        directory of the public repository.
+      </p>
+
+      <h2 className="mt-16 mb-4 font-display text-h2 text-ink">Cadence</h2>
+      <p className="mb-6 text-body text-ink-soft">
+        One episode every Friday. Source list, experiment code, raw trial
+        data, and an honest writeup ship together in the same commit.
       </p>
 
       <div className="mt-16 flex justify-center">
         <SealMark className="h-24 w-24" />
       </div>
       <p className="mt-4 text-center font-mono text-meta uppercase tracking-wider text-ink-mute">
-        made by Baagad, in the wild
+        papers in the wild · est. 2026
       </p>
     </div>
   );

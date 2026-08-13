@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { Subscribe } from "@/components/subscribe";
 
 /**
  * SiteHeader — sticky top navigation.
- * Compact wordmark left, nav right.
+ * Compact wordmark left, nav right, Subscribe as the final CTA.
  */
 export function SiteHeader() {
   return (
@@ -44,6 +45,8 @@ export function SiteHeader() {
           >
             Repo ↗
           </a>
+          <span className="h-4 w-px bg-rule" aria-hidden />
+          <Subscribe variant="link" />
         </nav>
       </div>
     </header>

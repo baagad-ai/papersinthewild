@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { SealMark } from "./seal-mark";
+import { Subscribe } from "./subscribe";
 
 /**
- * SiteFooter — three-column footer.
+ * SiteFooter — brand left, nav middle, seal + subscribe right.
  */
 export function SiteFooter() {
   return (
@@ -18,7 +19,7 @@ export function SiteFooter() {
               Papers in the Wild
             </div>
             <p className="font-body italic text-meta text-ink-mute">
-              I read a paper. I tried it. Here are the receipts.
+              One paper, every Friday. The receipts.
             </p>
           </div>
 
@@ -62,26 +63,31 @@ export function SiteFooter() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-oxblood">
-                    LinkedIn ↗
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-oxblood">
-                    Subscribe (soon)
+                  <a
+                    href="https://github.com/baagad-ai/papersinthewild"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-oxblood"
+                  >
+                    Watch for new episodes ↗
                   </a>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Seal */}
+          {/* Seal + tagline */}
           <div className="flex flex-col items-start gap-4 md:items-end">
             <SealMark className="h-16 w-16" />
             <p className="font-mono text-[0.7rem] uppercase tracking-wider text-ink-mute">
-              made by Baagad, in the wild
+              papers in the wild · est. 2026
             </p>
           </div>
+        </div>
+
+        {/* Subscribe form, full width below the grid */}
+        <div className="mt-16 border-t border-rule pt-12">
+          <Subscribe variant="form" />
         </div>
       </div>
     </footer>
