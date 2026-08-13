@@ -64,25 +64,14 @@ export default function AboutPage() {
           dair-ai/AI-Papers-of-the-Week
         </a>
         , a community-curated weekly list. Filters: free arXiv link, accessible
-        topic, bonus points for memeable or culturally relevant. The full
-        Stage&nbsp;1 protocol is in the{" "}
-        <a
-          href="https://github.com/baagad-ai/papersinthewild/blob/main/projects/ai-papers-explained/pipeline.md"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline decoration-rule underline-offset-4 hover:text-oxblood"
-        >
-          pipeline doc
-        </a>
-        .
+        topic, bonus points for memeable or culturally relevant. If a paper
+        looks worth a real-world test, it is.
       </p>
 
       <h2 className="mt-16 mb-4 font-display text-h2 text-ink">Author</h2>
       <p className="mb-6 text-body text-ink-soft">
-        Baagad. Builder, technical marketer in training, full-time on this
-        project. India-based. Building in public from absolute beginner to
-        global freelancer over 4-6 months. This publication is the spine of
-        that journey.
+        Baagad. India-based builder. One paper per week, every week, shipped in
+        public.
       </p>
 
       <h2 className="mt-16 mb-4 font-display text-h2 text-ink">Colophon</h2>
@@ -90,17 +79,18 @@ export default function AboutPage() {
         Set in <strong className="text-ink">Fraunces</strong> (display),{" "}
         <strong className="text-ink">Source Serif 4</strong> (body), and{" "}
         <strong className="text-ink">IBM Plex Mono</strong> (numbers, code,
-        timestamps). Built on Next.js 15 with shadcn/ui. Static-exported to
-        GitHub Pages. The full design system is in the{" "}
+        timestamps). Built on Next.js 15 with shadcn/ui primitives. Owned
+        components, no UI kit. Static-exported to GitHub Pages. The site code
+        is in the{" "}
         <a
-          href="https://github.com/baagad-ai/papersinthewild/blob/main/projects/ai-papers-explained/DESIGN-SYSTEM.md"
+          href="https://github.com/baagad-ai/papersinthewild/tree/main/site"
           target="_blank"
           rel="noopener noreferrer"
           className="underline decoration-rule underline-offset-4 hover:text-oxblood"
         >
-          repo
-        </a>
-        .
+          site/
+        </a>{" "}
+        directory of the repo.
       </p>
 
       <div className="mt-16 flex justify-center">

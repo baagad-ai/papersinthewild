@@ -1,112 +1,110 @@
 # Papers in the Wild
 
-> I read an AI paper. I try something real with it. I publish the receipts. Every Friday.
+> Weekly experiments on real AI research papers. Read the paper. Try something. Ship the receipts.
 
-[**Read the latest episode →**](https://papersinthewild.io)
+**Live site:** <https://baagad-ai.github.io/papersinthewild/>
+**Latest episode:** [My AI has an anxiety problem.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w33-prompt-induced-waste)
 
 ---
 
 ## What this is
 
-A weekly publication of experiments on real AI research papers. Each episode:
+A weekly publication. Each episode:
 
-1. **Pick** one paper from [dair-ai/AI-Papers-of-the-Week](https://github.com/dair-ai/AI-Papers-of-the-Week)
-2. **Understand** it deeply enough to explain in plain English
-3. **Find** a bizarre-but-real use case (funny, pointed, or genuinely useful)
-4. **Build** it — code runs, screenshots captured, failures documented
-5. **Write** the story — for non-technical readers, with the receipts
-6. **Ship** — blog post, LinkedIn, Instagram carousel
-7. **Measure** — T+24h, T+7d, T+30d metrics, honest retrospective
+1. **Pick** a recent AI paper (usually from [dair-ai/AI-Papers-of-the-Week](https://github.com/dair-ai/AI-Papers-of-the-Week))
+2. **Try** something real with it. Reproduce a result. Build a small experiment. Test a claim against a different setup.
+3. **Ship** the receipts: code, raw data, screenshots, an honest writeup of what worked and what didn't.
 
-The work lives in this repo. You can replicate any episode from the artifacts here.
+The work lives in this repo. Every episode is replicable from the artifacts here.
 
-## The voice
-
-**`build_to_think`** — curious explorer reporting from the field. Never a guru. Never "10 secrets to…". Always: *"I got curious about X. So I tried Y. Here's what I found."*
-
-Receipts over rhetoric. Every number has a source. Failures are content.
-
-Full brand identity: [`projects/ai-papers-explained/BRAND.md`](./projects/ai-papers-explained/BRAND.md)
-Writing manual: [`projects/ai-papers-explained/STYLE-GUIDE.md`](./projects/ai-papers-explained/STYLE-GUIDE.md)
-
-## Episode index
+## Episodes
 
 | # | Week | Title | Paper |
 |---|------|-------|-------|
-| 01 | 2026-W33 | *Be absolutely certain.* | [Prompt-Induced Waste (arXiv 2608.01347)](https://arxiv.org/abs/2608.01347) |
+| 01 | 2026-W33 | [My AI has an anxiety problem.](./episodes/2026-w33-prompt-induced-waste/blog-post.md) | [Prompt-Induced Waste (arXiv 2608.01347)](https://arxiv.org/abs/2608.01347) |
 
-Full index: [`projects/ai-papers-explained/index.md`](./projects/ai-papers-explained/index.md)
+Each episode folder contains:
 
-## Repository layout (public)
+| File | Purpose |
+|---|---|
+| `paper.md` | Link to the paper, one-line "why this one" |
+| `build-log.md` | Step-by-step build with screenshots, the human-readable story |
+| `build/` | Original trial code + outputs (smaller reproduction) |
+| `build-deeper/` | Larger reproduction code, raw trial data, analysis scripts |
+| `blog-post.md` | Plain-markdown mirror of the published blog post |
+| `assets/` | Screenshots and images |
+
+## Repository layout
 
 ```
 papersinthewild/
-├── README.md                              ← you are here
-├── LICENSE
-└── projects/
-    └── ai-papers-explained/
-        ├── BRAND.md                       ← identity, voice, palette, type
-        ├── DESIGN-SYSTEM.md               ← tokens, components, MDX mapping
-        ├── STYLE-GUIDE.md                 ← writing manual (canonical)
-        ├── pipeline.md                    ← 7-stage production workflow
-        ├── index.md                       ← episode registry
-        ├── episodes/
-        │   └── YYYY-WW-{slug}/            ← one folder per paper
-        │       ├── paper.md               ← arXiv link + why this paper
-        │       ├── notes.md               ← Claude's structured understanding
-        │       ├── use-cases.md           ← 3 candidates, scored
-        │       ├── build-log.md           ← what was built, with screenshots
-        │       ├── blog-post.md           ← the story (plain MD mirror)
-        │       ├── linkedin.md            ← LinkedIn post + first comment
-        │       └── instagram.md           ← 10-slide IG carousel script
-        └── site/                          ← Next.js 15 + shadcn + MDX
-            ├── app/                       ← routes (home, episodes/[slug], about)
-            ├── components/                ← InkRule, ReceiptTable, DropCap, PullQuote…
-            ├── content/
-            │   ├── episodes.ts            ← episode metadata registry
-            │   └── episodes/*.mdx         ← canonical episode MDX
-            └── public/                    ← seal.svg, favicon.svg, wordmark.svg
+├── README.md                           You are here
+├── LICENSE                             CC BY 4.0 (content) + MIT (code)
+├── CONTRIBUTING.md                     How to suggest a paper or contribute
+├── .github/workflows/deploy.yml        Auto-deploys site to GitHub Pages
+├── site/                               Next.js 15 + MDX static site
+│   ├── app/                            Routes: home, episodes/[slug], about
+│   ├── components/                     Owned shadcn-style components
+│   ├── content/
+│   │   ├── episodes.ts                 Episode metadata registry
+│   │   └── episodes/*.mdx              Canonical episode content
+│   ├── public/                         seal.svg, favicon.svg, wordmark.svg
+│   └── next.config.mjs                 Static export + basePath for Pages
+└── episodes/
+    └── {year}-w{week}-{slug}/          Per-episode artifacts (see above)
 ```
-
-## Tech stack
-
-- **Next.js 15** (App Router, static export) → GitHub Pages
-- **shadcn/ui** for component primitives
-- **MDX** via `next-mdx-remote-client` for episode content
-- **Fraunces** (display) + **Source Serif 4** (body) + **IBM Plex Mono** (numbers, code)
-- **Field Notebook** palette: cream paper `#F5EFE0`, deep ink `#1A1612`, oxblood accent `#7C2D2D`
-
-Full design system: [`projects/ai-papers-explained/DESIGN-SYSTEM.md`](./projects/ai-papers-explained/DESIGN-SYSTEM.md)
 
 ## Build the site locally
 
+Requirements: Node.js 20+ and npm.
+
 ```bash
-cd projects/ai-papers-explained/site
-npm install
-npm run dev      # http://localhost:3000
-npm run build    # static export to out/
+git clone https://github.com/baagad-ai/papersinthewild.git
+cd papersinthewild/site
+npm install --legacy-peer-deps    # see note below
+npm run dev                       # http://localhost:3000/papersinthewild
+npm run build                     # static export to site/out/
 ```
+
+The `--legacy-peer-deps` flag is needed because `framer-motion@11` peer-deps React 18 while the project is on React 19. The lockfile is already resolved correctly; this flag just unblocks `npm install`'s strict peer check.
 
 ## Replicate an episode
 
-Each episode folder contains everything you need to reproduce the work:
+Each episode folder is self-contained. A good starting point: [`episodes/2026-w33-prompt-induced-waste/`](./episodes/2026-w33-prompt-induced-waste/). Read `build-log.md` first, then poke around `build-deeper/` for the trial data.
 
-- The exact prompts used (in `build-log.md`)
-- The trial data and analysis scripts
-- The test harness
-- Screenshots and outputs in `assets/`
+## Tech stack
 
-Start with [`episodes/2026-W33-prompt-induced-waste/build-log.md`](./projects/ai-papers-explained/episodes/2026-W33-prompt-induced-waste/build-log.md) for a worked example.
+- **[Next.js 15](https://nextjs.org/)** (App Router, static export) on GitHub Pages
+- **[shadcn/ui](https://ui.shadcn.com/)** patterns (owned, copy-paste components, no UI kit dependency)
+- **[MDX](https://mdxjs.com/)** via `@next/mdx` for episode content
+- **[Fraunces](https://fonts.google.com/specimen/Fraunces)** (display) + **[Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4)** (body) + **[IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono)** (numbers, code)
+- **[Tailwind CSS](https://tailwindcss.com/)** with CSS-variable design tokens
 
 ## Submit a paper
 
-Open an issue with `paper-suggestion:` prefix. Include arXiv link + one sentence on why it's bizarre-but-real.
+Open an issue with the `paper-suggestion:` prefix. Include:
+
+- arXiv link
+- One sentence on why it is bizarre-but-real
+- (Optional) A use case you would like to see tested
+
+Every suggestion is read. Suggestions that get picked are credited in the episode writeup.
 
 ## License
 
-Content (blog posts, episodes, images): **CC BY 4.0** — credit "Papers in the Wild by Baagad", link back to the episode.
-Code (experiment scripts, site): **MIT**.
+This repository contains two kinds of work, licensed separately:
+
+- **Content** (blog posts, episode writeups, images, any creative work): **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)**. Attribute "Papers in the Wild", link back to the source episode.
+- **Code** (the site, experiment scripts, test harnesses, analysis code): **[MIT](https://opensource.org/license/mit/)**.
+
+See [`LICENSE`](./LICENSE) for the full text.
+
+## Acknowledgments
+
+- Episode papers sourced from [`dair-ai/AI-Papers-of-the-Week`](https://github.com/dair-ai/AI-Papers-of-the-Week)
+- Fonts by Stephen Nixon (Fraunces), Frank Grießhammer (Source Serif 4), and IBM (Plex Mono)
+- Component primitives inspired by [shadcn/ui](https://ui.shadcn.com/)
 
 ---
 
-*Made by Baagad, in the wild.*
+*Made by [Baagad](https://github.com/baagad-ai), in the wild.*
