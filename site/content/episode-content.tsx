@@ -1,5 +1,6 @@
 import type { ComponentType } from "react";
 import Episode1 from "./episodes/2026-w33-prompt-induced-waste.mdx";
+import Episode2 from "./episodes/2026-w34-mind-viruses.mdx";
 
 /**
  * Episode content registry.
@@ -12,4 +13,5 @@ import Episode1 from "./episodes/2026-w33-prompt-induced-waste.mdx";
  */
 export const episodeContent: Record<string, ComponentType> = {
   "2026-w33-prompt-induced-waste": Episode1,
+  "2026-w34-mind-viruses": Episode2,
 };
