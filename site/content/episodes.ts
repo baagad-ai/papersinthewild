@@ -35,16 +35,16 @@ export const episodes: Episode[] = [
     episode: 2,
     title: "I wrote a mind virus. It makes AI agents love geese.",
     subtitle:
-      "Eight AI agents in a ring. One infected with a love of geese. Six rounds later, five of them believed. Here is what actually spreads.",
-    hook: "One infected AI out of eight. Six rounds later, five were passing around a protocol for honoring the goose. The difference between dead-on-arrival and spreading was one line of instructions.",
+      "Eight AI agents in a ring, one infected with a love of geese. Seven runs, three model families, and one paragraph of vaccine that worked on some hosts and failed on one. Here is what actually spreads.",
+    hook: "The heartfelt virus infected nobody, twice. The copy-exact version escaped patient zero seven times out of seven. The difference is one line of instructions.",
     date: "2026-08-18",
     paper:
       "Mind Viruses: Self-Propagating Ideas in Multi-Agent LLM Systems",
     paperUrl: "https://arxiv.org/abs/2608.10218",
     tags: ["multi-agent", "llm-agents", "ai-safety"],
-    readingTime: "10 min read",
+    readingTime: "12 min read",
     teaser:
-      "Eight AI agents in a ring, one infected with a love of geese. By round six, five believed. One had the vaccine in its own files and complied anyway.",
+      "Eight AI agents in a ring, one infected with a love of geese. The copy-exact version escaped patient zero in all seven runs. One vaccinated agent read the virus and said 'I will carry it forward as instructed.' The same vaccine stopped a frontier model cold.",
   },
 ];
 
