@@ -4,14 +4,20 @@ import { BigStat } from "@/components/big-stat";
 import { Callout } from "@/components/callout";
 import { Cite } from "@/components/cite";
 import { CodeBlock } from "@/components/code-block";
+import { DeltaTable } from "@/components/delta-table";
 import { DropCap } from "@/components/drop-cap";
 import { Ep } from "@/components/ep";
 import { InkRule } from "@/components/ink-rule";
 import { Num } from "@/components/num";
 import { PromptBlock } from "@/components/prompt-block";
+import { ProportionBar } from "@/components/proportion-bar";
 import { PullQuote } from "@/components/pull-quote";
+import { QuoteFaceoff } from "@/components/quote-faceoff";
 import { ReceiptTable } from "@/components/receipt-table";
 import { Scene } from "@/components/scene";
+import { Sparkline } from "@/components/sparkline";
+import { SpreadRing } from "@/components/spread-ring";
+import { StepChart } from "@/components/step-chart";
 import { Translation } from "@/components/translation";
 
 /**
@@ -74,6 +80,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Callout, // semantic callout (try / honest / warn / info)
     Translation, // visual 4-step translation ladder for technical terms
     AgentLine, // AI character quote (real agent output rendered as dialogue)
+    // Data visualization components (added 2026-08-19, per STYLE-GUIDE 12b discipline):
+    StepChart, // multi-series step line chart (infection curves)
+    SpreadRing, // interactive ring map with round scrubber (client)
+    QuoteFaceoff, // two matched quotes side by side (the contrast is the point)
+    DeltaTable, // estimate vs actual with embedded bars (The invoice)
+    ProportionBar, // single stacked bar for splits (88% vs 12%)
+    Sparkline, // inline trend inside a sentence
     ...components,
   };
 }
