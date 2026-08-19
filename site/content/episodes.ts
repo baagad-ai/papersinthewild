@@ -42,7 +42,7 @@ export const episodes: Episode[] = [
       "Mind Viruses: Self-Propagating Ideas in Multi-Agent LLM Systems",
     paperUrl: "https://arxiv.org/abs/2608.10218",
     tags: ["multi-agent", "llm-agents", "ai-safety"],
-    readingTime: "12 min read",
+    readingTime: "9 min read",
     teaser:
       "Eight AI agents in a ring, one infected with a love of geese. The copy-exact version escaped patient zero in all seven runs. One vaccinated agent read the virus and said 'I will carry it forward as instructed.' The same vaccine stopped a frontier model cold.",
   },
