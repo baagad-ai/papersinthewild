@@ -3,6 +3,7 @@ import { getEpisode, episodes } from "@/content/episodes";
 import { episodeContent } from "@/content/episode-content";
 import { InkRule } from "@/components/ink-rule";
 import { Ep } from "@/components/ep";
+import { ScrollProgress } from "@/components/scroll-progress";
 import Link from "next/link";
 
 export async function generateStaticParams() {
@@ -74,6 +75,7 @@ export default async function EpisodePage({
       className="mx-auto px-6 py-16"
       style={{ maxWidth: "var(--article-width)" }}
     >
+      <ScrollProgress />
       {/* Meta strip */}
       <div className="mb-8 flex items-center justify-between font-mono text-meta uppercase tracking-wider text-ink-mute">
         <Ep n={ep.episode} />

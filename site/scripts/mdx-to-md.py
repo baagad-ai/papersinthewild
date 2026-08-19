@@ -49,7 +49,7 @@ def convert(src: str, meta: dict) -> str:
             out += f'\n*{caption.group(1)}*\n'
         return out
 
-    src = re.sub(r"<StepChart[^>]*?/>", stepchart, src, flags=re.S)
+    src = re.sub(r"<(?:StepChart|ChartExplorer)[^>]*?/>", stepchart, src, flags=re.S)
 
     def spreadring(m):
         body = m.group(0)
@@ -103,6 +103,14 @@ def convert(src: str, meta: dict) -> str:
         return f"*({' → '.join(vals)})*"
 
     src = re.sub(r"<Sparkline[^>]*/>", sparkline, src)
+
+
+    # ---- fun-scroller layer (BLOG-FLOW.md, 2026-08-19)
+    # Reveal: passthrough (strip wrapper, keep inner)
+    src = re.sub(r"<Reveal>\s*\n?(.*?)\n?\s*</Reveal>", lambda m: m.group(1).strip() + "\n", src, flags=re.S)
+    # ChartExplorer: same transform as StepChart
+    def chartexplorer(m):
+        return stepchart(m)
 
     # ---- storytelling components (2026-08-13)
     src = re.sub(r"<DropCap>(.*?)</DropCap>", lambda m: m.group(1), src, flags=re.S)
@@ -182,7 +190,7 @@ def main():
     mdx = (SITE / "content" / "episodes" / f"{slug}.mdx").read_text()
     out = convert(mdx, meta)
 
-    leftover = re.findall(r"<(?:DropCap|InkRule|PromptBlock|AgentLine|BigStat|Translation|ReceiptTable|Scene|Callout|StepChart|SpreadRing|QuoteFaceoff|DeltaTable|ProportionBar|Sparkline)[^>]*>", out)
+    leftover = re.findall(r"<(?:DropCap|InkRule|PromptBlock|AgentLine|BigStat|Translation|ReceiptTable|Scene|Callout|StepChart|SpreadRing|QuoteFaceoff|DeltaTable|ProportionBar|Sparkline|Reveal|ChartExplorer)[^>]*>", out)
     if leftover:
         sys.exit(f"ERROR: unconverted JSX in mirror: {leftover}")
     if re.search(r"[—–]", out):

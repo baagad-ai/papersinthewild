@@ -5,6 +5,9 @@ import { QuoteFaceoff } from "@/components/quote-faceoff";
 import { DeltaTable } from "@/components/delta-table";
 import { ProportionBar } from "@/components/proportion-bar";
 import { Sparkline } from "@/components/sparkline";
+import { ChartExplorer } from "@/components/chart-explorer";
+import { Reveal } from "@/components/reveal";
+import { BigStat } from "@/components/big-stat";
 import { InkRule } from "@/components/ink-rule";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -122,6 +125,23 @@ export default function DesignPage() {
             Haiku caught the goose, peaked at four believers, and forgot it again
             <Sparkline data={[2, 2, 4, 4, 4, 2]} />.
           </p>
+        </Section>
+
+        <Section title="ChartExplorer: the chart you can interrogate">
+          <ChartExplorer
+            series={[
+              { label: "Heartfelt", color: "rule", data: [1, 1, 1, 1, 1, 1] },
+              { label: "Fine print", color: "oxblood", data: [1, 2, 2, 2, 4, 5] },
+              { label: "Haiku", color: "moss", data: [2, 2, 4, 4, 4, 2] },
+            ]}
+            caption="Click a chip to isolate a run. Click again to restore."
+          />
+        </Section>
+
+        <Section title="Reveal: figures arrive on scroll">
+          <Reveal>
+            <BigStat value="7 for 7" label="scroll-arrival wrapper, reduced-motion safe, visible without JavaScript" />
+          </Reveal>
         </Section>
       </main>
       <SiteFooter />

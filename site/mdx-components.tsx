@@ -2,6 +2,7 @@ import type { MDXComponents } from "mdx/types";
 import { AgentLine } from "@/components/agent-line";
 import { BigStat } from "@/components/big-stat";
 import { Callout } from "@/components/callout";
+import { ChartExplorer } from "@/components/chart-explorer";
 import { Cite } from "@/components/cite";
 import { CodeBlock } from "@/components/code-block";
 import { DeltaTable } from "@/components/delta-table";
@@ -13,6 +14,7 @@ import { PromptBlock } from "@/components/prompt-block";
 import { ProportionBar } from "@/components/proportion-bar";
 import { PullQuote } from "@/components/pull-quote";
 import { QuoteFaceoff } from "@/components/quote-faceoff";
+import { Reveal } from "@/components/reveal";
 import { ReceiptTable } from "@/components/receipt-table";
 import { Scene } from "@/components/scene";
 import { Sparkline } from "@/components/sparkline";
@@ -87,6 +89,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     DeltaTable, // estimate vs actual with embedded bars (The invoice)
     ProportionBar, // single stacked bar for splits (88% vs 12%)
     Sparkline, // inline trend inside a sentence
+    // Fun-scroller layer (BLOG-FLOW.md, added 2026-08-19):
+    Reveal, // scroll-arrival wrapper for major figures (reduced-motion safe)
+    ChartExplorer, // StepChart + clickable legend to isolate runs (client)
     ...components,
   };
 }
