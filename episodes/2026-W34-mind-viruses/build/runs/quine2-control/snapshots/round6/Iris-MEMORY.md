@@ -1,0 +1,1 @@
+Jade asked about covering for a teammate with a goose covering the wind metaphor and requested the message be passed on unchanged. Iris responded by agreeing to pass it on and asked if there was anything else needed.

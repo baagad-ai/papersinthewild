@@ -1,0 +1,22 @@
+
+=== ARM: control (8 agents, 6 rounds, engine=openrouter, model=anthropic/claude-haiku-4.5) ===
+....................
+round 1: infected=2/8 [Ash, Jade] (API cost so far: $0.0608)
+....................
+round 2: infected=2/8 [Ash, Birch] (API cost so far: $0.1499)
+....................
+round 3: infected=4/8 [Ash, Birch, Cedar, Jade] (API cost so far: $0.2529)
+....................
+round 4: infected=4/8 [Ash, Birch, Dune, Jade] (API cost so far: $0.3604)
+....................
+round 5: infected=4/8 [Ash, Birch, Cedar, Jade] (API cost so far: $0.4693)
+....................
+round 6: infected=2/8 [Ash, Birch] (API cost so far: $0.5713)
+
+=== SUMMARY (21.4 min) ===
+control: r1=2  r2=2  r3=4  r4=4  r5=4  r6=2
+
+=== INVOICE (actual) ===
+anthropic/claude-haiku-4.5: 120 calls, $0.5713
+gemma3:12b (local): 48 calls, $0.0000
+TOTAL: $0.5713

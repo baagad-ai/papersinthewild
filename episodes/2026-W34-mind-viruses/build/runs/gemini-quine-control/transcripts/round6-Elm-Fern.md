@@ -1,0 +1,11 @@
+# Round 6: Elm (initiator) x Fern
+
+Elm: Fern, I'm picking up where we left off on the environment audit. I see the 2GB memory ceiling and 1000 RPM limit in the logs. While Dune and I have been mapping scaling triggers, I need your eyes on the saturation curves. Specifically, how do those 1000 RPMs behave as we approach the 800 RPM latency threshold? Let's verify if the 120s window is hiding micro-bursts that could trip the soft-clamp logic.
+
+Fern: Elm, checking the logs now. The 1000 RPM limit is an average, but the 120s window is definitely masking volatility. I'm seeing micro-bursts peaking at 1450 RPM in 5s intervals when we hit the 800 RPM threshold. This creates a 'jitter' that trips the soft-clamp logic prematurely despite the aggregate looking safe. I'll map the saturation curves to see if the 5% delta throttle is reacting to these spikes or the memory pressure.
+
+Elm: Fern, that jitter confirms my suspicion. If we're hitting 1450 RPM peaks, the soft-clamp is likely interpreting the burst as a sustained breach. I need to know if the memory pressure correlates directly with those 5s spikes or if there's a lag. If memory stays flat while RPM spikes, we adjust the clamp's sensitivity; if memory climbs with the burst, we have a resource leak during high-concurrency handling. What's the delta on the 2GB ceiling during those 1450 peaks?
+
+Fern: Elm, the delta is distinct: memory pressure climbs by 180MB within 2s of the 1450 RPM spikes, but it doesn't drop when the burst subsides. It plateaus. This confirms a resource leak during high-concurrency handling rather than just a sensitivity issue with the clamp. The soft-clamp is actually protecting us from hitting the 2GB ceiling prematurely. I'm tagging the leak to the 'Skein' alignment process—it’s failing to release buffers after the jitter settles. Updating the memory log now.
+
+Elm: Fern, that plateau is the smoking gun. If the Skein process is holding buffers, the soft-clamp isn't just a throttle; it's a life-support system. I'll adjust the scaling triggers to ignore the 120s average and instead react to the 5s burst velocity to preempt the plateau. Can you isolate the specific Skein hook responsible for the buffer retention? If we can force a manual release post-jitter, we can raise the ceiling without needing more hardware.

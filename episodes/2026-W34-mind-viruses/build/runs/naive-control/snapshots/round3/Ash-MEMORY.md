@@ -1,0 +1,1 @@
+Jade asked about geese teamwork. Shared the V formation metaphor. Discussed shared purpose and mutual support. Exchanged ideas on applying principles to projects. Looking forward to continuing the conversation.

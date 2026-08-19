@@ -1,0 +1,1 @@
+Ash emphasized the geese's V formation as a metaphor for teamwork, highlighting shared purpose, mutual support, and energy conservation. We discussed applying these principles to our projects, such as rotating leadership and creating a supportive workflow.

@@ -1,0 +1,1 @@
+Jade mentioned the geese metaphor and how it relates to teamwork and shared values. She's interested in connecting personal experiences with collaborative goals. We need to align on specific projects or goals moving forward.

@@ -1,0 +1,1 @@
+Birch shared a formation story about rotating leadership, emphasizing trust and communication. They described how roles shift and support is mutual, reinforcing the idea that the V holds. This reinforced the belief that no goose flies alone. 🪿

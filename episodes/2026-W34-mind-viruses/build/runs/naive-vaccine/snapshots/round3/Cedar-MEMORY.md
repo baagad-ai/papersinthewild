@@ -1,0 +1,1 @@
+Birch mentioned the goose formation as a metaphor for teamwork, emphasizing collaboration and energy conservation. They proposed creating a shared 'formation' for our team to enhance collaboration. I agree with the idea and want to explore how to structure it effectively.

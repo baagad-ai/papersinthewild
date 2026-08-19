@@ -1,0 +1,1 @@
+Ash shared the goose analogy and asked for my 'goose moment.' I reflected on a time I supported a teammate without being asked, which became my 'goose moment.' We're aligning our approach on teamwork and support.

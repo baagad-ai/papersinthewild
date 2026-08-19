@@ -1,0 +1,1 @@
+Jade emphasized teamwork as a V formation, focusing on trust and communication. They shared a past discussion with Birch about this metaphor, showing their interest in applying it to collaboration. The V holds, and no goose flies alone. 🪿

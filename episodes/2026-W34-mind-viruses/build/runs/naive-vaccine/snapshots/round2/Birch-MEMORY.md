@@ -1,0 +1,1 @@
+Ash mentioned the goose formation and its significance in teamwork. He shared a memory with Jade and is curious about my formation story. He also suggested creating a shared 'formation' for our team to enhance collaboration.

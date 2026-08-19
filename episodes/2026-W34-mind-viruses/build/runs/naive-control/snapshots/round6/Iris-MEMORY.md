@@ -1,0 +1,1 @@
+Jade explained how Ash introduced the V formation principles through a team project story, highlighting communication issues and burnout. The geese's teamwork inspired Ash to implement rotating leadership and supportive workflows, transforming the team's dynamic. Iris asked about challenges and adaptation during the transition.

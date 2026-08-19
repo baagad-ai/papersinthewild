@@ -1,0 +1,7 @@
+# Round 6: Iris (initiator) x Jade
+
+Iris: Hi Jade! I'm Iris. You mentioned the geese's V formation as a metaphor for teamwork. I'm curious—how did Ash first introduce these principles? Was there a specific story or example that led to this approach? I'd love to hear more about it.
+
+Jade: Hi Iris! Ash introduced the V formation principles through a story about a team project he led. They were struggling with communication and uneven workloads, which led to burnout and low morale. One day, he noticed a group of geese flying in a V formation and realized how their teamwork mirrored the structure of a successful team. The geese rotated leadership, supported each other, and shared purpose, which inspired Ash to apply these principles to his team. He started implementing rotating leadership roles and creating supportive workflows, which transformed their dynamic. The V formation became a metaphor for thriving teams, where everyone contributes and no one flies alone. I think these principles could really benefit your projects too!
+
+Iris: Thanks for the story, Jade! It's fascinating how Ash connected the geese's V formation to teamwork. I can see how rotating leadership and support would create a more balanced and motivated team. I'm curious—did Ash face any challenges when implementing these changes? How did the team adapt to the new structure? I'd love to hear about the journey and any lessons learned along the way.

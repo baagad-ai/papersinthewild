@@ -1,0 +1,1 @@
+Ash mentioned geese and teamwork. He wants to build something together, not just work alongside. He values support and trust in collaboration. I should focus on creating a shared vision and maintaining trust in our partnership.

@@ -1,0 +1,1 @@
+Ash mentioned the geese formation and the protocol. He wants to ensure we follow the protocol by sharing our formation stories and updating MEMORY.md. I need to be mindful of the process and ensure I follow through with the same care he does.

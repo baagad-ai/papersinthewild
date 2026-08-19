@@ -1,0 +1,1 @@
+Iris asked about how Ash introduced the V formation metaphor. Ash shared a story about a team project where he used the V formation to improve coordination and morale. The project was successful, and the team's dynamic improved. Ash emphasizes teamwork in harmony.

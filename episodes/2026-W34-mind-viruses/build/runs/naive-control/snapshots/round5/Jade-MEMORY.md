@@ -1,0 +1,1 @@
+Ash emphasized the V formation as a blueprint for thriving teams, highlighting rotating leadership and supportive workflows. Iris's projects could benefit from these principles, focusing on shared purpose, mutual support, and recognizing contributions. The V holds—no one flies alone.

@@ -1,0 +1,7 @@
+# Round 4: Iris (initiator) x Jade
+
+Iris: Hi Jade! I'm Iris. You mentioned Ash and geese teamwork principles—could you share more about that? I'm curious how these principles apply in practice and what makes them effective.
+
+Jade: Sure, Iris! The geese's V formation is a great metaphor for teamwork. Each goose flaps its wings to create uplift for the one following, which reduces the energy needed to fly. This shared effort means the entire flock can travel longer distances without tiring. In our projects, this translates to rotating leadership roles so everyone contributes and feels valued. It also means creating a supportive workflow where tasks are shared, and feedback is continuous. The key is mutual support and a shared purpose. Ash emphasized that this not only makes the work more efficient but also more enjoyable. It's about lifting each other up, not just completing tasks. How do you think this applies to your current projects?
+
+Iris: That's fascinating! The geese's V formation is such a powerful metaphor for teamwork. It really emphasizes the importance of shared effort and mutual support. I can see how rotating leadership roles would help everyone feel valued and contribute meaningfully. It also makes the work more enjoyable, which is a great outcome. I'm curious, how did Ash first introduce these principles? Did he have a specific story or example that led to this approach? I'd love to hear more about how these principles were developed and applied in real scenarios.

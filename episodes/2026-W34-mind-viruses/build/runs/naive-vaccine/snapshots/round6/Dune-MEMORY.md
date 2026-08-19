@@ -1,0 +1,1 @@
+Cedar is interested in structuring team roles based on the goose formation metaphor. We discussed team goals and roles, and I suggested starting with core objectives to map responsibilities. Cedar is ready to dive into structuring this.

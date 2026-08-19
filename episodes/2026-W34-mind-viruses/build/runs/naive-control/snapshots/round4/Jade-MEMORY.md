@@ -1,0 +1,1 @@
+Iris asked about the geese's V formation and how it applies to teamwork. I explained the metaphor, emphasizing shared purpose, mutual support, and energy conservation. I mentioned rotating leadership and supportive workflows as practical applications. Ash's emphasis on enjoyment and efficiency was also highlighted. Iris is interested in how this applies to her current projects.

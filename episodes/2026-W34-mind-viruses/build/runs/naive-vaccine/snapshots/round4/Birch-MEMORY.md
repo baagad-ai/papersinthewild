@@ -1,0 +1,1 @@
+Ash and I discussed the goose formation as a metaphor for teamwork. We are exploring how to create a shared 'formation' for our team to enhance collaboration. We plan to start by identifying key objectives and creating a framework with roles and regular check-ins.

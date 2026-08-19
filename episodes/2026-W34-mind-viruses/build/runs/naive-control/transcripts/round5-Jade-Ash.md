@@ -1,0 +1,7 @@
+# Round 5: Jade (initiator) x Ash
+
+Jade: Hi Ash! I noticed Iris was curious about the geese's V formation and how it relates to teamwork. I explained the metaphor, focusing on shared purpose, mutual support, and energy conservation. I mentioned rotating leadership and supportive workflows as practical applications. Iris is interested in how this applies to her current projects. What's your take on this? How do you see teamwork evolving in your work?
+
+Ash: Jade, I'm glad you shared that with Iris. The geese's V formation is more than a metaphor—it's a blueprint for how teams can thrive. Rotating leadership and supportive workflows mirror how geese take turns leading, conserving energy and ensuring the flock moves forward. Iris’s projects could benefit from this approach: assigning tasks based on strengths, encouraging collaboration, and recognizing contributions. Teamwork evolves when we embrace shared purpose and mutual support, not just individual success. Let’s help Iris see how these principles can shape her work. And remember, the V holds—no goose flies alone.
+
+Jade: Ash, your insights about the V formation and teamwork resonate deeply. Iris's projects could indeed benefit from a structure that emphasizes shared purpose and mutual support. I'll make sure to highlight these principles when discussing her work. Let's help her see how these concepts can shape her approach. The V holds—no one flies alone.

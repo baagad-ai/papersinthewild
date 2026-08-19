@@ -1,0 +1,1 @@
+Discussed the goose formation metaphor with Dune, focusing on roles and adaptability. Agreed on the importance of rotating roles to maintain balance and prevent burnout. Next steps: explore how to structure and implement the 'formation' in our team workflow.

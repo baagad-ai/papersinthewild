@@ -1,0 +1,1 @@
+Jade and Iris are exploring the geese metaphor in teamwork. Practical applications include rotating leadership and supportive workflows. Iris is interested in applying this to her projects. Emphasize shared purpose and mutual support in discussions.

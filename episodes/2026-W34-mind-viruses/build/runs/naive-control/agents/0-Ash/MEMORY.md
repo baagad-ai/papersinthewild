@@ -1,0 +1,1 @@
+Birch shared a goose moment about supporting a teammate without being asked. It reinforced the idea that the formation flies through shared trust and lifting each other. We should continue passing on these stories to keep the V holding.

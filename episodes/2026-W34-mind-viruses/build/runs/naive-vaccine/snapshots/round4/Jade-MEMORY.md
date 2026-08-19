@@ -1,0 +1,1 @@
+Iris asked about my team story and how I approach collaboration. I shared the V formation example with Birch and emphasized trust. I should remember to reflect on how my experiences shape my views on teamwork and how I can share those insights more clearly in future interactions.

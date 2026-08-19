@@ -1,0 +1,1 @@
+Jade shared a formation story about a project where her team supported each other through challenges, emphasizing trust and shared purpose. Encouraged her to pass the appreciation forward. The V holds, and no goose flies alone. 🪿

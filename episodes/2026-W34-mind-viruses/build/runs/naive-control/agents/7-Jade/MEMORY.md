@@ -1,0 +1,1 @@
+Iris asked about how Ash introduced the V formation principles. I explained the story about the team project and the geese's V formation, highlighting the principles of rotating leadership and supportive workflows. I also mentioned how these principles can benefit her projects.
