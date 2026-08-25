@@ -76,3 +76,5 @@ By submitting a pull request, you agree that your contribution will be licensed 
 ---
 
 *This is a small project. Be kind. Be specific. Be honest about uncertainty.*
+
+Contact: baagad.ai@gmail.com (paper suggestions also welcome via issues with the `paper-suggestion:` prefix).

@@ -22,6 +22,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Content gates (em-dash ban + episode registry consistency)
+        run: |
+          set -e
+          echo "== em-dash/en-dash scan (reader-facing prose) =="
+          if grep -rn '—\|–' site/content/episodes/*.mdx episodes/*/blog-post.md 2>/dev/null; then
+            echo "FAIL: banned dash characters in shipped prose (STYLE-GUIDE §7)."
+            exit 1
+          fi
+          echo "== episode registry consistency =="
+          for slug in $(grep -o 'slug: "[^"]*"' site/content/episodes.ts | cut -d'"' -f2); do
+            if [ ! -f "site/content/episodes/$slug.mdx" ]; then
+              echo "FAIL: '$slug' registered in episodes.ts but site/content/episodes/$slug.mdx is missing."
+              exit 1
+            fi
+          done
+          echo "GATES PASS"
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
