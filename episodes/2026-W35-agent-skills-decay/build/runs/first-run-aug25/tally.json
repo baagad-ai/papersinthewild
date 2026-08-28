@@ -1,0 +1,62 @@
+{
+  "clean6|local:qwen3:8b": {
+    "n": 6,
+    "pickAcc": 1,
+    "passRate": 0.67
+  },
+  "clean6|local:gemma3:12b": {
+    "n": 6,
+    "pickAcc": 1,
+    "passRate": 0.83
+  },
+  "clean6|local:phi4-mini": {
+    "n": 6,
+    "pickAcc": 0.83,
+    "passRate": 0.83
+  },
+  "clean6|or:google/gemini-3.7-flash": {
+    "n": 6,
+    "pickAcc": 0.83,
+    "passRate": 0.83
+  },
+  "clean8|local:qwen3:8b": {
+    "n": 6,
+    "pickAcc": 1,
+    "passRate": 0.83
+  },
+  "clean8|local:gemma3:12b": {
+    "n": 6,
+    "pickAcc": 1,
+    "passRate": 1
+  },
+  "clean8|local:phi4-mini": {
+    "n": 6,
+    "pickAcc": 0.83,
+    "passRate": 0.83
+  },
+  "clean8|or:google/gemini-3.7-flash": {
+    "n": 6,
+    "pickAcc": 1,
+    "passRate": 1
+  },
+  "twins8|local:qwen3:8b": {
+    "n": 6,
+    "pickAcc": 0.67,
+    "passRate": 0.67
+  },
+  "twins8|local:gemma3:12b": {
+    "n": 6,
+    "pickAcc": 0.83,
+    "passRate": 0.83
+  },
+  "twins8|local:phi4-mini": {
+    "n": 6,
+    "pickAcc": 0.83,
+    "passRate": 0.67
+  },
+  "twins8|or:google/gemini-3.7-flash": {
+    "n": 6,
+    "pickAcc": 0.83,
+    "passRate": 0.83
+  }
+}

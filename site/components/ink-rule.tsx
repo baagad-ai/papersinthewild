@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * InkRule — the signature brand divider.
+ * InkRule - the signature brand divider.
  * A 1px ink-rule line with a small oxblood square at the start (the "seal").
  * Used between major sections in every episode.
  */

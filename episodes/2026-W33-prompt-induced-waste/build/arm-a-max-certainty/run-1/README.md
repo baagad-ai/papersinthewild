@@ -1,4 +1,4 @@
-# Task — `slugify(text: str) -> str`
+# Task - `slugify(text: str) -> str`
 
 ## What to build
 
@@ -14,7 +14,7 @@ The function MUST pass `test_slugify.py`. The tests check:
 4. Collapses repeated hyphens into one
 5. Removes characters that are not `[a-z0-9-]`
 6. Returns `""` for empty or all-symbol input
-7. Handles Unicode by ASCII-folding (e.g. `café` → `cafe`) — *bonus, may skip if too complex*
+7. Handles Unicode by ASCII-folding (e.g. `café` → `cafe`) - *bonus, may skip if too complex*
 8. Preserves digits
 
 ## Constraints
@@ -27,8 +27,8 @@ The function MUST pass `test_slugify.py`. The tests check:
 
 ## Files
 
-- `slugify.py` — stub with `def slugify(text: str) -> str: ...`
-- `test_slugify.py` — 8 unit tests, all currently failing
+- `slugify.py` - stub with `def slugify(text: str) -> str: ...`
+- `test_slugify.py` - 8 unit tests, all currently failing
 
 ## How to verify
 

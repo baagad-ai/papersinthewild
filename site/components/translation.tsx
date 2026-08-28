@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Translation — the four-step translation ladder, visualised.
+ * Translation - the four-step translation ladder, visualised.
  *
  * The PITW style guide requires technical terms to be "climbed":
  *   1. Name the term (one sentence)

@@ -1,11 +1,22 @@
 /**
  * PITW subscribe configuration.
  *
+ * ACTIVATION STEPS (to go from mailto to a real newsletter):
+ *   1. Create a free account at https://buttondown.com
+ *      (free up to 100 subscribers).
+ *   2. In the Buttondown dashboard, open Settings → Embeds and copy
+ *      the form action URL. Paste it as `buttondownEndpoint` below.
+ *   3. Flip `provider` to "buttondown".
+ *   4. Optional: enable RSS-to-email (https://docs.buttondown.com/rss-to-email)
+ *      pointed at SITE_ORIGIN_URL + "/feed.xml" (i.e.
+ *      https://baagad-ai.github.io/papersinthewild/feed.xml) so the Friday
+ *      send drafts itself whenever a new episode ships.
+ *
  * TWO free providers supported out of the box. To switch, change the
  * `provider` field below. The <Subscribe /> component reads from here.
  *
  * ──────────────────────────────────────────────────────────────
- * provider: "mailto"   — zero setup, works today
+ * provider: "mailto"   - zero setup, works today
  * ──────────────────────────────────────────────────────────────
  *   The Subscribe button opens the reader's email client with a
  *   prefilled subscribe request to the address below. You collect
@@ -16,7 +27,7 @@
  *   subscribe requests at. A dedicated inbox is best.
  *
  * ──────────────────────────────────────────────────────────────
- * provider: "buttondown"  — recommended upgrade
+ * provider: "buttondown"  - recommended upgrade
  * ──────────────────────────────────────────────────────────────
  *   Buttondown is newsletter-first, indie-friendly, and offers the
  *   first 1,000 subscribers free (no feature limits). The form below

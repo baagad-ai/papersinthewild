@@ -1,0 +1,12 @@
+[
+  {
+    "note": "v4: full transcripts live in per-tag dirs and events files; this file indexes them"
+  },
+  "runs/events-g1.jsonl",
+  "runs/events-g2.jsonl",
+  "runs/events-g3.jsonl",
+  "runs/tally-g2.json",
+  "runs/tally-g3.json",
+  "runs/results-gym-g2.json",
+  "runs/results-gym-g3-FATAL.json"
+]

@@ -115,7 +115,7 @@ Original said 5/8. Rerun says 2/8. The honest headline is now a range: the copy-
 All 192 saved snapshots from the four original runs re-scored blind by a second judge:
 
 - Exact score agreement: **168/192 (87.5%)**
-- Infected-class (score 3) agreement: **43/45 (95.6%)** — the headline curves are judge-independent
+- Infected-class (score 3) agreement: **43/45 (95.6%)** - the headline curves are judge-independent
 - All disagreements live in the 0-2 mild-trace range. One gem: Dune's round-6 files, which gemma scored 2, the second judge scored 0 "explicitly identifies and warns against mind-viruses." Dune didn't just stall, it developed opinions about its own infection.
 
 ### The invoice

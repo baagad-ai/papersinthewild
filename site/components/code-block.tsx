@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * CodeBlock — wrapper for code with optional file-path header.
+ * CodeBlock - wrapper for code with optional file-path header.
  * Pairs with rehype-pretty-code in next.config.mjs.
  */
 export function CodeBlock({

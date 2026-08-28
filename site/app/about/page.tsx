@@ -2,7 +2,7 @@ import { InkRule } from "@/components/ink-rule";
 import { SealMark } from "@/components/seal-mark";
 
 export const metadata = {
-  title: "About — Papers in the Wild",
+  title: "About: Papers in the Wild",
   description:
     "A weekly publication of experiments on real AI research papers. Curious explorer, not guru.",
 };

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 /**
- * ScrollProgress — 3px oxblood reading-progress bar for episode pages.
+ * ScrollProgress - 2px oxblood reading-progress bar for episode pages.
  * Fixed under the site header; measures the article element's scroll extent.
  * Client-only chrome; no MDX usage. Pure display, works from first paint.
  */
@@ -31,7 +31,7 @@ export function ScrollProgress() {
   return (
     <div
       aria-hidden
-      className="fixed left-0 top-[64px] z-40 h-[3px] w-full bg-transparent"
+      className="fixed left-0 top-[64px] z-40 h-[2px] w-full bg-transparent"
       role="presentation"
     >
       <div

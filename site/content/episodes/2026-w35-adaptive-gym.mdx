@@ -1,0 +1,148 @@
+<DropCap>So, four AI models sat an exam with their own notes allowed.</DropCap>
+
+The three who carried answer sheets scored 100% on the homework and learned almost nothing usable anywhere else. One of them got WORSE at new questions because of her perfect answer sheet. The most expensive student failed a sorting game a 2.5-gigabyte intern passed, then aced the homework by copying his own notebook. And the only notes that helped at all were ones they wrote themselves, in words, badly.
+
+This is normal now.
+
+<Translation
+  term="Adaptive environment"
+  plain="A practice world that changes itself to target one specific learner's mistakes, instead of staying frozen forever."
+  analogy="A boxing coach who watches you drop your left hand, then spends the whole week throwing jabs at it. A punchbag cannot do that."
+  data="EnvHarness (Aug 2026) wrapped five static benchmarks in an adaptive layer and beat plain practice on held-out tasks: +9 points on ALFWorld (Table 2), with a scaling curve that kept climbing where static worlds went flat (Figure 5)."
+/>
+
+Their deeper point is why I spent a week here: environments get built once and never learn, so they upgrade the WORLD per student, by writing new rules and scenarios as code.
+
+Which raises the smallest version of their question. How much of that survives in a toy I can run on a laptop?
+
+<InkRule />
+
+## Three notebooks
+
+<Scene title="The sorting office">
+Lowercase strings arrive. Four shelves wait, each hiding one secret rule: a doubled letter like ll, matching first and last characters, an even vowel count, no repeated characters. Verdicts are exact, graded by code, no opinions anywhere. Four students enrolled: Juniper (qwen3:8b), Bram (gemma3:12b), Pip (phi4-mini), and Flit (gemini-3.7-flash), the paid consultant.
+</Scene>
+
+Three kinds of before. **Nothing**: walk in cold. **The answer sheet**: drill the same ten flashcards five rounds, then carry those cards with their right answers into the exam. **The tutor's way**: fresh cards every round, biased toward the shelves you keep failing, difficulty nudged to the edge of your ability, and your last eight practiced cards as notes.
+
+Two exams for everyone. The novel exam: sixteen strings nobody practiced. The sting: the ten homework strings again, as exam questions.
+
+The first grid I built had no notebooks at all, and all three arms came back byte-identical, every student. These models have no memory between chats; practice never touched the exam page. Three arms of expensive theater. That ghost grid died to make one thing obvious: the notebook is the only channel practice has.
+
+<InkRule />
+
+## The homework they aced
+
+Read the middle column against the left, then the right against both. Novel on the left of each slash, homework on the right:
+
+<ReceiptTable
+  caption="Source: my runs, Aug 28 2026, tag g2. n=16 novel, n=10 homework per cell, temperature 0. Episode spend to date: ₹30.15 ($0.315)."
+  headers={["Student", "cold", "answer-sheet", "tutor's way"]}
+  rows={[
+    ["Juniper", "69% / 40%", "50% / 100%", "50% / 60%"],
+    ["Bram", "50% / 40%", "69% / 100%", "50% / 40%"],
+    ["Pip", "44% / 40%", "50% / 100%", "50% / 40%"],
+    ["Flit", "31% / 60%", "50% / 100%", "38% / 30%"],
+  ]}
+/>
+
+Every answer-sheet student aced the homework. All ten cards. And the fresh-material column barely moved, or moved the wrong way: the homework 100 bought Bram and Flit +19 points each, Pip +6, and cost Juniper nineteen points. She walked in as the best cold student in the room, picked up a perfect answer key, and got worse.
+
+<BigStat value="100%" label="homework score, four for four, for notes that taught nothing else" />
+
+The tutor's-way column hurt to read: it matched walking in cold almost everywhere. My pre-registered prediction said the tutor's arm would beat drilling on new material. Grade: WRONG. The tutor the paper promises did not show up at toy scale, and here is why.
+
+## Pip writes his rulebook
+
+Between grids I added the R1 of my own episode: after the tutor's practice, each student writes each shelf's secret rule, one plain sentence, own words. The notebook now carries RULES and zero answers. If rules transfer better than answers, this is where it shows.
+
+<AgentLine task="Juniper's rulebook, shelf 'even vowels'">
+The string must contain an even number of vowels.
+</AgentLine>
+
+All four of hers were like that. Textbook-clean. And then Pip's:
+
+<AgentLine task="Pip's rulebook, shelf 'no repeats'">
+No consecutive characters should appear more than once.
+</AgentLine>
+
+That is not the rule. The rule is no repeated characters anywhere; Pip wrote a rule about neighbors only, and mangled the vowel shelf even worse. His scores afterwards matched his rulebook, roughly rule for rule.
+
+<QuoteFaceoff
+  left={{ speaker: "Juniper, shelf 'even vowels'", quote: "The string must contain an even number of vowels.", note: "flawless rulebook, still 10 points under her cold self" }}
+  right={{ speaker: "Pip, shelf 'no repeats'", quote: "No consecutive characters should appear more than once.", note: "mangled rule, and performed exactly that: 50%" }}
+  caption="Grade the rulebook before the exam."
+/>
+
+The third grid, strategy column fresh from tag g3:
+
+<ReceiptTable
+  caption="Novel / homework, tag g3, same exams, same seed. Rulebooks verbatim from events-g3.jsonl."
+  headers={["Student", "cold", "answer-sheet", "rules-written"]}
+  rows={[
+    ["Juniper", "69% / 40%", "50% / 100%", "56% / 40%"],
+    ["Bram", "50% / 40%", "69% / 100%", "63% / 40%"],
+    ["Pip", "44% / 40%", "50% / 100%", "50% / 40%"],
+    ["Flit", "31% / 60%", "50% / 100%", "50% / 70%"],
+  ]}
+/>
+
+Written rules did what written rules do. Bram took +13. Flit doubled his cold score and became the only student whose homework score ALSO rose with rules in the notebook (60 to 70), because his notes finally contained something true instead of something memorized. Juniper wrote a flawless rulebook and still landed under her cold self. Rules helped the students who needed help, in the hands of the students who could write them.
+
+And the sting column? Barely moved for the locals, even with perfect rules. The ten homework cards are rigged with boundary cases, and "even number of vowels" does not arm you for a five-letter monster with exactly one vowel next to a doubled consonant. The cliff questions ate the rules and asked for seconds.
+
+<InkRule />
+
+## What I predicted, graded
+
+**P1**, the tutor's arm beats drilling on fresh material: **WRONG.** The paper's environment writes new scenarios as CODE after diagnosing aggregate failures; my gym only re-aimed the item stream. That difference appears to be the entire mechanism. **P2**, drilling is flat-or-worse on fresh material: half right, surprised - Juniper dropped 19, but the answer sheet doubled as ten worked examples and accidentally helped the other three. A cheat sheet is also, weakly, a textbook. **P3**, everyone improves more on trained items than fresh ones, worst for drilling: **CONFIRMED four for four, by miles.** The control the source paper never ran, and the sharpest number in the episode.
+
+## What this means if you run AI agents
+
+1. **Test your evals for the photograph problem.** If practiced-item scores tower over untouched ones, you are measuring the notebook, not the brain. Two exams, one session, five lines of code, most honest number you will ever print.
+2. **Notes are a channel; design what travels.** Answers travel only to identical questions. Random examples are noise. One self-written sentence of rule beat eight worked examples. Ask every memory or skill file you hand an agent: does it store answers or rules?
+3. **Grade the rulebook, not just the score.** Pip's 50% was written down before the exam. When an agent writes how it thinks it works, grade the writing against the doing.
+
+You already know a Juniper: the kid who aces every past paper and falls apart when question 7 changes shape, because she studied the answers, not the shape. The gym says the fix is not more past papers. It is saying the rule out loud, in your own words, then meeting a question that argues with you.
+
+<InkRule />
+
+## The invoice
+
+<DeltaTable
+  unit="₹"
+  rows={[
+    { label: "g1, zero-channel control, locals (killed early)", estimate: 0, actual: 0 },
+    { label: "g2, answer-notebook grid (712 calls)", estimate: 5.88, actual: 20 },
+    { label: "g3, rule-notebook grid (320 calls)", estimate: 1.2, actual: 10.15 },
+  ]}
+  caption="Estimates as printed pre-run; actuals from per-call ledgers. Locals free all grids. Total ₹30.15 ($0.315). Source: results-gym-g2.json, results-gym-g3-FATAL.json."
+/>
+
+Two money-protocol escalations fired and were taken: gemini-3.7-flash reasons on every call whether you ask or not, about 500 output tokens per answer, and my estimator budgeted 24. The estimator has been taught; the receipt stands.
+
+<Callout variant="honest" label="Honest accounting">
+One grid per condition, one seed, one toy domain: directional numbers; the four 100s are exempt. Notebooks differ by design (10 cards vs 8 examples vs 4 rules), so cross-arm effects mix content and length; the direction survives, the decimals do not. My tutor is not EnvRIGGER: no code-writing, no component repair loop. Juniper's dip is one cell, directional not proof, first in line for n=3. Flit's reasoning could not be switched off; every consultant answer includes hidden thinking I paid for.
+</Callout>
+
+<Callout variant="try" label="Try it yourself">
+1. Free, local: install Ollama, pull qwen3:8b, run MODELS=local:qwen3:8b node tutor-gym.mjs --tag yourname
+2. Any model: add or:google/gemini-3.7-flash to MODELS (OpenRouter key). Budget for its reasoning.
+3. Open runs/events-yourname.jsonl: every card, verdict, and rulebook, one JSON per line. Then make your eval sit its own homework twice, practiced and cold. The gap is your photograph number.
+</Callout>
+
+The rig lives at [episodes/2026-W35-adaptive-gym/build](https://github.com/baagad-ai/papersinthewild/tree/main/projects/ai-papers-explained/episodes/2026-W35-adaptive-gym/build). The paper is [EnvHarness](https://arxiv.org/abs/2608.19880).
+
+<InkRule />
+
+I came to test a tutor and left with a museum of notebooks.
+
+The answer sheet aced everything it recognized and bought almost nothing else, and it quietly cost the best student in the room nineteen points of herself. Eight random examples did nothing at all. Four sentences in the student's own words did more than both, but only for students who could write them, and even the perfect rulebook surrendered to genuinely unfair questions.
+
+The notebook is the only place practice ever lives, so the only question that matters is what you put in it. Answers are a photograph of yesterday. Rules are a pair of glasses.
+
+Grade the rulebook. Then hand the student a question that argues with it.
+
+*This is Episode 5 of Papers in the Wild: one recent AI paper, one real experiment, all receipts, including the ones that flunk their own homework.*
+
+<Subscribe />

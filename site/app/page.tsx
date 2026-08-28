@@ -59,7 +59,7 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* Past episodes (empty for now) */}
+      {/* Past episodes */}
       {rest.length > 0 && (
         <section className="pb-24">
           <div className="mb-8 font-mono text-meta uppercase tracking-wider text-ink-mute">

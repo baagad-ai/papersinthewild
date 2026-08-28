@@ -1,9 +1,9 @@
-# Deeper Experiment — Analysis Report
+# Deeper Experiment - Analysis Report
 
 **Total trials:** 36  
 **Tasks:** slugify, csv_parser, rate_limiter  
 **Variants:** baseline, bounded_efficiency, multiple_approaches, deep_thinking, exhaustive_exploration, max_certainty  
-**Trials per cell:** 2 (target) — actual varies; see n_trials column
+**Trials per cell:** 2 (target) - actual varies; see n_trials column
 
 ---
 

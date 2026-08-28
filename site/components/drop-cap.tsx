@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * DropCap — wraps the first paragraph of an episode.
+ * DropCap - wraps the first paragraph of an episode.
  * Fraunces 500, oxblood, 4 lines tall, float-left.
  */
 export function DropCap({

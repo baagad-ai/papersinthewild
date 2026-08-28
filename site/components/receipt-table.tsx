@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * ReceiptTable — the signature Papers in the Wild component.
+ * ReceiptTable - the signature Papers in the Wild component.
  *
  * Usage in MDX:
  *   <ReceiptTable

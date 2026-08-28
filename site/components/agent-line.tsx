@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * AgentLine — quote the AI as a character.
+ * AgentLine - quote the AI as a character.
  *
  * When the AI is anthropomorphised in the story (it "got anxious",
  * it "decided to write nine extra tests"), its literal output reads

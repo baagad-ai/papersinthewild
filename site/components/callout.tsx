@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Callout — versatile callout with semantic variants.
+ * Callout - versatile callout with semantic variants.
  *
  * The brand requires two sections in every episode:
  *   - "Honest accounting" (caveats, biases, N counts)

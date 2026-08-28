@@ -3,7 +3,7 @@ import { SealMark } from "./seal-mark";
 import { Subscribe } from "./subscribe";
 
 /**
- * SiteFooter — brand left, nav middle, seal + subscribe right.
+ * SiteFooter - brand left, nav middle, seal + subscribe right.
  */
 export function SiteFooter() {
   return (
@@ -20,6 +20,15 @@ export function SiteFooter() {
             </div>
             <p className="font-body italic text-meta text-ink-mute">
               One paper, every Friday. The receipts.
+            </p>
+            <p className="mt-4 font-mono text-meta text-ink-mute">
+              Questions, receipts, paper tips:{" "}
+              <a
+                href="mailto:baagad.ai@gmail.com"
+                className="underline decoration-rule underline-offset-4 hover:text-oxblood transition-colors duration-base"
+              >
+                baagad.ai@gmail.com
+              </a>
             </p>
           </div>
 

@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { Ep } from "./ep";
 
 /**
- * PaperCard — episode preview card for the index page.
+ * PaperCard - episode preview card for the index page.
  */
 export function PaperCard({
   slug,

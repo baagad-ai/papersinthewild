@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Ep — episode number reference. Renders "EP. 01" in Plex Mono.
+ * Ep - episode number reference. Renders "EP. 01" in Plex Mono.
  */
 export function Ep({
   n,

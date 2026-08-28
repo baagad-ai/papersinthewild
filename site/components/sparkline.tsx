@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Sparkline — tiny inline trend line, used inside a sentence.
+ * Sparkline - tiny inline trend line, used inside a sentence.
  *
  * Usage in MDX:
  *   caught it, peaked at four, forgot it <Sparkline data={[2,2,4,4,4,2]} />

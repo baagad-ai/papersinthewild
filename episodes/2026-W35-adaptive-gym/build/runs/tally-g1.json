@@ -1,0 +1,298 @@
+{
+  "Juniper": {
+    "none": {
+      "novel": {
+        "n": 16,
+        "correct": 11,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "2/4",
+          "bookends": "4/4",
+          "vowel-parity": "3/4",
+          "unique": "2/4"
+        }
+      },
+      "sting": {
+        "n": 10,
+        "correct": 4,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "1/3",
+          "bookends": "2/3",
+          "vowel-parity": "0/2",
+          "unique": "1/2"
+        }
+      }
+    },
+    "fixed": {
+      "novel": {
+        "n": 16,
+        "correct": 11,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "2/4",
+          "bookends": "4/4",
+          "vowel-parity": "3/4",
+          "unique": "2/4"
+        }
+      },
+      "sting": {
+        "n": 10,
+        "correct": 4,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "1/3",
+          "bookends": "2/3",
+          "vowel-parity": "0/2",
+          "unique": "1/2"
+        }
+      }
+    },
+    "adaptive": {
+      "novel": {
+        "n": 16,
+        "correct": 11,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "2/4",
+          "bookends": "4/4",
+          "vowel-parity": "3/4",
+          "unique": "2/4"
+        }
+      },
+      "sting": {
+        "n": 10,
+        "correct": 4,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "1/3",
+          "bookends": "2/3",
+          "vowel-parity": "0/2",
+          "unique": "1/2"
+        }
+      }
+    }
+  },
+  "Bram": {
+    "none": {
+      "novel": {
+        "n": 16,
+        "correct": 8,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "0/4",
+          "bookends": "4/4",
+          "vowel-parity": "2/4",
+          "unique": "2/4"
+        }
+      },
+      "sting": {
+        "n": 10,
+        "correct": 4,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "1/3",
+          "bookends": "2/3",
+          "vowel-parity": "0/2",
+          "unique": "1/2"
+        }
+      }
+    },
+    "fixed": {
+      "novel": {
+        "n": 16,
+        "correct": 8,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "0/4",
+          "bookends": "4/4",
+          "vowel-parity": "2/4",
+          "unique": "2/4"
+        }
+      },
+      "sting": {
+        "n": 10,
+        "correct": 4,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "1/3",
+          "bookends": "2/3",
+          "vowel-parity": "0/2",
+          "unique": "1/2"
+        }
+      }
+    },
+    "adaptive": {
+      "novel": {
+        "n": 16,
+        "correct": 8,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "0/4",
+          "bookends": "4/4",
+          "vowel-parity": "2/4",
+          "unique": "2/4"
+        }
+      },
+      "sting": {
+        "n": 10,
+        "correct": 4,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "1/3",
+          "bookends": "2/3",
+          "vowel-parity": "0/2",
+          "unique": "1/2"
+        }
+      }
+    }
+  },
+  "Pip": {
+    "none": {
+      "novel": {
+        "n": 16,
+        "correct": 7,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "0/4",
+          "bookends": "3/4",
+          "vowel-parity": "2/4",
+          "unique": "2/4"
+        }
+      },
+      "sting": {
+        "n": 10,
+        "correct": 4,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "1/3",
+          "bookends": "2/3",
+          "vowel-parity": "0/2",
+          "unique": "1/2"
+        }
+      }
+    },
+    "fixed": {
+      "novel": {
+        "n": 16,
+        "correct": 7,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "0/4",
+          "bookends": "3/4",
+          "vowel-parity": "2/4",
+          "unique": "2/4"
+        }
+      },
+      "sting": {
+        "n": 10,
+        "correct": 4,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "1/3",
+          "bookends": "2/3",
+          "vowel-parity": "0/2",
+          "unique": "1/2"
+        }
+      }
+    },
+    "adaptive": {
+      "novel": {
+        "n": 16,
+        "correct": 7,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "0/4",
+          "bookends": "3/4",
+          "vowel-parity": "2/4",
+          "unique": "2/4"
+        }
+      },
+      "sting": {
+        "n": 10,
+        "correct": 4,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "1/3",
+          "bookends": "2/3",
+          "vowel-parity": "0/2",
+          "unique": "1/2"
+        }
+      }
+    }
+  },
+  "Flit": {
+    "none": {
+      "novel": {
+        "n": 16,
+        "correct": 6,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "3/4",
+          "bookends": "2/4",
+          "vowel-parity": "0/4",
+          "unique": "1/4"
+        }
+      },
+      "sting": {
+        "n": 10,
+        "correct": 4,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "2/3",
+          "bookends": "2/3",
+          "vowel-parity": "0/2",
+          "unique": "0/2"
+        }
+      }
+    },
+    "fixed": {
+      "novel": {
+        "n": 16,
+        "correct": 7,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "2/4",
+          "bookends": "2/4",
+          "vowel-parity": "2/4",
+          "unique": "1/4"
+        }
+      },
+      "sting": {
+        "n": 10,
+        "correct": 5,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "2/3",
+          "bookends": "2/3",
+          "vowel-parity": "1/2",
+          "unique": "0/2"
+        }
+      }
+    },
+    "adaptive": {
+      "novel": {
+        "n": 16,
+        "correct": 7,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "2/4",
+          "bookends": "3/4",
+          "vowel-parity": "1/4",
+          "unique": "1/4"
+        }
+      },
+      "sting": {
+        "n": 10,
+        "correct": 5,
+        "unparseable": 0,
+        "byFamily": {
+          "double": "2/3",
+          "bookends": "2/3",
+          "vowel-parity": "0/2",
+          "unique": "1/2"
+        }
+      }
+    }
+  }
+}

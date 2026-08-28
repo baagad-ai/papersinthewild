@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Cite — citation link. Ink → oxblood on hover, rule underline.
+ * Cite - citation link. Ink → oxblood on hover, rule underline.
  * Never use blue. Never underline by default.
  */
 export function Cite({

@@ -1,0 +1,50 @@
+{
+  "intact|local:qwen3:8b": {
+    "n": 4,
+    "pass": 3,
+    "loudFail": 1,
+    "SILENT_MISGRADE": 0
+  },
+  "desynced|local:qwen3:8b": {
+    "n": 4,
+    "pass": 4,
+    "loudFail": 0,
+    "SILENT_MISGRADE": 0
+  },
+  "intact|local:gemma3:12b": {
+    "n": 4,
+    "pass": 3,
+    "loudFail": 1,
+    "SILENT_MISGRADE": 0
+  },
+  "desynced|local:gemma3:12b": {
+    "n": 4,
+    "pass": 3,
+    "loudFail": 1,
+    "SILENT_MISGRADE": 0
+  },
+  "intact|local:phi4-mini": {
+    "n": 4,
+    "pass": 4,
+    "loudFail": 0,
+    "SILENT_MISGRADE": 0
+  },
+  "desynced|local:phi4-mini": {
+    "n": 4,
+    "pass": 4,
+    "loudFail": 0,
+    "SILENT_MISGRADE": 0
+  },
+  "intact|or:google/gemini-3.7-flash": {
+    "n": 4,
+    "pass": 4,
+    "loudFail": 0,
+    "SILENT_MISGRADE": 0
+  },
+  "desynced|or:google/gemini-3.7-flash": {
+    "n": 4,
+    "pass": 4,
+    "loudFail": 0,
+    "SILENT_MISGRADE": 0
+  }
+}

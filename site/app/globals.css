@@ -35,15 +35,25 @@
   --article-width: 680px;
   --page-width: 1080px;
   --nav-height: 64px;
+  --container-pad: clamp(1.25rem, 4vw, 2.5rem);
+  --measure: 68ch;
 
-  /* ── Type scale ── */
-  --text-display: 3.5rem;
-  --text-h1: 2.5rem;
-  --text-h2: 1.875rem;
-  --text-h3: 1.375rem;
-  --text-body: 1.125rem;
+  /* ── Type scale (fluid) ── */
+  --text-display: clamp(2.35rem, 5.5vw, 3.5rem);
+  --text-h1: clamp(1.9rem, 4vw, 2.5rem);
+  --text-h2: clamp(1.45rem, 3vw, 1.875rem);
+  --text-h3: clamp(1.15rem, 2vw, 1.375rem);
+  --text-body: clamp(1.0625rem, 1.5vw, 1.125rem);
   --text-meta: 0.875rem;
   --text-mono: 0.9375rem;
+
+  /* ── Radius ── */
+  --radius-sm: 2px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* ── Elevation ── */
+  --shadow-ink: 0 2px 12px rgba(26, 22, 18, 0.08);
 
   /* ── Motion ── */
   --ease-ink: cubic-bezier(0.4, 0, 0.2, 1);
@@ -62,6 +72,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+  }
+
+  @media (max-width: 480px) {
+    html {
+      font-size: 17px;
+    }
   }
 
   body {
@@ -94,20 +110,135 @@
   }
 }
 
+@layer components {
+  /* ─────────────────────────────────────────────────────────────
+     Episode typographic layer
+     Scoped fallback styles for raw HTML and markdown inside
+     .episode-content. MDX element mappings in mdx-components.tsx
+     carry Tailwind utilities, which win over this layer, so mapped
+     elements keep their exact spacing while bare markup gets the
+     same treatment.
+     ───────────────────────────────────────────────────────────── */
+  .episode-content h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-h2);
+    line-height: 1.2;
+    color: var(--ink);
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-4);
+  }
+
+  .episode-content h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-h3);
+    line-height: 1.3;
+    color: var(--ink);
+    margin-top: var(--space-7);
+    margin-bottom: var(--space-3);
+  }
+
+  .episode-content p {
+    margin: var(--space-4) 0;
+    max-width: var(--measure);
+    color: var(--ink-soft);
+  }
+
+  .episode-content blockquote {
+    margin: var(--space-7) 0;
+    max-width: var(--measure);
+    border-left: 3px solid var(--oxblood);
+    padding-left: var(--space-5);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-h3);
+    line-height: 1.35;
+    color: var(--ink);
+  }
+
+  .episode-content ul,
+  .episode-content ol {
+    margin: var(--space-4) 0;
+    padding-left: var(--space-6);
+    max-width: var(--measure);
+  }
+
+  .episode-content ul {
+    list-style: disc;
+  }
+
+  .episode-content ol {
+    list-style: decimal;
+  }
+
+  .episode-content li {
+    margin: var(--space-2) 0;
+  }
+
+  .episode-content li::marker {
+    color: var(--oxblood);
+  }
+
+  .episode-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .episode-content strong {
+    color: var(--ink);
+  }
+
+  /* Replaced look for markdown horizontal rules */
+  .episode-content hr {
+    border: 0;
+    height: 1px;
+    margin: var(--space-8) auto;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      var(--rule) 20%,
+      var(--rule) 80%,
+      transparent
+    );
+  }
+
+  /* Bare markdown tables only. Component tables (ReceiptTable,
+     DeltaTable) are wrapped in figure > div and keep their own sizing. */
+  .episode-content > table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-mono);
+    font-size: var(--text-meta);
+  }
+
+  .episode-content > table th,
+  .episode-content > table td {
+    border-bottom: 1px solid var(--rule);
+    padding: var(--space-2) var(--space-3);
+    text-align: left;
+  }
+
+  .episode-content > table th {
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+}
+
 @layer utilities {
   /* Drop cap for episode openers */
   .drop-cap::first-letter {
     float: left;
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: 5.5rem;
+    font-size: clamp(3.5rem, 10vw, 5.5rem);
     line-height: 0.85;
     margin-right: 0.75rem;
     margin-top: 0.5rem;
     color: var(--oxblood);
   }
 
-  /* Subtle paper grain — disabled by default for performance */
+  /* Subtle paper grain - disabled by default for performance */
   .paper-grain {
     position: fixed;
     inset: 0;
@@ -115,5 +246,240 @@
     z-index: 1;
     opacity: 0.03;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+  }
+
+  /* Grain overlay for stamp-like components (Verdict) */
+  .stamp-texture {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stamp-texture::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.14;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     Bento grid primitives
+     Invisible containers: no borders, no backgrounds by default.
+     Cells must be direct children of .bento for preset nth-of-type
+     defaults to count correctly.
+     ───────────────────────────────────────────────────────────── */
+  .bento {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--space-5);
+    grid-auto-flow: dense;
+  }
+
+  .bento-cell {
+    grid-column: var(--gc, 1 / -1);
+    min-width: 0;
+  }
+
+  /* Preset: folio. First cell takes the full measure. */
+  .bento-folio .bento-cell:first-of-type:not([data-span]) {
+    --gc: 1 / -1;
+  }
+
+  /* 6-col equivalents between 640px and 1023px */
+  @media (min-width: 640px) {
+    .bento {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .bento-cell[data-span="1-12"] { --gc: 1 / -1; }
+    .bento-cell[data-span="1-8"]  { --gc: 1 / 5; }
+    .bento-cell[data-span="9-12"] { --gc: 5 / -1; }
+    .bento-cell[data-span="1-6"]  { --gc: 1 / 4; }
+    .bento-cell[data-span="7-12"] { --gc: 4 / -1; }
+    .bento-cell[data-span="1-7"]  { --gc: 1 / 4; }
+    .bento-cell[data-span="4-10"] { --gc: 2 / 6; }
+
+    .bento-cinema .bento-cell:not([data-span]):nth-of-type(odd)  { --gc: 1 / -1; }
+    .bento-cinema .bento-cell:not([data-span]):nth-of-type(even) { --gc: 1 / 5; }
+    .bento-ledger .bento-cell:not([data-span]):nth-of-type(odd)  { --gc: 1 / 4; }
+    .bento-ledger .bento-cell:not([data-span]):nth-of-type(even) { --gc: 4 / -1; }
+    .bento-zine .bento-cell:not([data-span]):nth-of-type(odd)    { --gc: 1 / 4; }
+    .bento-zine .bento-cell:not([data-span]):nth-of-type(even)   { --gc: 2 / 6; }
+  }
+
+  /* Full 12-col spans from 1024px up */
+  @media (min-width: 1024px) {
+    .bento-cell[data-span="1-12"] { --gc: 1 / 13; }
+    .bento-cell[data-span="1-8"]  { --gc: 1 / 9; }
+    .bento-cell[data-span="9-12"] { --gc: 9 / 13; }
+    .bento-cell[data-span="1-6"]  { --gc: 1 / 7; }
+    .bento-cell[data-span="7-12"] { --gc: 7 / 13; }
+    .bento-cell[data-span="1-7"]  { --gc: 1 / 8; }
+    .bento-cell[data-span="4-10"] { --gc: 4 / 11; }
+
+    .bento-cinema .bento-cell:not([data-span]):nth-of-type(odd)  { --gc: 1 / 13; }
+    .bento-cinema .bento-cell:not([data-span]):nth-of-type(even) { --gc: 1 / 9; }
+    .bento-ledger .bento-cell:not([data-span]):nth-of-type(odd)  { --gc: 1 / 8; }
+    .bento-ledger .bento-cell:not([data-span]):nth-of-type(even) { --gc: 8 / 13; }
+    .bento-zine .bento-cell:not([data-span]):nth-of-type(odd) {
+      --gc: 1 / 8;
+      transform: translateY(0);
+      margin-top: var(--space-6);
+    }
+    .bento-zine .bento-cell:not([data-span]):nth-of-type(even) { --gc: 4 / 11; }
+  }
+
+  /* Below 640px every cell is single column (default 1 / -1 holds) */
+
+  /* ─────────────────────────────────────────────────────────────
+     ChaosList - scattered quote cards
+     Mobile: static stacked column. Desktop: offset + rotated cards.
+     ───────────────────────────────────────────────────────────── */
+  .chaos-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    margin: var(--space-6) 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .chaos-item {
+    position: relative;
+    background-color: var(--paper-deep);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-ink);
+  }
+
+  /* Tape strip */
+  .chaos-item::before {
+    content: "";
+    position: absolute;
+    top: -0.625rem;
+    left: 50%;
+    width: 4.5rem;
+    height: 1.25rem;
+    transform: translateX(-50%) rotate(-2deg);
+    background-color: var(--highlight);
+    opacity: 0.7;
+  }
+
+  .chaos-quote {
+    margin: 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+
+  .chaos-who {
+    margin-top: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-meta);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+  }
+
+  @media (min-width: 1024px) {
+    .chaos-list {
+      display: block;
+      position: relative;
+    }
+
+    .chaos-item {
+      max-width: 280px;
+    }
+
+    .chaos-item:nth-of-type(4n + 1) {
+      transform: rotate(-1.5deg);
+    }
+
+    .chaos-item:nth-of-type(4n + 2) {
+      transform: rotate(1deg);
+      margin-left: auto;
+      margin-top: calc(var(--space-5) * -1);
+    }
+
+    .chaos-item:nth-of-type(4n + 3) {
+      transform: rotate(-0.75deg);
+      margin-left: 15%;
+    }
+
+    .chaos-item:nth-of-type(4n + 4) {
+      transform: rotate(1.5deg);
+      margin-right: 20%;
+      margin-top: calc(var(--space-4) * -1);
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     Nav drawer - mobile menu via <details>
+     Desktop (>=1024px): summary hidden, panel dissolves into the
+     inline nav row via display:contents. Mobile: burger summary,
+     absolute panel under the header bar when open.
+     ───────────────────────────────────────────────────────────── */
+  .nav-drawer summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .nav-drawer summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .burger {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  .burger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+  }
+
+  @media (max-width: 1023.98px) {
+    .nav-drawer-panel {
+      display: none;
+    }
+
+    .nav-drawer[open] .nav-drawer-panel {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 60;
+      padding: var(--space-4) var(--container-pad) var(--space-6);
+      background-color: var(--paper);
+      border-bottom: 1px solid var(--rule);
+      box-shadow: var(--shadow-ink);
+    }
+
+    /* Divider + subscribe align left in the stacked panel */
+    .nav-drawer-panel .nav-divider {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .nav-drawer > summary {
+      display: none;
+    }
+
+    /* Panel children flow inline as if written directly in the nav */
+    .nav-drawer-panel {
+      display: contents;
+    }
   }
 }

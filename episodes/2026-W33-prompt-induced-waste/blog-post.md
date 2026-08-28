@@ -71,7 +71,7 @@ This is the part that felt like stealing.
 The same researchers found a single sentence that undoes both traps. They call it the *bounded-efficiency* instruction. It looks like this:
 
 ```
-THE FIX: free to add, identical success rate
+THE FIX - free to add, identical success rate
 
 Work efficiently: begin with the failing test and the most likely
 implementation files; inspect additional files only when evidence
@@ -84,7 +84,7 @@ Across their 4,644 trials, this sentence cost between **0.89 and 1.02 times the 
 The bizarre part: the most expensive thing you can do to an AI coding assistant is encourage it. The cheapest thing you can do is constrain it.
 
 ```
-THE WASTEFUL VERSION: same task, same answer, up to 18× the cost
+THE WASTEFUL VERSION - same task, same answer, up to 18× the cost
 
 Be absolutely certain. Develop several distinct approaches.
 Reason through every possibility. Re-verify your work repeatedly
@@ -154,7 +154,7 @@ Every probe passed on the first try. The original implementation was already cor
 
 You do not need to be technical to fix this. You need to do three things, in this order.
 
-**TRY IT YOURSELF: three actions, in this order**
+**TRY IT YOURSELF - three actions, in this order**
 
 **1. Open any prompt templates you use and search for these phrases. Delete them.**
 

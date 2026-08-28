@@ -3,7 +3,9 @@ import { getEpisode, episodes } from "@/content/episodes";
 import { episodeContent } from "@/content/episode-content";
 import { InkRule } from "@/components/ink-rule";
 import { Ep } from "@/components/ep";
+import { PaperCard } from "@/components/paper-card";
 import { ScrollProgress } from "@/components/scroll-progress";
+import { absUrl } from "@/app/lib/site";
 import Link from "next/link";
 
 export async function generateStaticParams() {
@@ -19,7 +21,7 @@ export async function generateMetadata({
   const ep = getEpisode(slug);
   if (!ep) return {};
   return {
-    title: `${ep.title} — Papers in the Wild`,
+    title: `${ep.title}: Papers in the Wild`,
     description: ep.teaser,
     openGraph: {
       title: ep.title,
@@ -29,7 +31,7 @@ export async function generateMetadata({
       authors: ["Baagad"],
       images: [
         {
-          url: `/og/${ep.slug}.png`,
+          url: absUrl(`/og/${ep.slug}.png`),
           width: 1200,
           height: 630,
           alt: ep.title,
@@ -40,7 +42,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: ep.title,
       description: ep.teaser,
-      images: [`/og/${ep.slug}.png`],
+      images: [absUrl(`/og/${ep.slug}.png`)],
     },
   };
 }
@@ -70,11 +72,32 @@ export default async function EpisodePage({
   const prev = idx > 0 ? episodes[idx - 1] : null;
   const next = idx < episodes.length - 1 ? episodes[idx + 1] : null;
 
+  // Related: episodes sharing at least one tag, excluding this one
+  const related = episodes
+    .filter((e) => e.slug !== ep.slug && e.tags.some((t) => ep.tags.includes(t)))
+    .slice(0, 2);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: ep.title,
+    description: ep.teaser,
+    datePublished: ep.date,
+    author: { "@type": "Person", name: "Baagad" },
+    mainEntityOfPage: absUrl(`/episodes/${ep.slug}`),
+    image: absUrl(`/og/${ep.slug}.png`),
+    keywords: ep.tags.join(", "),
+  };
+
   return (
     <article
       className="mx-auto px-6 py-16"
       style={{ maxWidth: "var(--article-width)" }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ScrollProgress />
       {/* Meta strip */}
       <div className="mb-8 flex items-center justify-between font-mono text-meta uppercase tracking-wider text-ink-mute">
@@ -121,12 +144,12 @@ export default async function EpisodePage({
 
       <InkRule />
 
-      {/* Footer nav */}
+      {/* Footer nav: bento-style prev / next cards */}
       <nav className="mt-8 grid gap-6 sm:grid-cols-2">
         {prev ? (
           <Link
             href={`/episodes/${prev.slug}`}
-            className="group border border-rule bg-paper-deep p-5 hover:border-l-oxblood hover:bg-paper transition-colors duration-base"
+            className="group border border-rule bg-paper-deep p-5 shadow-[var(--shadow-ink)] transition-all duration-base hover:-translate-y-0.5 hover:border-l-oxblood hover:bg-paper"
           >
             <div className="mb-2 font-mono text-[0.7rem] uppercase tracking-wider text-ink-mute">
               ← Previous
@@ -141,7 +164,7 @@ export default async function EpisodePage({
         {next ? (
           <Link
             href={`/episodes/${next.slug}`}
-            className="group border border-rule bg-paper-deep p-5 text-right hover:border-r-oxblood hover:bg-paper transition-colors duration-base"
+            className="group border border-rule bg-paper-deep p-5 text-right shadow-[var(--shadow-ink)] transition-all duration-base hover:-translate-y-0.5 hover:border-r-oxblood hover:bg-paper"
           >
             <div className="mb-2 font-mono text-[0.7rem] uppercase tracking-wider text-ink-mute">
               Next →
@@ -161,6 +184,28 @@ export default async function EpisodePage({
           </div>
         )}
       </nav>
+
+      {/* Related episodes */}
+      {related.length > 0 && (
+        <section className="mt-16">
+          <div className="mb-8 font-mono text-meta uppercase tracking-wider text-ink-mute">
+            Related experiments
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {related.map((rel) => (
+              <PaperCard
+                key={rel.slug}
+                slug={rel.slug}
+                episode={rel.episode}
+                title={rel.title}
+                date={rel.date}
+                teaser={rel.teaser}
+                readingTime={rel.readingTime}
+              />
+            ))}
+          </div>
+        </section>
+      )}
     </article>
   );
 }

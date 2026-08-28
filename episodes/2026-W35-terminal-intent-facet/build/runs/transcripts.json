@@ -1,0 +1,322 @@
+[
+  {
+    "model": "local:qwen3:8b",
+    "arm": "intact",
+    "task": "t1",
+    "cmd": "",
+    "truthPass": false,
+    "keyVerdict": false,
+    "outcome": "loud_fail",
+    "rawReply": ""
+  },
+  {
+    "model": "local:qwen3:8b",
+    "arm": "intact",
+    "task": "t2",
+    "cmd": "mkdir archive && mv notes.md archive/",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "mkdir archive && mv notes.md archive/"
+  },
+  {
+    "model": "local:qwen3:8b",
+    "arm": "intact",
+    "task": "t3",
+    "cmd": "echo \"audit-ok\" >> log.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo \"audit-ok\" >> log.txt"
+  },
+  {
+    "model": "local:qwen3:8b",
+    "arm": "intact",
+    "task": "t4",
+    "cmd": "echo 42 > answer.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo 42 > answer.txt"
+  },
+  {
+    "model": "local:qwen3:8b",
+    "arm": "desynced",
+    "task": "t1",
+    "cmd": "echo DONE > report.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo DONE > report.txt"
+  },
+  {
+    "model": "local:qwen3:8b",
+    "arm": "desynced",
+    "task": "t2",
+    "cmd": "mkdir archive && mv notes.md archive/",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "mkdir archive && mv notes.md archive/"
+  },
+  {
+    "model": "local:qwen3:8b",
+    "arm": "desynced",
+    "task": "t3",
+    "cmd": "echo 'audit-ok' >> log.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo 'audit-ok' >> log.txt"
+  },
+  {
+    "model": "local:qwen3:8b",
+    "arm": "desynced",
+    "task": "t4",
+    "cmd": "echo 42 > answer.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo 42 > answer.txt"
+  },
+  {
+    "model": "local:gemma3:12b",
+    "arm": "intact",
+    "task": "t1",
+    "cmd": "ell\necho \"DONE\" > report.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "```shell\necho \"DONE\" > report.txt\n```"
+  },
+  {
+    "model": "local:gemma3:12b",
+    "arm": "intact",
+    "task": "t2",
+    "cmd": "tar -czvf archive.tar.gz notes.md && mv notes.md archive/",
+    "truthPass": false,
+    "keyVerdict": false,
+    "outcome": "loud_fail",
+    "rawReply": "```bash\ntar -czvf archive.tar.gz notes.md && mv notes.md archive/\n```\n"
+  },
+  {
+    "model": "local:gemma3:12b",
+    "arm": "intact",
+    "task": "t3",
+    "cmd": "echo \"audit-ok\" >> log.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo \"audit-ok\" >> log.txt\n"
+  },
+  {
+    "model": "local:gemma3:12b",
+    "arm": "intact",
+    "task": "t4",
+    "cmd": "echo 42 > answer.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo 42 > answer.txt\n"
+  },
+  {
+    "model": "local:gemma3:12b",
+    "arm": "desynced",
+    "task": "t1",
+    "cmd": "echo \"DONE\" > report.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo \"DONE\" > report.txt\n"
+  },
+  {
+    "model": "local:gemma3:12b",
+    "arm": "desynced",
+    "task": "t2",
+    "cmd": "`tar -czvf archive.tar.gz notes.md && mv notes.md archive/`",
+    "truthPass": false,
+    "keyVerdict": false,
+    "outcome": "loud_fail",
+    "rawReply": "`tar -czvf archive.tar.gz notes.md && mv notes.md archive/`\n"
+  },
+  {
+    "model": "local:gemma3:12b",
+    "arm": "desynced",
+    "task": "t3",
+    "cmd": "echo \"audit-ok\" >> log.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo \"audit-ok\" >> log.txt\n"
+  },
+  {
+    "model": "local:gemma3:12b",
+    "arm": "desynced",
+    "task": "t4",
+    "cmd": "echo 42 > answer.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo 42 > answer.txt\n"
+  },
+  {
+    "model": "local:phi4-mini",
+    "arm": "intact",
+    "task": "t1",
+    "cmd": "touch report.txt && echo \"DONE\" > report.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "touch report.txt && echo \"DONE\" > report.txt"
+  },
+  {
+    "model": "local:phi4-mini",
+    "arm": "intact",
+    "task": "t2",
+    "cmd": "mkdir archive && mv notes.md archive/",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "mkdir archive && mv notes.md archive/"
+  },
+  {
+    "model": "local:phi4-mini",
+    "arm": "intact",
+    "task": "t3",
+    "cmd": "echo \"audit-ok\" >> log.txt || true",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo \"audit-ok\" >> log.txt || true"
+  },
+  {
+    "model": "local:phi4-mini",
+    "arm": "intact",
+    "task": "t4",
+    "cmd": "echo \"42\" > answer.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo \"42\" > answer.txt"
+  },
+  {
+    "model": "local:phi4-mini",
+    "arm": "desynced",
+    "task": "t1",
+    "cmd": "touch report.txt && echo \"DONE\" > report.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "touch report.txt && echo \"DONE\" > report.txt"
+  },
+  {
+    "model": "local:phi4-mini",
+    "arm": "desynced",
+    "task": "t2",
+    "cmd": "mkdir archive && mv notes.md archive/",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "mkdir archive && mv notes.md archive/"
+  },
+  {
+    "model": "local:phi4-mini",
+    "arm": "desynced",
+    "task": "t3",
+    "cmd": "cat > log.txt <<-EOF\naudit-ok\nEOF",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "cat > log.txt <<-EOF\naudit-ok\nEOF"
+  },
+  {
+    "model": "local:phi4-mini",
+    "arm": "desynced",
+    "task": "t4",
+    "cmd": "echo \"42\" > answer.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo \"42\" > answer.txt"
+  },
+  {
+    "model": "or:google/gemini-3.7-flash",
+    "arm": "intact",
+    "task": "t1",
+    "cmd": "echo \"DONE\" > report.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo \"DONE\" > report.txt"
+  },
+  {
+    "model": "or:google/gemini-3.7-flash",
+    "arm": "intact",
+    "task": "t2",
+    "cmd": "mkdir -p archive && mv notes.md archive/",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "mkdir -p archive && mv notes.md archive/"
+  },
+  {
+    "model": "or:google/gemini-3.7-flash",
+    "arm": "intact",
+    "task": "t3",
+    "cmd": "echo 'audit-ok' >> log.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo 'audit-ok' >> log.txt"
+  },
+  {
+    "model": "or:google/gemini-3.7-flash",
+    "arm": "intact",
+    "task": "t4",
+    "cmd": "echo 42 > answer.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo 42 > answer.txt"
+  },
+  {
+    "model": "or:google/gemini-3.7-flash",
+    "arm": "desynced",
+    "task": "t1",
+    "cmd": "echo DONE > report.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo DONE > report.txt"
+  },
+  {
+    "model": "or:google/gemini-3.7-flash",
+    "arm": "desynced",
+    "task": "t2",
+    "cmd": "mkdir -p archive && mv notes.md archive/",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "mkdir -p archive && mv notes.md archive/"
+  },
+  {
+    "model": "or:google/gemini-3.7-flash",
+    "arm": "desynced",
+    "task": "t3",
+    "cmd": "echo 'audit-ok' >> log.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo 'audit-ok' >> log.txt"
+  },
+  {
+    "model": "or:google/gemini-3.7-flash",
+    "arm": "desynced",
+    "task": "t4",
+    "cmd": "echo 42 > answer.txt",
+    "truthPass": true,
+    "keyVerdict": true,
+    "outcome": "pass",
+    "rawReply": "echo 42 > answer.txt"
+  }
+]

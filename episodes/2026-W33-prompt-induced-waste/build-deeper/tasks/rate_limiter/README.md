@@ -1,4 +1,4 @@
-# Task — `TokenBucket` rate limiter *(harder)*
+# Task - `TokenBucket` rate limiter *(harder)*
 
 ## What to build
 
@@ -29,7 +29,7 @@ class TokenBucket:
 2. `take(1)` succeeds until tokens run out, then fails
 3. After `refill_rate` seconds elapse, one token is added (lazily, on next call)
 4. Bucket never exceeds `capacity` (refill caps at capacity)
-5. `now` parameter is honored — tests use it to simulate time passing
+5. `now` parameter is honored - tests use it to simulate time passing
 6. Taking more tokens than capacity always fails (returns False, no decrement)
 7. Taking 0 tokens always succeeds (returns True, no decrement)
 8. Multiple `take()` calls without time advancing correctly exhaust the bucket
@@ -54,8 +54,8 @@ assert b.take(1, now=2.0)  # refill 2 tokens, succeeds
 
 ## Files
 
-- `rate_limiter.py` — stub with empty `TokenBucket` class
-- `test_rate_limiter.py` — 9 tests, all currently failing
+- `rate_limiter.py` - stub with empty `TokenBucket` class
+- `test_rate_limiter.py` - 9 tests, all currently failing
 
 ## Verify
 

@@ -2,11 +2,11 @@ import { cn } from "@/lib/utils";
 import { subscribeConfig } from "@/content/subscribe-config";
 
 /**
- * <Subscribe /> — the PITW subscribe call to action.
+ * <Subscribe /> - the PITW subscribe call to action.
  *
  * Two variants:
- *   - variant="form"  — inline email form (footer, about page)
- *   - variant="link"  — minimal "Subscribe" link/button (header)
+ *   - variant="form"  - inline email form (footer, about page)
+ *   - variant="link"  - minimal "Subscribe" link/button (header)
  *
  * Provider switching is one line: change `subscribeConfig.provider`
  * in site/content/subscribe-config.ts from "mailto" to "buttondown".
@@ -41,7 +41,7 @@ export function Subscribe({
     provider === "buttondown" && Boolean(buttondownEndpoint);
 
   // ─────────────────────────────────────────────────────────────
-  // LINK variant — minimal "Subscribe" link for header
+  // LINK variant - minimal "Follow" link for header
   // ─────────────────────────────────────────────────────────────
   if (variant === "link") {
     return (
@@ -53,13 +53,13 @@ export function Subscribe({
           className,
         )}
       >
-        Subscribe
+        Follow
       </a>
     );
   }
 
   // ─────────────────────────────────────────────────────────────
-  // FORM variant — inline email form for footer / about page
+  // FORM variant - inline email form for footer / about page
   // ─────────────────────────────────────────────────────────────
   return (
     <div className={cn("w-full", className)}>

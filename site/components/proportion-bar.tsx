@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * ProportionBar — single stacked horizontal bar for splits (88% vs 12%).
+ * ProportionBar - single stacked horizontal bar for splits (88% vs 12%).
  *
  * Usage in MDX:
  *   <ProportionBar

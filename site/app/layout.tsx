@@ -3,6 +3,7 @@ import { Fraunces, Source_Serif_4, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { SITE_URL, absUrl } from "@/app/lib/site";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -25,10 +26,15 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Papers in the Wild — weekly experiments on real AI papers",
+  title: "Papers in the Wild: weekly experiments on real AI papers",
   description:
-    "I read a paper. I tried it. Here are the receipts. Weekly experiments on AI research papers — curious explorer, not guru.",
-  metadataBase: new URL("https://papersinthewild.io"),
+    "I read a paper. I tried it. Here are the receipts. Weekly experiments on AI research papers. Curious explorer, not guru.",
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    types: {
+      "application/rss+xml": absUrl("/feed.xml"),
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -45,10 +51,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/og-default.png",
+        url: absUrl("/og-default.png"),
         width: 1200,
         height: 630,
-        alt: "Papers in the Wild — weekly experiments on real AI papers",
+        alt: "Papers in the Wild: weekly experiments on real AI papers",
       },
     ],
   },
@@ -56,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Papers in the Wild",
     description: "Weekly experiments on real AI papers. Curious explorer, not guru.",
-    images: ["/og-default.png"],
+    images: [absUrl("/og-default.png")],
   },
   authors: [{ name: "Baagad" }],
   keywords: ["ai", "papers", "research", "experiments", "build_to_think"],
@@ -76,6 +82,15 @@ export default function RootLayout({
         <SiteHeader />
         <main className="relative z-10">{children}</main>
         <SiteFooter />
+        {process.env.NEXT_PUBLIC_CF_BEACON && (
+          <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.js"
+            data-cf-beacon={JSON.stringify({
+              token: process.env.NEXT_PUBLIC_CF_BEACON,
+            })}
+          />
+        )}
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * PullQuote — emphasis block with oxblood left border.
+ * PullQuote - emphasis block with oxblood left border.
  * Fraunces italic, larger than body.
  */
 export function PullQuote({

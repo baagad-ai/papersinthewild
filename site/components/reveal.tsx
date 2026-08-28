@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * Reveal — scroll-arrival wrapper for major figures (BLOG-FLOW.md).
+ * Reveal - scroll-arrival wrapper for major figures (BLOG-FLOW.md).
  * Fade + 12px rise once, via IntersectionObserver + CSS transitions.
  * No animation library, prefers-reduced-motion respected, and the content
  * renders immediately if JS never runs (opacity handled by a class, so the

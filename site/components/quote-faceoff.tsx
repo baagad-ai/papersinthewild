@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * QuoteFaceoff — two matched quotes side by side. The contrast is the point.
+ * QuoteFaceoff - two matched quotes side by side. The contrast is the point.
  *
  * Usage in MDX:
  *   <QuoteFaceoff

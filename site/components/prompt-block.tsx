@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * PromptBlock — display a verbatim prompt with tone context.
+ * PromptBlock - display a verbatim prompt with tone context.
  *
  * Used when the post needs to show the exact wording that triggers
  * a behavior (wasteful) or fixes it (bounded). The reader needs to

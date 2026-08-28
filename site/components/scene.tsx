@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Scene — boxed analogy / story scene for non-technical readers.
+ * Scene - boxed analogy / story scene for non-technical readers.
  *
  * When you're writing for a general audience, the analogy has to
  * arrive BEFORE the data, not after. Scene is the visual cue that

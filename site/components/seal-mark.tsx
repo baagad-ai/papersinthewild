@@ -1,5 +1,5 @@
 /**
- * SealMark — the PITW ink seal.
+ * SealMark - the PITW ink seal.
  * Circular oxblood ring with "PITW" mono text inside.
  * Used as favicon, footer mark, IG highlight cover, OG corner.
  */

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * SpreadRing — the interactive outbreak map. Eight agents on a ring, a scrubber
+ * SpreadRing - the interactive outbreak map. Eight agents on a ring, a scrubber
  * that walks the rounds, and a play button. The reader watches the goose spread.
  *
  * Usage in MDX:

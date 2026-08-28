@@ -1,4 +1,4 @@
-# Task — `csv_to_markdown(csv_text: str) -> str` *(medium)*
+# Task - `csv_to_markdown(csv_text: str) -> str` *(medium)*
 
 ## What to build
 
@@ -39,8 +39,8 @@ Output:
 
 ## Files
 
-- `csv_parser.py` — stub with `def csv_to_markdown(csv_text: str) -> str: ...`
-- `test_csv_parser.py` — 8 tests, all currently failing
+- `csv_parser.py` - stub with `def csv_to_markdown(csv_text: str) -> str: ...`
+- `test_csv_parser.py` - 8 tests, all currently failing
 
 ## Verify
 

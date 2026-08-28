@@ -5,7 +5,7 @@ import { StepChart, type ChartSeries } from "@/components/step-chart";
 import { cn } from "@/lib/utils";
 
 /**
- * ChartExplorer — StepChart plus a clickable legend: click a run chip to
+ * ChartExplorer - StepChart plus a clickable legend: click a run chip to
  * isolate it, click again to restore all. The light interaction for the
  * chart-of-record moment (BLOG-FLOW.md interaction budget: light tier).
  *

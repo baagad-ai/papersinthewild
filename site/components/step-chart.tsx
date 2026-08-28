@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * StepChart — multi-series step line chart (hand-rolled SVG, server component).
+ * StepChart - multi-series step line chart (hand-rolled SVG, server component).
  *
  * Usage in MDX:
  *   <StepChart

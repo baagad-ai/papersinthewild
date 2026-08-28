@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * BigStat — punchy display number for moments that deserve to break
+ * BigStat - punchy display number for moments that deserve to break
  * out of body text. Think: "4×", "36 trials", "9.62× invoice".
  *
  * Usage in MDX:

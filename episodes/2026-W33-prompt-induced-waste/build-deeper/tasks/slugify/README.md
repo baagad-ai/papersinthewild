@@ -1,4 +1,4 @@
-# Task — `slugify(text: str) -> str` *(trivial)*
+# Task - `slugify(text: str) -> str` *(trivial)*
 
 ## What to build
 
@@ -21,8 +21,8 @@ The function MUST pass `test_slugify.py`. Behavior:
 
 ## Files
 
-- `slugify.py` — stub
-- `test_slugify.py` — 8 unit tests (all currently fail)
+- `slugify.py` - stub
+- `test_slugify.py` - 8 unit tests (all currently fail)
 
 ## Verify
 

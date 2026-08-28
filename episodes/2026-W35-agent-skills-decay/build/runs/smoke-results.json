@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "name": "twins-lab",
+    "tag": "smoke",
+    "models": [
+      "mock:echo"
+    ],
+    "startedAt": "2026-08-25T07:50:45.429Z",
+    "finishedAt": "2026-08-25T07:50:45.431Z",
+    "wallMs": 2,
+    "inrPerUsd": 95.76
+  },
+  "models": [
+    {
+      "model": "mock:echo",
+      "calls": 1,
+      "tokens": 236,
+      "promptTokens": 173,
+      "completionTokens": 63,
+      "usd": 0,
+      "inr": 0,
+      "unpricedCalls": 0
+    }
+  ],
+  "warnings": [],
+  "calls": [
+    {
+      "engine": "mock",
+      "model": "mock:echo",
+      "promptTokens": 173,
+      "completionTokens": 63,
+      "usd": 0,
+      "ms": 0,
+      "ok": true,
+      "retries": 0,
+      "meta": null,
+      "inr": 0
+    }
+  ]
+}

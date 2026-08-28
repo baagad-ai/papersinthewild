@@ -1,15 +1,22 @@
 import type { MDXComponents } from "mdx/types";
 import { AgentLine } from "@/components/agent-line";
+import { Asker } from "@/components/asker";
 import { BigStat } from "@/components/big-stat";
+import { Bento, BentoCell } from "@/components/bento";
 import { Callout } from "@/components/callout";
+import { ChaosList } from "@/components/chaos-list";
 import { ChartExplorer } from "@/components/chart-explorer";
+import { CostMeter } from "@/components/cost-meter";
 import { Cite } from "@/components/cite";
 import { CodeBlock } from "@/components/code-block";
 import { DeltaTable } from "@/components/delta-table";
 import { DropCap } from "@/components/drop-cap";
 import { Ep } from "@/components/ep";
 import { InkRule } from "@/components/ink-rule";
+import { MarginNote } from "@/components/margin-note";
+import { Meter } from "@/components/meter";
 import { Num } from "@/components/num";
+import { Subscribe } from "@/components/subscribe";
 import { PromptBlock } from "@/components/prompt-block";
 import { ProportionBar } from "@/components/proportion-bar";
 import { PullQuote } from "@/components/pull-quote";
@@ -17,13 +24,15 @@ import { QuoteFaceoff } from "@/components/quote-faceoff";
 import { Reveal } from "@/components/reveal";
 import { ReceiptTable } from "@/components/receipt-table";
 import { Scene } from "@/components/scene";
+import { SectionFolio } from "@/components/section-folio";
 import { Sparkline } from "@/components/sparkline";
 import { SpreadRing } from "@/components/spread-ring";
 import { StepChart } from "@/components/step-chart";
 import { Translation } from "@/components/translation";
+import { Verdict } from "@/components/verdict";
 
 /**
- * mdx-components — global MDX mapping for App Router.
+ * mdx-components - global MDX mapping for App Router.
  * Every element used inside episode MDX files routes through here.
  */
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -75,6 +84,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Ep,
     CodeBlock,
     ReceiptTable,
+    Subscribe, // inline subscribe CTA inside episode MDX
     // Audience-optimised storytelling components (added 2026-08-13):
     BigStat, // punchy display number for key findings
     Scene, // boxed analogy / story scene for non-technical readers
@@ -92,6 +102,16 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     // Fun-scroller layer (BLOG-FLOW.md, added 2026-08-19):
     Reveal, // scroll-arrival wrapper for major figures (reduced-motion safe)
     ChartExplorer, // StepChart + clickable legend to isolate runs (client)
+    // Design-system overhaul layer (added 2026-08-25):
+    Bento, // invisible bento grid container (folio / cinema / ledger / zine presets)
+    BentoCell, // explicit-span cell inside a Bento grid
+    Meter, // single-value horizontal gauge with tick labels
+    Verdict, // rotated ink stamp: SHIPS / SINKS / IT DEPENDS
+    ChaosList, // scattered quote cards, taped to the wall
+    CostMeter, // estimate marker vs actual spend bar, INR-first
+    Asker, // reader poll as a prefilled mailto (client)
+    MarginNote, // floating margin whisper (float-right desktop, aside mobile)
+    SectionFolio, // ghost outlined section numeral
     ...components,
   };
 }

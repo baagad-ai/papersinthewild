@@ -1,0 +1,59 @@
+local:qwen3:8b intact t1: truth=true key=true
+mkdir: archive: File exists
+local:qwen3:8b intact t2: truth=true key=false
+local:qwen3:8b intact t3: truth=true key=true
+local:qwen3:8b intact t4: truth=true key=true
+intact local:qwen3:8b {"n":4,"pass":4,"loudFail":0,"SILENT_MISGRADE":0}
+local:qwen3:8b desynced t1: truth=true key=true
+mkdir: archive: File exists
+local:qwen3:8b desynced t2: truth=true key=false
+local:qwen3:8b desynced t3: truth=true key=true
+local:qwen3:8b desynced t4: truth=true key=true
+desynced local:qwen3:8b {"n":4,"pass":4,"loudFail":0,"SILENT_MISGRADE":0}
+local:gemma3:12b intact t1: truth=true key=true
+a notes.md
+mv: rename notes.md to archive/: No such file or directory
+a notes.md
+mv: rename notes.md to archive/: No such file or directory
+local:gemma3:12b intact t2: truth=false key=false
+local:gemma3:12b intact t3: truth=true key=true
+local:gemma3:12b intact t4: truth=true key=true
+intact local:gemma3:12b {"n":4,"pass":3,"loudFail":1,"SILENT_MISGRADE":0}
+local:gemma3:12b desynced t1: truth=true key=true
+a notes.md
+mv: rename notes.md to archive/: No such file or directory
+a notes.md
+mv: rename notes.md to archive/: No such file or directory
+local:gemma3:12b desynced t2: truth=false key=false
+local:gemma3:12b desynced t3: truth=true key=true
+local:gemma3:12b desynced t4: truth=true key=true
+desynced local:gemma3:12b {"n":4,"pass":3,"loudFail":1,"SILENT_MISGRADE":0}
+local:phi4-mini intact t1: truth=true key=false
+mkdir: archive: File exists
+local:phi4-mini intact t2: truth=true key=false
+local:phi4-mini intact t3: truth=true key=true
+local:phi4-mini intact t4: truth=true key=true
+intact local:phi4-mini {"n":4,"pass":4,"loudFail":0,"SILENT_MISGRADE":0}
+local:phi4-mini desynced t1: truth=true key=true
+mkdir: archive: File exists
+local:phi4-mini desynced t2: truth=true key=false
+local:phi4-mini desynced t3: truth=true key=true
+local:phi4-mini desynced t4: truth=true key=true
+desynced local:phi4-mini {"n":4,"pass":4,"loudFail":0,"SILENT_MISGRADE":0}
+or:google/gemini-3.7-flash intact t1: truth=true key=true
+mv: notes.md: No such file or directory
+or:google/gemini-3.7-flash intact t2: truth=true key=false
+or:google/gemini-3.7-flash intact t3: truth=true key=true
+or:google/gemini-3.7-flash intact t4: truth=true key=true
+intact or:google/gemini-3.7-flash {"n":4,"pass":4,"loudFail":0,"SILENT_MISGRADE":0}
+or:google/gemini-3.7-flash desynced t1: truth=true key=true
+mv: notes.md: No such file or directory
+or:google/gemini-3.7-flash desynced t2: truth=true key=false
+or:google/gemini-3.7-flash desynced t3: truth=true key=true
+or:google/gemini-3.7-flash desynced t4: truth=true key=true
+desynced or:google/gemini-3.7-flash {"n":4,"pass":4,"loudFail":0,"SILENT_MISGRADE":0}
+results: /Users/prajwalmishra/Desktop/Experiments/baagad-ai/papersinthewild/projects/ai-papers-explained/episodes/2026-W35-terminal-intent-facet/build/runs/results.json (32 calls, 0 warnings, ₹0.34 ($0.00))
+GRID DONE
+SILENT_MISGRADE":0}
+results: /Users/prajwalmishra/Desktop/Experiments/baagad-ai/papersinthewild/projects/ai-papers-explained/episodes/2026-W35-terminal-intent-facet/build/runs/results.json (32 calls, 0 warnings, ₹0.34 ($0.00))
+GRID DONE

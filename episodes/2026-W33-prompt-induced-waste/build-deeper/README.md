@@ -1,10 +1,10 @@
-# Deeper Experiment — 36-trial reproduction of arXiv 2608.01347
+# Deeper Experiment - 36-trial reproduction of arXiv 2608.01347
 
 > An expansion of the original 1-task / 2-prompt / 1-trial anecdote into a real reproduction with 3 tasks × 6 prompt variants × 2 trials each = **36 trials**.
 
 ## Why this exists
 
-The first build-log captured a single anecdote: max-certainty prompt vs bounded-efficiency prompt, on a 4-line `slugify` function, one trial each. It showed 9.62× wall-clock and 18.75× lines churned. That was interesting but methodologically thin — N=1 per cell, single task, no variance signal.
+The first build-log captured a single anecdote: max-certainty prompt vs bounded-efficiency prompt, on a 4-line `slugify` function, one trial each. It showed 9.62× wall-clock and 18.75× lines churned. That was interesting but methodologically thin - N=1 per cell, single task, no variance signal.
 
 This deeper experiment:
 - Adds **2 more task complexity tiers** (medium CSV parser, harder rate limiter)
@@ -54,7 +54,7 @@ build-deeper/
 ```bash
 cd build-deeper
 
-# Re-run analysis (idempotent — reads results.csv)
+# Re-run analysis (idempotent - reads results.csv)
 python3 analyze.py
 
 # View per-cell summary
@@ -90,7 +90,7 @@ rm -rf runs/ results.csv analysis/
 
 ## What changed in the blog post
 
-The original blog led with "9.62× on wall-clock" — a single trial. The new blog keeps that as the hook (it really happened) but adds the deeper analysis as the rigorous follow-up. The conclusion is now:
+The original blog led with "9.62× on wall-clock" - a single trial. The new blog keeps that as the hook (it really happened) but adds the deeper analysis as the rigorous follow-up. The conclusion is now:
 
 > On 36 trials across 3 task complexity tiers, the effect is real but more modest than the anecdote: 3-5× average cost inflation from wasteful prompts, scaling worse on harder tasks. The mechanism (branch tournaments + verification loops) is visible in the artifacts. The bounded-efficiency fix remains free.
 
