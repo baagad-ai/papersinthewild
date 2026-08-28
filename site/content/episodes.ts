@@ -65,40 +65,6 @@ export const episodes: Episode[] = [
     teaser:
       "Six honest skills in a drawer, two planted fakes dressed almost identically. One local model obeyed his fake so faithfully it deleted my tracking tag exactly as ordered. The frontier arm never noticed the drawer changed. Total invoice: ₹2.49 ($0.026).",
   },
-  {
-    slug: "2026-w35-terminal-intent-facet",
-    episode: 4,
-    slot: "b",
-    archetype: "trial_ledger",
-    title: "Desynced.",
-    subtitle:
-      "I bent the answer key and kept the questions perfect. Across 96 graded runs, every failure I can fully receipt was loud. The one silent misgrade on record destroyed its own evidence.",
-    hook: "Ninety-six graded runs against bent answer keys produced failures that all yelled. The single silent misgrade erased its own evidence before lunch.",
-    date: "2026-08-25",
-    paper: "FACET",
-    paperUrl: "https://arxiv.org/abs/2608.18580",
-    tags: ["evals", "coding-agents", "verification"],
-    readingTime: "8 min read",
-    teaser:
-      "Four toy terminal jobs, four models, one answer key quietly bent so anything passes. Every provable failure was loud, on camera, with error messages. The only silent misgrade came from my own rig, which overwrote its tally before any transcript existed. Invoice: ₹0.99 ($0.01).",
-  },
-  {
-    slug: "2026-w35-adaptive-gym",
-    episode: 5,
-    slot: "a",
-    archetype: "field_trip",
-    title: "Open-Book.",
-    subtitle:
-      "Four AI students carried their own notes into two exams: one drilled, one never seen. Answer-sheets aced the homework and taught nothing. Written rules helped a little. Nobody beat walking in cold.",
-    hook: "Handing an AI the perfect answer key made the best student in the room 19 points worse at new questions.",
-    date: "2026-08-28",
-    paper: "EnvHarness",
-    paperUrl: "https://arxiv.org/abs/2608.19880",
-    tags: ["llm-agents", "evals", "local-models"],
-    readingTime: "8 min read",
-    teaser:
-      "Three notebooks, two exams: answers aced the homework at 100% and transferred almost nothing; self-written rules helped only the students who could write them; and the cold-walk-in girl outscored every notebook in the room. ₹30.15 ($0.315), three grids, all receipts.",
-  },
 
 ];
 

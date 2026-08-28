@@ -2,8 +2,6 @@ import type { ComponentType } from "react";
 import Episode1 from "./episodes/2026-w33-prompt-induced-waste.mdx";
 import Episode2 from "./episodes/2026-w34-mind-viruses.mdx";
 import Episode3 from "./episodes/2026-w35-agent-skills-decay.mdx";
-import Episode4 from "./episodes/2026-w35-terminal-intent-facet.mdx";
-import Episode5 from "./episodes/2026-w35-adaptive-gym.mdx";
 
 /**
  * Episode content registry.
@@ -21,6 +19,4 @@ export const episodeContent: Record<string, ComponentType> = {
   "2026-w33-prompt-induced-waste": Episode1,
   "2026-w34-mind-viruses": Episode2,
   "2026-w35-agent-skills-decay": Episode3,
-  "2026-w35-terminal-intent-facet": Episode4,
-  "2026-w35-adaptive-gym": Episode5,
 };
