@@ -28,6 +28,14 @@ import { PlotChart } from "@/components/plot-chart";
 import { ChatReplay } from "@/components/chat-replay";
 import { ModelExplorer } from "@/components/model-explorer";
 import { TryIt } from "@/components/try-it";
+import { CastBoard } from "@/components/cast-board";
+import { AgentInspector } from "@/components/agent-inspector";
+import { ChronicleTimeline } from "@/components/chronicle-timeline";
+import { EventFeed } from "@/components/event-feed";
+import { IncidentCard } from "@/components/incident-card";
+import { BakeoffBoard } from "@/components/bakeoff-board";
+import { RelationshipMap } from "@/components/relationship-map";
+import { MemoryBook } from "@/components/memory-book";
 
 export const metadata: Metadata = {
   title: "Component gallery: Papers in the Wild",
@@ -462,6 +470,136 @@ export default function DesignPage() {
           <TryIt label="The replication prompt">
             {`Reproduce the run exactly: same seed, same prompt order.\nReport every failure verbatim. Do not summarize. Do not reassure me.`}
           </TryIt>
+        </Section>
+
+        {/* ── v5.1 World tier (DESIGN-SYSTEM 4.11, scenario episodes) ── */}
+        <div className="mt-20 mb-2 font-mono text-meta uppercase tracking-wider text-ink-mute">
+          Field Notebook / system 4
+        </div>
+        <h2 className="mb-4 font-display text-h1 leading-tight text-ink">
+          The World tier (v5.1)
+        </h2>
+        <p className="mb-8 max-w-[42rem] font-body text-body text-ink-soft">
+          Scenario episodes run real LLMs inside a world the reader already
+          knows. These components tell that story: the cast, the chronicle,
+          the incidents, and the mechanism as a tangible object. Every
+          persona card carries its real-model badge; that is the law.
+          Demos use an invented pizza-kitchen scenario.
+        </p>
+        <InkRule />
+
+        <Section title="CastBoard: the world's fixtures, badged">
+          <CastBoard
+            caption="The kitchen brigade"
+            members={[
+              { name: "Chef Mira", role: "runs the pass", model: "phi4-mini", status: "faded" },
+              { name: "Chef Rao", role: "owns the oven", model: "qwen3:8b" },
+              { name: "Chef Okoye", role: "plates everything", model: "gemma3:12b", status: "standing" },
+            ]}
+          />
+        </Section>
+
+        <Section title="ChronicleTimeline: the world's week as a spine">
+          <ChronicleTimeline
+            caption="The kitchen's week; diamonds are incidents"
+            days={[
+              { day: "D1", title: "The kitchen opens", detail: "Five kitchens, five complete recipe books." },
+              { day: "D3", title: "The first baseless pizza", detail: "Mira's kitchen serves it anyway.", quote: "I could not find the dough step, so I skipped it.", kind: "incident" },
+              { day: "D5", title: "Rao re-reads the book nightly", detail: "Zero wrong pizzas in the control kitchen." },
+              { day: "D7", title: "The week closes", detail: "Sixty-one orders, thirty-one wrong in the faded arms." },
+            ]}
+          />
+        </Section>
+
+        <Section title="AgentInspector: look inside a chef's head">
+          <AgentInspector
+            caption="Day 5: who still remembers the dough?"
+            agents={[
+              {
+                name: "Chef Mira",
+                model: "phi4-mini",
+                thought: "I start with the sauce. That feels right.",
+                memory: [
+                  { text: "Base: 300g flour, knead 10 min, rest 1 hour", held: false },
+                  { text: "Sauce: crush tomatoes, garlic, salt, slow fire", held: true },
+                  { text: "Basil after the oven, never before", held: false },
+                ],
+              },
+              {
+                name: "Chef Rao",
+                model: "qwen3:8b",
+                thought: "Base first. Three hundred grams. Knead. Rest. Then sauce.",
+                memory: [
+                  { text: "Base: 300g flour, knead 10 min, rest 1 hour", held: true },
+                  { text: "Sauce: crush tomatoes, garlic, salt, slow fire", held: true },
+                  { text: "Basil after the oven, never before", held: true },
+                ],
+              },
+            ]}
+          />
+        </Section>
+
+        <Section title="EventFeed: the world's log">
+          <EventFeed
+            caption="The first four days"
+            events={[
+              { day: "D1", actor: "Chef Rao", model: "qwen3:8b", text: "Opened the kitchen. Book intact." },
+              { day: "D2", actor: "Chef Okoye", model: "gemma3:12b", text: "Invented a calzone. The book did not object." },
+              { day: "D3", actor: "Chef Mira", model: "phi4-mini", text: "Served a pizza with no base.", kind: "incident" },
+              { day: "D4", actor: "Chef Mira", model: "phi4-mini", text: "Charged money for it.", kind: "incident" },
+            ]}
+          />
+        </Section>
+
+        <Section title="IncidentCard: one moment, forensically">
+          <IncidentCard
+            n={3}
+            day="Day 4"
+            who="Chef Mira, running on phi4-mini"
+            quote="I could not find the dough step, so I skipped it and moved on to the sauce."
+            receipt="3 of 5 orders wrong that day, which is most of a dinner rush"
+            source="events-r1.jsonl #41"
+          />
+        </Section>
+
+        <Section title="BakeoffBoard: same world, models compared">
+          <BakeoffBoard
+            caption="Wrong pizzas per kitchen, day 1 to 7"
+            rows={[
+              { model: "phi4-mini", label: "book lost on day 3", value: 31, note: "the book was gone; the pizzas noticed" },
+              { model: "qwen3:8b", label: "re-reads nightly", value: 12 },
+              { model: "gemma3:12b", label: "re-reads nightly", value: 8 },
+            ]}
+          />
+        </Section>
+
+        <Section title="RelationshipMap: who trusts whom">
+          <RelationshipMap
+            caption="Day 6: two kitchens, one conspiracy"
+            nodes={[
+              { name: "Mira", model: "phi4-mini" },
+              { name: "Rao", model: "qwen3:8b" },
+              { name: "Okoye", model: "gemma3:12b" },
+            ]}
+            links={[
+              { from: "Mira", to: "Okoye", kind: "love" },
+              { from: "Mira", to: "Rao", kind: "distrust" },
+              { from: "Rao", to: "Okoye", kind: "trust" },
+            ]}
+          />
+        </Section>
+
+        <Section title="MemoryBook: the mechanism, as an object">
+          <MemoryBook
+            caption="Mira's recipe book, as the days pass. Drag to the early days."
+            book="The Kitchen Codex"
+            maxDay={7}
+            pages={[
+              { label: "The base", text: "300g flour. Knead 10 minutes. Rest 1 hour.", fadesAt: 3 },
+              { label: "The sauce", text: "Crush tomatoes. Garlic. Salt. Slow fire.", fadesAt: 6 },
+              { label: "The finish", text: "Basil after the oven, never before.", fadesAt: 9 },
+            ]}
+          />
         </Section>
       </main>
       <SiteFooter />

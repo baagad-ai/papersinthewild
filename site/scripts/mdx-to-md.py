@@ -212,6 +212,132 @@ def convert(src: str, meta: dict) -> str:
         src, flags=re.S,
     )
 
+    # ---- v5.1 World tier (scenario episodes, 2026-08-29)
+    def castboard(m):
+        body = m.group(0)
+        caption = re.search(r'caption="([^"]*)"', body)
+        members = re.findall(r'\{ name: "([^"]+)"(?:, role: "([^"]*)")?, model: "([^"]+)"(?:, status: "([^"]+)")?\s*\}', body)
+        out = "| Persona | Role | Real model | Status |\n|---|---|---|---|\n"
+        for name, role, model, status in members:
+            out += f"| {name} | {role or ''} | {model} | {status or ''} |\n"
+        return out + (f"\n*{caption.group(1)}*\n" if caption else "")
+
+    src = re.sub(r"<CastBoard[^>]*?/>", castboard, src, flags=re.S)
+
+    def incidentcard(m):
+        body = m.group(0)
+        num = re.search(r'n=\{(\d+)\}', body)
+        day = re.search(r'day="([^"]*)"', body)
+        who = re.search(r'who="([^"]*)"', body)
+        quote = re.search(r'quote="((?:[^"\\]|\\.)*)"', body)
+        receipt = re.search(r'receipt="([^"]*)"', body)
+        source = re.search(r'source="([^"]*)"', body)
+        head = f"**Incident Nº {num.group(1)}**" if num else "**Incident**"
+        if day:
+            head += f" ({day.group(1)})"
+        out = f"> {head}\n>\n> \"{quote.group(1)}\"\n>\n"
+        if who:
+            out += f"> {who.group(1)}\n>\n"
+        if receipt:
+            out += f"> *{receipt.group(1)}*\n>\n"
+        if source:
+            out += f"> `{source.group(1)}`\n"
+        return out + "\n"
+
+    src = re.sub(r"<IncidentCard[^>]*?/>", incidentcard, src, flags=re.S)
+
+    def eventfeed(m):
+        caption, body = m.group(1), m.group(2)
+        out = "| When | Actor | Model | Event |\n|---|---|---|---|\n"
+        for day, ts, actor, model, text in re.findall(
+            r'\{ day: "([^"]*)"(?:, ts: "([^"]*)")?, actor: "([^"]+)"(?:, model: "([^"]*)")?, text: "((?:[^"\\]|\\.)*)"(?:, kind: "[^"]+")?\s*\}',
+            body,
+        ):
+            when = " ".join(x for x in (day, ts) if x)
+            out += f"| {when} | {actor} | {model or ''} | {text} |\n"
+        return out + (f"\n*{caption}*\n" if caption else "")
+
+    src = re.sub(r'<EventFeed\s+caption="((?:[^"\\]|\\.)*)"\s+events=\{\[(.*?)\]\}\s*/>', eventfeed, src, flags=re.S)
+
+    def bakeoffboard(m):
+        caption, body = m.group(1), m.group(2)
+        out = "| Model | Value | Note |\n|---|---|---|\n"
+        for model, label, value, note in re.findall(
+            r'\{ model: "([^"]+)"(?:, label: "([^"]*)")?, value: ([\d.]+)(?:, note: "([^"]*)")?\s*\}',
+            body,
+        ):
+            out += f"| {model} | {value} | {note or label or ''} |\n"
+        return out + (f"\n*{caption}*\n" if caption else "")
+
+    src = re.sub(r'<BakeoffBoard\s+caption="((?:[^"\\]|\\.)*)"\s+rows=\{\[(.*?)\]\}\s*/>', bakeoffboard, src, flags=re.S)
+
+    def agentinspector(m):
+        caption, body = m.group(1), m.group(2)
+        agent_re = re.findall(
+            r'name: "([^"]+)", model: "([^"]+)",\s*thought: "((?:[^"\\]|\\.)*)",\s*memory: \[([^\]]*)\]',
+            body,
+        )
+        out = ""
+        for name, model, thought, membody in agent_re:
+            out += f"**{name}** (runs on {model})\n\n> \"{thought}\"\n\n"
+            out += "| Memory | Held |\n|---|---|\n"
+            for text, held in re.findall(r'\{ text: "((?:[^"\\]|\\.)*)", held: (true|false)\s*\}', membody):
+                out += f"| {text} | {'yes' if held == 'true' else 'dropped'} |\n"
+            out += "\n"
+        return out + (f"\n*{caption}*\n" if caption else "")
+
+    src = re.sub(r'<AgentInspector\s+caption="((?:[^"\\]|\\.)*)"\s+agents=\{\[(.*?)\]\}\s*/>', agentinspector, src, flags=re.S)
+
+    def chronicle(m):
+        caption, body = m.group(1), m.group(2)
+        rows = re.findall(
+            r'day: "([^"]+)", title: "([^"]+)"(?:, detail: "((?:[^"\\]|\\.)*)")?(?:, quote: "((?:[^"\\]|\\.)*)")?(?:, kind: "[^"]+")?\s*\}',
+            body,
+        )
+        out = "| Day | What | Detail |\n|---|---|---|\n"
+        for day, title, detail, quote in rows:
+            cell = title + (f' (\"{quote}\")' if quote else "")
+            out += f"| {day} | {cell} | {detail or ''} |\n"
+        return out + (f"\n*{caption}*\n" if caption else "")
+
+    src = re.sub(r'<ChronicleTimeline\s+caption="((?:[^"\\]|\\.)*)"\s+days=\{\[(.*?)\]\}\s*/>', chronicle, src, flags=re.S)
+
+    def relmap(m):
+        body = m.group(0)
+        caption = re.search(r'caption="([^"]*)"', body)
+        nodes = re.findall(r'\{ name: "([^"]+)"(?:, model: "([^"]*)")?\s*\}', body)
+        links = re.findall(r'\{ from: "([^"]+)", to: "([^"]+)"(?:, kind: "([^"]+)")?\s*\}', body)
+        out = "| Who | Model | Links |\n|---|---|---|\n"
+        for name, model in nodes:
+            mine = [f"{a} -{k or 'trust'}-> {b}" for a, b, k in links if a == name or b == name]
+            out += f"| {name} | {model or ''} | {', '.join(mine)} |\n"
+        return out + (f"\n*{caption.group(1)}*\n" if caption else "")
+
+    src = re.sub(r"<RelationshipMap[^>]*?/>", relmap, src, flags=re.S)
+
+    def memorybook_md(caption, body, book=None):
+        out = (f"**{book}**\n\n" if book else "")
+        out += "| Page | Text | Fades by day |\n|---|---|---|\n"
+        for label, text, fades in re.findall(
+            r'label: "([^"]+)", text: "((?:[^"\\]|\\.)*)"(?:, fadesAt: (\d+))?\s*\}',
+            body,
+        ):
+            out += f"| {label} | {text} | {fades or ''} |\n"
+        return out + (f"\n*{caption}*\n" if caption else "")
+
+    src = re.sub(
+        r'<MemoryBook\s+caption="((?:[^"\\]|\\.)*)"\s+book="([^"]*)"\s+maxDay=\{?(\d+)\}?\s+pages=\{\[(.*?)\]\}\s*/>',
+        lambda m: memorybook_md(m.group(1), m.group(4), m.group(2)),
+        src, flags=re.S,
+    )
+    # fallback shape without book/maxDay attrs
+    src = re.sub(
+        r'<MemoryBook\s+caption="((?:[^"\\]|\\.)*)"\s+pages=\{\[(.*?)\]\}\s*/>',
+        lambda m: memorybook_md(m.group(1), m.group(2)),
+        src, flags=re.S,
+    )
+
+
     # ---- frontmatter + H1
     front = (
         "---\n"
@@ -251,7 +377,7 @@ def main():
     mdx = (SITE / "content" / "episodes" / f"{slug}.mdx").read_text()
     out = convert(mdx, meta)
 
-    leftover = re.findall(r"<(?:DropCap|InkRule|PromptBlock|AgentLine|BigStat|Translation|ReceiptTable|Scene|Callout|StepChart|SpreadRing|QuoteFaceoff|DeltaTable|ProportionBar|Sparkline|Reveal|ChartExplorer|ChatReplay|TallyBoard|PlotChart|MomentCard|TryIt|DrawerTrap|ModelExplorer|StickyStep|Timeline|ChapterProgress)[^>]*>", out)
+    leftover = re.findall(r"<(?:DropCap|InkRule|PromptBlock|AgentLine|BigStat|Translation|ReceiptTable|Scene|Callout|StepChart|SpreadRing|QuoteFaceoff|DeltaTable|ProportionBar|Sparkline|Reveal|ChartExplorer|ChatReplay|TallyBoard|PlotChart|MomentCard|TryIt|DrawerTrap|ModelExplorer|StickyStep|Timeline|ChapterProgress|CastBoard|AgentInspector|ChronicleTimeline|EventFeed|IncidentCard|BakeoffBoard|RelationshipMap|MemoryBook)[^>]*>", out)
     if leftover:
         sys.exit(f"ERROR: unconverted JSX in mirror: {leftover}")
     if re.search(r"[—–]", out):

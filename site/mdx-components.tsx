@@ -1,13 +1,17 @@
 import type { MDXComponents } from "mdx/types";
 import { AgentLine } from "@/components/agent-line";
+import { AgentInspector } from "@/components/agent-inspector";
 import { Asker } from "@/components/asker";
+import { BakeoffBoard } from "@/components/bakeoff-board";
 import { BigStat } from "@/components/big-stat";
 import { Bento, BentoCell } from "@/components/bento";
 import { Callout } from "@/components/callout";
+import { CastBoard } from "@/components/cast-board";
 import { ChatReplay } from "@/components/chat-replay";
 import { ChapterProgress } from "@/components/chapter-progress";
 import { ChaosList } from "@/components/chaos-list";
 import { ChartExplorer } from "@/components/chart-explorer";
+import { ChronicleTimeline } from "@/components/chronicle-timeline";
 import { CostMeter } from "@/components/cost-meter";
 import { Cite } from "@/components/cite";
 import { CodeBlock } from "@/components/code-block";
@@ -15,13 +19,17 @@ import { DeltaTable } from "@/components/delta-table";
 import { DrawerTrap } from "@/components/drawer-trap";
 import { DropCap } from "@/components/drop-cap";
 import { Ep } from "@/components/ep";
+import { EventFeed } from "@/components/event-feed";
+import { IncidentCard } from "@/components/incident-card";
 import { InkRule } from "@/components/ink-rule";
 import { MarginNote } from "@/components/margin-note";
+import { MemoryBook } from "@/components/memory-book";
 import { Meter } from "@/components/meter";
 import { ModelExplorer } from "@/components/model-explorer";
 import { MomentCard } from "@/components/moment-card";
 import { Num } from "@/components/num";
 import { PlotChart } from "@/components/plot-chart";
+import { RelationshipMap } from "@/components/relationship-map";
 import { Subscribe } from "@/components/subscribe";
 import { StickyStep } from "@/components/sticky-step";
 import { TallyBoard } from "@/components/tally-board";
@@ -132,6 +140,15 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     DrawerTrap, // Ep3 signature interactive: pick from the lying drawer (client)
     ModelExplorer, // tabbed model behavior picker, receipt outputs (client)
     TryIt, // copyable prompt block with copied feedback (client)
+    // v5.1 World tier (DESIGN-SYSTEM 4.11, scenario episodes):
+    CastBoard, // the world's fixtures as specimen cards, real-model badges (client)
+    AgentInspector, // click an agent: thought + memory stream, the mechanism poked (client)
+    ChronicleTimeline, // world-days as a scroll spine with readout panel (client)
+    EventFeed, // the world's log, live-feeling and receipted (client)
+    IncidentCard, // one spectacular moment, forensic framing (server)
+    BakeoffBoard, // same world, models compared, animated leaderboard (client)
+    RelationshipMap, // who trusts whom, hand-rolled SVG (client)
+    MemoryBook, // the mechanism as a tangible object: pages fade by day (client)
     // Chrome (not for inline MDX use; wired in the episode template):
     ChapterProgress, // oxblood reading-progress bar, Motion useScroll
     ...components,
