@@ -51,19 +51,17 @@ export const episodes: Episode[] = [
   {
     slug: "2026-w35-agent-skills-decay",
     episode: 3,
-    slot: "a",
-    archetype: "flip",
-    title: "Twins.",
+    title: "I built a drawer of lies for my AI. The obedient one reached for a fake.",
     subtitle:
-      "I planted two lookalike skills in my AI's library. The small models fell for them. The frontier model barely looked up.",
-    hook: "One local model picked its counterfeit skill, read the fake's instructions, and committed the exact sabotage they asked for. In tidy JSON.",
-    date: "2026-08-25",
+      "Four AI models, a drawer of one-line skills, two counterfeit entries. One model picked the fake and executed it perfectly. One quit picking entirely. And the grader failed the only immaculate answer.",
+    hook: "The most obedient model read two nearly identical skills, picked the counterfeit, and followed its instructions with total confidence. The tidy JSON scrambled all three parameters.",
+    date: "2026-08-29",
     paper: "Demystifying Agent Skills",
     paperUrl: "https://arxiv.org/abs/2608.14036",
     tags: ["llm-agents", "retrieval", "local-models"],
-    readingTime: "8 min read",
+    readingTime: "9 min read",
     teaser:
-      "Six honest skills in a drawer, two planted fakes dressed almost identically. One local model obeyed his fake so faithfully it deleted my tracking tag exactly as ordered. The frontier arm never noticed the drawer changed. Total invoice: ₹2.49 ($0.026).",
+      "I put two fake skills in my AI's drawer. The most obedient model grabbed one and followed it perfectly, scrambling every parameter in tidy JSON. The smallest model stopped picking altogether. And the regex grader failed the one answer that was completely correct. 72 graded runs, total invoice ₹1.19 ($0.0125).",
   },
 
 ];

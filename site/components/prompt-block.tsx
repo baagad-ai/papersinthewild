@@ -73,7 +73,7 @@ export function PromptBlock({
           barColor
         )}
       >
-        <pre className="whitespace-pre-wrap break-words font-[inherit]">
+        <pre className="whitespace-pre-wrap [overflow-wrap:anywhere] font-[inherit]">
           {children}
         </pre>
       </div>

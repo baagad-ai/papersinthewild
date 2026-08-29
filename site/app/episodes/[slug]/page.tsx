@@ -4,7 +4,7 @@ import { episodeContent } from "@/content/episode-content";
 import { InkRule } from "@/components/ink-rule";
 import { Ep } from "@/components/ep";
 import { PaperCard } from "@/components/paper-card";
-import { ScrollProgress } from "@/components/scroll-progress";
+import { ChapterProgress } from "@/components/chapter-progress";
 import { absUrl } from "@/app/lib/site";
 import Link from "next/link";
 
@@ -98,7 +98,7 @@ export default async function EpisodePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ScrollProgress />
+      <ChapterProgress />
       {/* Meta strip */}
       <div className="mb-8 flex items-center justify-between font-mono text-meta uppercase tracking-wider text-ink-mute">
         <Ep n={ep.episode} />

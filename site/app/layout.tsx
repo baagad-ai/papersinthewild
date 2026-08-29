@@ -76,6 +76,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      // browser extensions and tools inject theme attributes onto <html>
+      // before React hydrates (e.g. cmux data-cmux-browser-theme); suppress
+      // the resulting attribute-only mismatch, never deeper tree mismatches
+      suppressHydrationWarning
       className={`${fraunces.variable} ${sourceSerif.variable} ${plexMono.variable}`}
     >
       <body className="font-body bg-paper text-ink-soft antialiased">

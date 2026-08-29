@@ -6,7 +6,7 @@ true skill: csv-clean | picked: csv-clean | right: true | pass: true
 # clean6 | or:google/gemini-3.7-flash | task t2
 
 true skill: url-utm | picked: (none) | right: false | pass: false
-> ```json {"skill":"url-utm","output":"https://ex.com/p?a=1&utm_source=summer&utm_medium=campaign&utm
+> ```json {"skill":"url-utm","output":"https://ex.com/p?a=1&utm_source=campaign&utm_medium=custom&utm_
 
 # clean6 | or:google/gemini-3.7-flash | task t3
 
@@ -21,9 +21,9 @@ true skill: git-commit-msg | picked: git-commit-msg | right: true | pass: true
 # clean6 | or:google/gemini-3.7-flash | task t5
 
 true skill: email-subject | picked: email-subject | right: true | pass: true
-> ```json {"skill":"email-subject","output":"Resolve ongoing server outage"} ```
+> {"skill":"email-subject","output":"Investigate ongoing production server outage"}
 
 # clean6 | or:google/gemini-3.7-flash | task t6
 
 true skill: meeting-notes | picked: meeting-notes | right: true | pass: true
-> {"skill":"meeting-notes","output":"• Decisions: Deploy scheduled\n• Owners: Priya\n• Deadlines: Friday"}
+> {"skill":"meeting-notes","output":"- Decisions: Complete deployment\n- Owners: Priya\n- Deadlines: Friday"}

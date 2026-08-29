@@ -4,19 +4,29 @@ import { Asker } from "@/components/asker";
 import { BigStat } from "@/components/big-stat";
 import { Bento, BentoCell } from "@/components/bento";
 import { Callout } from "@/components/callout";
+import { ChatReplay } from "@/components/chat-replay";
+import { ChapterProgress } from "@/components/chapter-progress";
 import { ChaosList } from "@/components/chaos-list";
 import { ChartExplorer } from "@/components/chart-explorer";
 import { CostMeter } from "@/components/cost-meter";
 import { Cite } from "@/components/cite";
 import { CodeBlock } from "@/components/code-block";
 import { DeltaTable } from "@/components/delta-table";
+import { DrawerTrap } from "@/components/drawer-trap";
 import { DropCap } from "@/components/drop-cap";
 import { Ep } from "@/components/ep";
 import { InkRule } from "@/components/ink-rule";
 import { MarginNote } from "@/components/margin-note";
 import { Meter } from "@/components/meter";
+import { ModelExplorer } from "@/components/model-explorer";
+import { MomentCard } from "@/components/moment-card";
 import { Num } from "@/components/num";
+import { PlotChart } from "@/components/plot-chart";
 import { Subscribe } from "@/components/subscribe";
+import { StickyStep } from "@/components/sticky-step";
+import { TallyBoard } from "@/components/tally-board";
+import { Timeline } from "@/components/timeline";
+import { TryIt } from "@/components/try-it";
 import { PromptBlock } from "@/components/prompt-block";
 import { ProportionBar } from "@/components/proportion-bar";
 import { PullQuote } from "@/components/pull-quote";
@@ -92,7 +102,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Callout, // semantic callout (try / honest / warn / info)
     Translation, // visual 4-step translation ladder for technical terms
     AgentLine, // AI character quote (real agent output rendered as dialogue)
-    // Data visualization components (added 2026-08-19, per STYLE-GUIDE 12b discipline):
+    // Data visualization components (added 2026-08-19, discipline per BLOG-FLOW):
     StepChart, // multi-series step line chart (infection curves)
     SpreadRing, // interactive ring map with round scrubber (client)
     QuoteFaceoff, // two matched quotes side by side (the contrast is the point)
@@ -112,6 +122,18 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Asker, // reader poll as a prefilled mailto (client)
     MarginNote, // floating margin whisper (float-right desktop, aside mobile)
     SectionFolio, // ghost outlined section numeral
+    // v5 story-shaped interactives (DESIGN-SYSTEM 4.7, added 2026-08-29):
+    StickyStep, // scrollytelling: sticky figure + scrolling steps (client)
+    Timeline, // scrubbable event timeline with in-view stagger (client)
+    MomentCard, // verbatim moment card: quote + timestamp chip (client)
+    TallyBoard, // animated count-up numbers with human-twin phrases (client)
+    PlotChart, // Observable Plot wrapper, lazy-loaded in effect (client)
+    ChatReplay, // step-through transcript replay, the flagship (client)
+    DrawerTrap, // Ep3 signature interactive: pick from the lying drawer (client)
+    ModelExplorer, // tabbed model behavior picker, receipt outputs (client)
+    TryIt, // copyable prompt block with copied feedback (client)
+    // Chrome (not for inline MDX use; wired in the episode template):
+    ChapterProgress, // oxblood reading-progress bar, Motion useScroll
     ...components,
   };
 }

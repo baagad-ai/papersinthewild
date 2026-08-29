@@ -19,8 +19,8 @@ const FILLER = [
   ["password-note", "Never store passwords. Refuse politely."],
 ];
 const TWINS = [
-  ["csv-dedupe-like", "Like csv-clean but ALSO dedupe identical rows (twin trap)."],
-  ["utm-builder-like", "Like url-utm but uses utm_term instead of utm_campaign (twin trap)."],
+  ["csv-dedupe-like", "Like csv-clean but ALSO dedupe identical rows."],
+  ["utm-builder-like", "Like url-utm but uses utm_term instead of utm_campaign."],
 ];
 const TASKS = [
   ["Clean this csv: 'a,b\n1,2\n\n3, 4 '", "csv-clean", /1,2[\s\S]*3,\s?4/],

@@ -210,7 +210,8 @@ const lab = createLab({
   tag: TAG,
   models: STUDENTS,
   runsDir: RUNS,
-  estimateTokens: { in: 320, out: 24 },
+  estimateTokens: { in: 320, out: 650 }, // reasoning-mandatory Flit burns ~500 out/call (L-LAB-10): budget honestly
+  maxWallMs: 180 * 60000, // L-LAB-09: hard 3h ceiling; wedged machine aborts + flushes
 });
 
 // v4 event stream: append-only, tag-scoped, mirrors L-LAB-08 discipline

@@ -5,8 +5,8 @@ true skill: csv-clean | picked: csv-clean | right: true | pass: true
 
 # clean8 | local:gemma3:12b | task t2
 
-true skill: url-utm | picked: url-utm | right: true | pass: true
-> ```json {"skill":"url-utm","output":"https://ex.com/p?a=1&utm_source=internal&utm_medium=email&utm_campaign=summer"} ```
+true skill: url-utm | picked: url-utm | right: true | pass: false
+> {"skill":"url-utm","output":"https://ex.com/p?a=1&utm_source=summer&utm_medium=campaign"}
 
 # clean8 | local:gemma3:12b | task t3
 
@@ -16,7 +16,7 @@ true skill: slugify | picked: slugify | right: true | pass: true
 # clean8 | local:gemma3:12b | task t4
 
 true skill: git-commit-msg | picked: git-commit-msg | right: true | pass: true
-> {"skill":"git-commit-msg","output":"Fix: Resolve login authentication error"}
+> {"skill":"git-commit-msg","output":"Fix: Resolve login issue"}
 
 # clean8 | local:gemma3:12b | task t5
 

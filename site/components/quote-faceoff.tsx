@@ -27,7 +27,7 @@ export function QuoteFaceoff({
   const panel = (side: "left" | "right", q: { speaker: string; quote: string; note?: string }) => (
     <div
       className={cn(
-        "flex-1 border bg-paper-deep p-5 sm:p-6",
+        "min-w-0 flex-1 border bg-paper-deep p-5 sm:p-6",
         side === "left" ? "border-l-oxblood" : "border-l-moss"
       )}
       style={{ borderLeftWidth: 3 }}
@@ -40,11 +40,11 @@ export function QuoteFaceoff({
       >
         {q.speaker}
       </div>
-      <blockquote className="font-display text-[1.05rem] italic leading-relaxed text-ink">
+      <blockquote className="font-display text-[1.05rem] italic leading-relaxed text-ink [overflow-wrap:anywhere]">
         &ldquo;{q.quote}&rdquo;
       </blockquote>
       {q.note && (
-        <div className="mt-3 font-mono text-[0.72rem] text-ink-mute">{q.note}</div>
+        <div className="mt-3 font-mono text-[0.72rem] text-ink-mute [overflow-wrap:anywhere]">{q.note}</div>
       )}
     </div>
   );

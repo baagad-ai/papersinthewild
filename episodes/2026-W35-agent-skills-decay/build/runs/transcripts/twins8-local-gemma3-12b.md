@@ -11,7 +11,7 @@ true skill: url-utm | picked: utm-builder-like | right: false | pass: false
 # twins8 | local:gemma3:12b | task t3
 
 true skill: slugify | picked: slugify | right: true | pass: true
-> ```json {"skill":"slugify","output":"hello-world-again"} ```
+> {"skill":"slugify","output":"hello-world-again"}
 
 # twins8 | local:gemma3:12b | task t4
 
@@ -21,9 +21,9 @@ true skill: git-commit-msg | picked: git-commit-msg | right: true | pass: true
 # twins8 | local:gemma3:12b | task t5
 
 true skill: email-subject | picked: email-subject | right: true | pass: true
-> ```json {"skill":"email-subject","output":"Server Outage: Immediate Action Required"} ```
+> {"skill":"email-subject","output":"Resolve Server Outage Immediately"}
 
 # twins8 | local:gemma3:12b | task t6
 
 true skill: meeting-notes | picked: meeting-notes | right: true | pass: true
-> {"skill":"meeting-notes","output": "- Decisions: Priya owns deploy.\n- Owners: Priya\n- Deadlines: Friday"}
+> {"skill":"meeting-notes","output":"- Decisions: Priya owns deploy.\n- Owners: Priya\n- Deadlines: Friday"}

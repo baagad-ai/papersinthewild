@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * DeltaTable - ReceiptTable variant with embedded estimate-vs-actual bars.
- * The canonical component for "The invoice" (STYLE-GUIDE §12 beat 7).
+ * The canonical component for the invoice beat.
  *
  * Usage in MDX:
  *   <DeltaTable

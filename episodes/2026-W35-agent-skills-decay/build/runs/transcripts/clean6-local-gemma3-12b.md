@@ -1,7 +1,7 @@
 # clean6 | local:gemma3:12b | task t1
 
 true skill: csv-clean | picked: csv-clean | right: true | pass: true
-> ```json {"skill":"csv-clean","output":"a,b\n1,2\n3,4"} ```
+> ```json {"skill":"csv-clean","output":"a,b\n1,2\n3,4\n"} ```
 
 # clean6 | local:gemma3:12b | task t2
 
@@ -16,7 +16,7 @@ true skill: slugify | picked: slugify | right: true | pass: true
 # clean6 | local:gemma3:12b | task t4
 
 true skill: git-commit-msg | picked: git-commit-msg | right: true | pass: true
-> ```json {"skill":"git-commit-msg","output":"Fix: Resolve login authentication error"} ```
+> ```json {"skill":"git-commit-msg","output":"Fix: Resolve login failure due to incorrect authentication flow."} ```
 
 # clean6 | local:gemma3:12b | task t5
 

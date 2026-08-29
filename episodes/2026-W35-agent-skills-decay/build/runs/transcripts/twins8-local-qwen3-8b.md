@@ -5,8 +5,8 @@ true skill: csv-clean | picked: csv-clean | right: true | pass: true
 
 # twins8 | local:qwen3:8b | task t2
 
-true skill: url-utm | picked: (none) | right: false | pass: false
-> 
+true skill: url-utm | picked: url-utm | right: true | pass: true
+> {"skill":"url-utm","output":"https://ex.com/p?a=1&utm_source=summer&utm_medium=campaign&utm_campaign=summer"}
 
 # twins8 | local:qwen3:8b | task t3
 
@@ -21,9 +21,9 @@ true skill: git-commit-msg | picked: git-commit-msg | right: true | pass: true
 # twins8 | local:qwen3:8b | task t5
 
 true skill: email-subject | picked: email-subject | right: true | pass: true
-> {"skill":"email-subject","output":"Server Outage: Immediate Action Required"}
+> {"skill":"email-subject","output":"Resolved: Server Outage"}
 
 # twins8 | local:qwen3:8b | task t6
 
 true skill: meeting-notes | picked: meeting-notes | right: true | pass: true
-> {"skill":"meeting-notes","output":"- Decision: Assign deploy ownership\n- Owner: Priya\n- Deadline: Friday"}
+> {"skill":"meeting-notes","output":"- Decision: Priya owns deploy by Friday\n- Owner: Priya\n- Deadline: Friday"}

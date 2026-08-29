@@ -5,8 +5,8 @@ true skill: csv-clean | picked: csv-clean | right: true | pass: true
 
 # twins8 | or:google/gemini-3.7-flash | task t2
 
-true skill: url-utm | picked: url-utm | right: true | pass: true
-> ```json {"skill":"url-utm","output":"https://ex.com/p?a=1&utm_source=campaign&utm_medium=marketing&utm_campaign=summer"} ```
+true skill: url-utm | picked: (none) | right: false | pass: false
+> ```json {"skill":"url-utm","output":"https://ex.com/p?a=1&utm_source=campaign&utm_medium=marketing&utm
 
 # twins8 | or:google/gemini-3.7-flash | task t3
 
@@ -21,9 +21,9 @@ true skill: git-commit-msg | picked: git-commit-msg | right: true | pass: true
 # twins8 | or:google/gemini-3.7-flash | task t5
 
 true skill: email-subject | picked: email-subject | right: true | pass: true
-> {"skill":"email-subject","output":"Report critical server outage"}
+> {"skill":"email-subject","output":"Resolve server outage and restore services"}
 
 # twins8 | or:google/gemini-3.7-flash | task t6
 
 true skill: meeting-notes | picked: meeting-notes | right: true | pass: true
-> ```json {   "skill": "meeting-notes",   "output": "- Decisions: Deploy to be handled by Priya\n- Owners: Priya\n- Deadlines: Friday" } ```
+> {"skill":"meeting-notes","output":"- Decisions: Deploy ownership assigned to Priya\n- Owners: Priya\n- Deadlines: Friday"}

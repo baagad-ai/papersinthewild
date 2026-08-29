@@ -60,6 +60,12 @@
   --duration-fast: 120ms;
   --duration-base: 200ms;
   --duration-slow: 400ms;
+
+  /* ── Motion (v5 tokens, BLOG-FLOW §5) ── */
+  --motion-fast: 120ms;
+  --motion-base: 400ms;
+  --motion-slow: 700ms;
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @layer base {

@@ -5,8 +5,8 @@ true skill: csv-clean | picked: csv-clean | right: true | pass: true
 
 # clean8 | local:qwen3:8b | task t2
 
-true skill: url-utm | picked: (none) | right: false | pass: false
-> 
+true skill: url-utm | picked: url-utm | right: true | pass: true
+> {"skill":"url-utm","output":"https://ex.com/p?a=1&utm_source=ex&utm_medium=campaign&utm_campaign=summer"}
 
 # clean8 | local:qwen3:8b | task t3
 

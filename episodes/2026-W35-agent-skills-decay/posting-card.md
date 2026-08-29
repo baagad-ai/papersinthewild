@@ -1,43 +1,33 @@
-# Posting card - Episode 3, "Twins." (2026-w35-agent-skills-decay)
+# Posting card - Episode 3 rewrite, "I built a drawer of lies for my AI. The obedient one reached for a fake." (2026-w35-agent-skills-decay)
 
-Episode link: https://baagad-ai.github.io/papersinthewild/episodes/2026-w35-agent-skills-decay?utm_source=site&utm_medium=posting-card&utm_campaign=2026-w35-agent-skills-decay
+Episode link: https://papersinthewild.io/episodes/2026-w35-agent-skills-decay?utm_source=direct&utm_campaign=2026-w35-agent-skills-decay
 Paper: https://arxiv.org/abs/2608.14036
 Postable any day. Respect spacing advisories only.
-Advisories at pack time (2026-08-28): no prior posts logged on any platform - CLEAR everywhere. First doc-post/carousel of the season.
+Advisories at pack time (2026-08-29): no posts logged on any platform (metrics ledger empty; the 2026-08-28 card also showed CLEAR everywhere). Treat as first doc-post/carousel of the season unless you know otherwise.
 
 ## LinkedIn (document post lead)
 
-Copy block (from linkedin.md, Status READY):
-"I planted two fake skills in my AI's skill drawer. One small model picked its fake, read its instructions, and committed sabotage exactly as they specified."
-
-Body: see linkedin.md Post body (receipts, ₹2.49, audit-near-duplicates takeaway, CTA question).
-PDF: episodes/2026-W35-agent-skills-decay/slides/carousel.pdf (10 pages, 1080x1080 square)
-First comment: see linkedin.md First comment block (episode URL + paper + rig, UTM-tagged).
-Spacing advisory: CLEAR (no prior LinkedIn post logged; >=72h rule satisfied trivially).
+Copy block: linkedin.md (Status: READY). Hook 157 chars, earns "see more". Three beats, receipt line (72 runs, ₹1.19), takeaway, CTA question.
+Body: see linkedin.md copy block. Do not paste the scaffold.
+PDF: episodes/2026-W35-agent-skills-decay/slides/ (linkedin.pdf, 4:5, rendered).
+First comment: episode URL (UTM-tagged) + paper link + reader question, per linkedin.md.
+Spacing advisory: >=72h since last LinkedIn doc-post; ledger has no prior, so CLEAR.
 
 ## X
 
-Single (from x.md Option A, 238 chars):
-"Planted two fake skills beside six honest ones. A local model picked its fake and committed the exact sabotage it asked for, in tidy JSON. Frontier arm: perfect. Invoice ₹2.49."
-Thread: x.md Option B (6 tweets, one number per tweet).
-Link handling: blog URL in reply (x.md Link in reply block, UTM-tagged).
-Spacing advisory: CLEAR.
+Single: 269 chars, x.md (Status: READY).
+Thread: 7 tweets, one beat per tweet, grader twist as the mid-thread turn.
+Link handling: blog URL in the reply, never in a tweet body.
+Spacing advisory: flexible.
 
 ## Instagram
 
-Caption (from instagram.md):
-"I planted two fake skills in my AI's drawer. One small model obeyed his fake so faithfully it committed sabotage exactly as specified. Two rupees forty-nine in API costs, most models free on my laptop. Names changed to protect the embarrassed."
-Deck: episodes/2026-W35-agent-skills-decay/slides/slide-01.png ... slide-10.png (1080x1080 export, 2160x2200 @2x)
-Slide 6 is the receipt (mandatory). Slide 10 carries seal + next-episode teaser (day-free).
-Hashtags: #llmagents #aiexperiments #buildinpublic
-Spacing advisory: CLEAR (no prior carousel logged; >=48h rule satisfied trivially).
-
-## Alt text (slide 6 receipt)
-
-"Scoreboard table with four columns, one per AI worker. Clean drawer row: near-perfect picking. Twins row, highlighted: picking falls for two workers, one obeys the fake skill, the frontier model stays perfect."
+Caption: instagram.md (Status: READY), hook + story + 4 lowercase hashtags.
+Deck: episodes/2026-W35-agent-skills-decay/slides/ (10 slides, 4:5, PNG + PDF).
+Spacing advisory: >=48h since last IG carousel; ledger has no prior, so CLEAR.
 
 ## Evergreen slot
 
-T+30d re-share angle: the receipts angle - "the sabotage transcript, one month later" (Bram's JSON never stops being funny).
+T+30d re-share angle: the grader failed the only perfect answer of the run. Lead with the QuoteFaceoff and the "audit the reaches" rule.
 
-(No weekday is named anywhere on this card. Post when spacing allows.)
+(No weekday is named anywhere on this card. Post when spacing allows. After each post, log T+24h and T+7d numbers via node tools/log-metrics.mjs so the next card carries real spacing data.)

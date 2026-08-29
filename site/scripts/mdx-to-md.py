@@ -24,10 +24,10 @@ def convert(src: str, meta: dict) -> str:
         body = m.group(0)
 
         def side(key):
-            s = re.search(rf'{key}=\{{\{{\s*speaker: "([^"]+)",\s*quote: "([^"]+)"(?:,\s*note: "([^"]+)")?', body, re.S)
-            out = f'> **{s.group(1)}:**\n>\n> "{s.group(2)}"'
-            if s.group(3):
-                out += f'\n>\n> *({s.group(3)})*'
+            s = re.search(rf"{key}=\{{\{{\s*speaker: [\"']([^\"']+)[\"'],\s*quote: ([\"'])(.+?)\2(?:,\s*note: [\"']([^\"']*)[\"'])?", body, re.S)
+            out = f'> **{s.group(1)}:**\n>\n> "{s.group(3)}"'
+            if s.group(4):
+                out += f'\n>\n> *({s.group(4)})*'
             return out
 
         caption = re.search(r'caption="([^"]*)"', body)
@@ -116,10 +116,71 @@ def convert(src: str, meta: dict) -> str:
     src = re.sub(r"<DropCap>(.*?)</DropCap>", lambda m: m.group(1), src, flags=re.S)
     src = src.replace("<InkRule />", "---")
     src = re.sub(
-        r'<PromptBlock label="([^"]+)" tone="[^"]+">\s*\n(.*?)\n</PromptBlock>',
-        lambda m: f'> **{m.group(1)}**\n>\n> ' + "\n> ".join(m.group(2).strip().split("\n")) + "\n",
+        r'<PromptBlock label="([^"]+)"(?: tone="[^"]+")?>\s*\n(.*?)\n</PromptBlock>',
+        lambda m: f'> **{m.group(1)}**\n>\n> ' + "\n> ".join(m.group(2).strip().removeprefix("{`").removesuffix("`}").split("\n")) + "\n",
         src, flags=re.S,
     )
+    src = re.sub(
+        r'<Callout[^>]*>\s*\n(.*?)\n</Callout>',
+        lambda m: "> " + "\n> ".join(m.group(1).strip().split("\n")) + "\n",
+        src, flags=re.S,
+    )
+
+    # ---- v5 story-shaped interactives (2026-08-29)
+    def chatreplay(m):
+        caption, body = m.group(1), m.group(2)
+        out = f"*{caption}*\n\n" if caption else ""
+        msg_re = re.findall(
+            r'\{\s*role:\s*["\'](user|model|system)["\'](?:,\s*modelId:\s*["\']([^"\']*)["\'])?,\s*text:\s*(["\'])(.*?)\3\s*\}',
+            body,
+        )
+        for role, model_id, _, text in msg_re:
+            who = model_id or ("the grader" if role == "system" else "me")
+            out += f"> **{who}:**\n>\n> {text}\n>\n"
+        return out + "\n"
+
+    src = re.sub(r'<ChatReplay\s+caption="((?:[^"\\]|\\.)*)"\s+messages=\{\[(.*?)\]\}\s*/>', chatreplay, src, flags=re.S)
+
+    def tallyboard(m):
+        caption, body = m.group(1), m.group(2)
+        out = "| Model | Pick accuracy | In plain numbers |\n|---|---|---|\n"
+        for value, _dec, label, household in re.findall(
+            r'\{ value: ([\d.]+)(?:, decimals: (\d+))?, label: "([^"]*)"(?:, household: "([^"]*)")?\s*\}', body
+        ):
+            out += f'| {label} | {value} | {household or ""} |\n'
+        return out + (f"\n*{caption}*\n" if caption else "")
+
+    src = re.sub(r'<TallyBoard\s+caption="((?:[^"\\]|\\.)*)"\s+items=\{\[(.*?)\]\}\s*/>', tallyboard, src, flags=re.S)
+
+    def plotchart(m):
+        caption = m.group(1)
+        body = m.group(2)
+        conds: list[str] = []
+        rows: dict[str, dict[str, str]] = {}
+        for cond, value, model in re.findall(r'\{ cond: "([^"]*)", pickAcc: ([\d.]+), model: "([^"]*)"\s*\}', body):
+            if cond not in conds:
+                conds.append(cond)
+            rows.setdefault(model, {})[cond] = value
+        out = "| Model | " + " | ".join(conds) + " |\n|" + "---|" * (len(conds) + 1) + "\n"
+        for model, vals in rows.items():
+            out += f"| {model} | " + " | ".join(vals.get(c, "") for c in conds) + " |\n"
+        return out + (f"\n*{caption}*\n" if caption else "")
+
+    src = re.sub(r'<PlotChart[^>]*caption="((?:[^"\\]|\\.)*)"\s+data=\{\[(.*?)\]\}\s+fallback="[^"]*"\s*/>', plotchart, src, flags=re.S)
+
+    src = re.sub(
+        r'<MomentCard\s+quote=(["\'])(.+?)\1\s+ts="([^"]*)"\s+context=(["\'])(.+?)\4\s+source="([^"]*)"\s*/>',
+        lambda m: f'> **{m.group(3)}**\n>\n> `{m.group(2)}`\n>\n> {m.group(5)}\n\n*Source: {m.group(6)}*\n',
+        src,
+    )
+
+    src = re.sub(
+        r'<TryIt\s+label="([^"]*)"\s+prompt="((?:[^"\\]|\\.)*)"\s*/>',
+        lambda m: f"**{m.group(1)}**\n\n```\n{m.group(2)}\n```\n",
+        src,
+    )
+
+    src = re.sub(r'<DrawerTrap[^>]*/>', "*Interactive: the lying-drawer pick, playable on the site. The two entries and what each produces for the chore are shown below.*\n", src)
     src = re.sub(
         r'<AgentLine task="([^"]+)">\s*\n(.*?)\n</AgentLine>',
         lambda m: f'> **AI, {m.group(1)}:**\n>\n> {m.group(2).strip()}\n',
@@ -190,7 +251,7 @@ def main():
     mdx = (SITE / "content" / "episodes" / f"{slug}.mdx").read_text()
     out = convert(mdx, meta)
 
-    leftover = re.findall(r"<(?:DropCap|InkRule|PromptBlock|AgentLine|BigStat|Translation|ReceiptTable|Scene|Callout|StepChart|SpreadRing|QuoteFaceoff|DeltaTable|ProportionBar|Sparkline|Reveal|ChartExplorer)[^>]*>", out)
+    leftover = re.findall(r"<(?:DropCap|InkRule|PromptBlock|AgentLine|BigStat|Translation|ReceiptTable|Scene|Callout|StepChart|SpreadRing|QuoteFaceoff|DeltaTable|ProportionBar|Sparkline|Reveal|ChartExplorer|ChatReplay|TallyBoard|PlotChart|MomentCard|TryIt|DrawerTrap|ModelExplorer|StickyStep|Timeline|ChapterProgress)[^>]*>", out)
     if leftover:
         sys.exit(f"ERROR: unconverted JSX in mirror: {leftover}")
     if re.search(r"[—–]", out):
