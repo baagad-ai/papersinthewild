@@ -1,121 +1,82 @@
 # Papers in the Wild
 
-> Weekly experiments on real AI research papers. Read the paper. Try something. Ship the receipts.
+> Real AI research papers, taken far too literally, once a week. Then the receipts get published.
 
-**Live site:** <https://baagad-ai.github.io/papersinthewild/>
+**Read:** <https://baagad-ai.github.io/papersinthewild/>
 **Latest episode:** [The judge who never looked gave my AI's broken levels 8 out of 10.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w36-engine-as-referee)
 
 ---
 
-## What this is
+Every week: pick one recent paper, build something small and real against it, and publish what actually happened. Local models first, the bill printed either way, failures included on purpose. Every number in every writeup opens a file in this repo. If it cannot, it does not ship.
 
-A weekly publication. Each episode:
+## The season so far
 
-1. **Pick** a recent AI paper (usually from [dair-ai/AI-Papers-of-the-Week](https://github.com/dair-ai/AI-Papers-of-the-Week))
-2. **Try** something real with it. Reproduce a result. Build a small experiment. Test a claim against a different setup.
-3. **Ship** the receipts: code, raw data, transcripts, an honest writeup of what worked and what didn't.
+**04 · [The judge who never looked gave my AI's broken levels 8 out of 10.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w36-engine-as-referee)**
 
-The work lives in this repo. Every episode is replicable from the artifacts here, and every number in every writeup traces back to a file under `build/runs/`.
+The judge who never opened a file gave ten broken levels a cheerful 8 out of 10. The judge that opened everything never used an adjective in its life.
 
-## Episodes
+Three AI desks designed game levels for a week under three kinds of feedback: coordinates, silence, and praise. One of them learned to build. Guess which feedback taught it.
 
-| # | Week | Episode | Paper | Replicate |
-|---|------|---------|-------|-----------|
-| 04 | 2026-W36 | [The judge who never looked gave my AI's broken levels 8 out of 10.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w36-engine-as-referee) | [Agentic Game Development as a Verifiable Trajectory Data Engine (arXiv 2608.25518)](https://arxiv.org/abs/2608.25518) | [folder](./episodes/2026-W36-engine-as-referee/) |
-| 03 | 2026-W35 | [I built a drawer of lies for my AI. The obedient one reached for a fake.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w35-agent-skills-decay) | [Demystifying Agent Skills (arXiv 2608.14036)](https://arxiv.org/abs/2608.14036) | [folder](./episodes/2026-W35-agent-skills-decay/) |
-| 02 | 2026-W34 | [I wrote a mind virus. It makes AI agents love geese.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w34-mind-viruses) | [Mind Viruses (arXiv 2608.10218)](https://arxiv.org/abs/2608.10218) | [folder](./episodes/2026-W34-mind-viruses/) |
-| 01 | 2026-W33 | [My AI has an anxiety problem.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w33-prompt-induced-waste) | [Prompt-Induced Waste (arXiv 2608.01347)](https://arxiv.org/abs/2608.01347) | [folder](./episodes/2026-W33-prompt-induced-waste/) |
+Paper: *Agentic Game Development as a Verifiable Trajectory Data Engine* · [arXiv 2608.25518](https://arxiv.org/abs/2608.25518) · [replicate it](./episodes/2026-W36-engine-as-referee/) · bill: ₹0 ($0)
 
-Each episode folder contains what shipped for that episode:
+---
 
-| File | Purpose |
-|---|---|
-| `paper.md` | Link to the paper, one-line "why this one" |
-| `build-log.md` | Step-by-step build with attempts, failures, rig amendments, costs. The human-readable story |
-| `blog-post.md` | Plain-markdown mirror of the published blog post |
-| `build/` | Original trial code + outputs: transcripts, chronicle events, results, tallies |
+**03 · [I built a drawer of lies for my AI. The obedient one reached for a fake.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w35-agent-skills-decay)**
 
-Some earlier episodes also carry `build-deeper/` (larger reproduction code and raw trial data) and `assets/` (screenshots).
+The most obedient model read two nearly identical skills, picked the counterfeit, and followed its instructions with total confidence. The tidy JSON scrambled all three parameters.
 
-## Replicate an episode
+Paper: *Demystifying Agent Skills* · [arXiv 2608.14036](https://arxiv.org/abs/2608.14036) · [replicate it](./episodes/2026-W35-agent-skills-decay/) · bill: ₹1.19 ($0.0125)
 
-Each episode folder is self-contained. Start from [`episodes/2026-W36-engine-as-referee/`](./episodes/2026-W36-engine-as-referee/): read `build-log.md` first, then run the studio's self-checks. The engine selftest and the tally need no model downloads:
+---
 
-```bash
-cd episodes/2026-W36-engine-as-referee/build
-node studio.mjs selftest   # five-gate level checker + playtest bot, deterministic
-node studio.mjs tally      # rebuilds the observables table from the run state
-```
+**02 · [I wrote a mind virus. It makes AI agents love geese.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w34-mind-viruses)**
 
-A full re-run of any episode needs [Ollama](https://ollama.com) with the models each build-log lists (W36 used `gemma3:12b` + `qwen3:8b`, all local, INR 0).
+The heartfelt virus infected nobody, twice. The copy-exact version escaped patient zero seven times out of seven. The difference is one line of instructions.
 
-## Repository layout
+Paper: *Mind Viruses: Self-Propagating Ideas in Multi-Agent LLM Systems* · [arXiv 2608.10218](https://arxiv.org/abs/2608.10218) · [replicate it](./episodes/2026-W34-mind-viruses/)
 
-```
-papersinthewild/
-├── README.md                           You are here
-├── LICENSE                             CC BY 4.0 (content) + MIT (code)
-├── CONTRIBUTING.md                     How to suggest a paper or contribute
-├── .github/workflows/deploy.yml        Auto-deploys site to GitHub Pages
-├── site/                               Next.js 15 + MDX static site
-│   ├── app/                            Routes: home, episodes/[slug], about
-│   ├── components/                     Owned components (world tier: CastBoard, ChronicleTimeline, ...)
-│   ├── content/
-│   │   ├── episodes.ts                 Episode metadata registry
-│   │   └── episodes/*.mdx              Canonical episode content
-│   ├── public/og/                      Per-episode social cards
-│   └── next.config.mjs                 Static export + basePath for Pages
-└── episodes/
-    └── {year}-w{week}-{slug}/          Per-episode artifacts (see above)
-```
+---
 
-## Build the site locally
+**01 · [My AI has an anxiety problem.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w33-prompt-induced-waste)**
 
-Requirements: Node.js 20+ and npm.
+Tell your AI to "be absolutely certain" and it will check the locked door six times. Same code. Four times the invoice.
+
+Paper: *Prompt-Induced Waste* · [arXiv 2608.01347](https://arxiv.org/abs/2608.01347) · [replicate it](./episodes/2026-W33-prompt-induced-waste/)
+
+---
+
+## What lives where
+
+- `site/` · the publication itself. Next.js, static, fast.
+- `episodes/{week}-{slug}/` · each episode's receipts, self-contained.
+  - `build-log.md` · the week told honestly: attempts, failures, amendments, costs.
+  - `blog-post.md` · the published piece as plain markdown.
+  - `build/runs/` · every transcript, event, verdict, and tally behind every claim.
+  - `build/*.mjs` · the actual rigs. Small, readable, rerunnable.
+
+## Run the rigs yourself
+
+The W36 referee needs no models at all. It just judges:
 
 ```bash
 git clone https://github.com/baagad-ai/papersinthewild.git
-cd papersinthewild/site
-npm install --legacy-peer-deps    # see note below
-npm run dev                       # http://localhost:3000/papersinthewild
-npm run build                     # static export to site/out/
+cd papersinthewild/episodes/2026-W36-engine-as-referee/build
+node studio.mjs selftest   # the five gates + the playtest bot, deterministic
+node studio.mjs tally      # the week's scoreboard, rebuilt from the run state
 ```
 
-The `--legacy-peer-deps` flag is needed because `framer-motion@11` peer-deps React 18 while the project is on React 19. The lockfile is already resolved correctly; this flag just unblocks `npm install`'s strict peer check.
-
-## Tech stack
-
-- **[Next.js 15](https://nextjs.org/)** (App Router, static export) on GitHub Pages
-- **[MDX](https://mdxjs.com/)** via `@next/mdx` for episode content
-- **[Observable Plot](https://observablehq.com/plot/)** + Motion for the data beats
-- **[Fraunces](https://fonts.google.com/specimen/Fraunces)** (display) + **[Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4)** (body) + **[IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono)** (numbers, code)
-- **[Tailwind CSS](https://tailwindcss.com/)** with CSS-variable design tokens
-- Experiments run on **[Ollama](https://ollama.com)** (local models, ₹0) with [OpenRouter](https://openrouter.ai) as the paid fallback
+Full reruns need [Ollama](https://ollama.com) with the models each build-log lists. The site runs with `cd site && npm install --legacy-peer-deps && npm run dev`.
 
 ## Submit a paper
 
-Open an issue with the `paper-suggestion:` prefix. Include:
-
-- arXiv link
-- One sentence on why it is bizarre-but-real
-- (Optional) A use case you would like to see tested
-
-Every suggestion is read. Suggestions that get picked are credited in the episode writeup.
+Open an issue with the `paper-suggestion:` prefix. Bring an arXiv link, one sentence on why it is bizarre-but-real, and the use case you want tested. Suggestions that get picked are credited in the writeup.
 
 ## License
 
-This repository contains two kinds of work, licensed separately:
+- **Content** (writeups, images, the words): [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Attribute "Papers in the Wild", link the episode.
+- **Code** (rigs, site, scripts): [MIT](https://opensource.org/license/mit/).
 
-- **Content** (blog posts, episode writeups, images, any creative work): **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)**. Attribute "Papers in the Wild", link back to the source episode.
-- **Code** (the site, experiment scripts, test harnesses, analysis code): **[MIT](https://opensource.org/license/mit/)**.
-
-See [`LICENSE`](./LICENSE) for the full text.
-
-## Acknowledgments
-
-- Episode papers sourced from [`dair-ai/AI-Papers-of-the-Week`](https://github.com/dair-ai/AI-Papers-of-the-Week)
-- Fonts by Stephen Nixon (Fraunces), Frank Grießhammer (Source Serif 4), and IBM (Plex Mono)
-- Component primitives inspired by [shadcn/ui](https://ui.shadcn.com/)
+Full text in [`LICENSE`](./LICENSE).
 
 ---
 
