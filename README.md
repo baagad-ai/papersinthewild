@@ -3,7 +3,7 @@
 > Weekly experiments on real AI research papers. Read the paper. Try something. Ship the receipts.
 
 **Live site:** <https://baagad-ai.github.io/papersinthewild/>
-**Latest episode:** [My AI has an anxiety problem.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w33-prompt-induced-waste)
+**Latest episode:** [The judge who never looked gave my AI's broken levels 8 out of 10.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w36-engine-as-referee)
 
 ---
 
@@ -13,26 +13,41 @@ A weekly publication. Each episode:
 
 1. **Pick** a recent AI paper (usually from [dair-ai/AI-Papers-of-the-Week](https://github.com/dair-ai/AI-Papers-of-the-Week))
 2. **Try** something real with it. Reproduce a result. Build a small experiment. Test a claim against a different setup.
-3. **Ship** the receipts: code, raw data, screenshots, an honest writeup of what worked and what didn't.
+3. **Ship** the receipts: code, raw data, transcripts, an honest writeup of what worked and what didn't.
 
-The work lives in this repo. Every episode is replicable from the artifacts here.
+The work lives in this repo. Every episode is replicable from the artifacts here, and every number in every writeup traces back to a file under `build/runs/`.
 
 ## Episodes
 
-| # | Week | Title | Paper |
-|---|------|-------|-------|
-| 01 | 2026-W33 | [My AI has an anxiety problem.](./episodes/2026-w33-prompt-induced-waste/blog-post.md) | [Prompt-Induced Waste (arXiv 2608.01347)](https://arxiv.org/abs/2608.01347) |
+| # | Week | Episode | Paper | Replicate |
+|---|------|---------|-------|-----------|
+| 04 | 2026-W36 | [The judge who never looked gave my AI's broken levels 8 out of 10.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w36-engine-as-referee) | [Agentic Game Development as a Verifiable Trajectory Data Engine (arXiv 2608.25518)](https://arxiv.org/abs/2608.25518) | [folder](./episodes/2026-W36-engine-as-referee/) |
+| 03 | 2026-W35 | [I built a drawer of lies for my AI. The obedient one reached for a fake.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w35-agent-skills-decay) | [Demystifying Agent Skills (arXiv 2608.14036)](https://arxiv.org/abs/2608.14036) | [folder](./episodes/2026-W35-agent-skills-decay/) |
+| 02 | 2026-W34 | [I wrote a mind virus. It makes AI agents love geese.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w34-mind-viruses) | [Mind Viruses (arXiv 2608.10218)](https://arxiv.org/abs/2608.10218) | [folder](./episodes/2026-W34-mind-viruses/) |
+| 01 | 2026-W33 | [My AI has an anxiety problem.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w33-prompt-induced-waste) | [Prompt-Induced Waste (arXiv 2608.01347)](https://arxiv.org/abs/2608.01347) | [folder](./episodes/2026-W33-prompt-induced-waste/) |
 
-Each episode folder contains:
+Each episode folder contains what shipped for that episode:
 
 | File | Purpose |
 |---|---|
 | `paper.md` | Link to the paper, one-line "why this one" |
-| `build-log.md` | Step-by-step build with screenshots, the human-readable story |
-| `build/` | Original trial code + outputs (smaller reproduction) |
-| `build-deeper/` | Larger reproduction code, raw trial data, analysis scripts |
+| `build-log.md` | Step-by-step build with attempts, failures, rig amendments, costs. The human-readable story |
 | `blog-post.md` | Plain-markdown mirror of the published blog post |
-| `assets/` | Screenshots and images |
+| `build/` | Original trial code + outputs: transcripts, chronicle events, results, tallies |
+
+Some earlier episodes also carry `build-deeper/` (larger reproduction code and raw trial data) and `assets/` (screenshots).
+
+## Replicate an episode
+
+Each episode folder is self-contained. Start from [`episodes/2026-W36-engine-as-referee/`](./episodes/2026-W36-engine-as-referee/): read `build-log.md` first, then run the studio's self-checks. The engine selftest and the tally need no model downloads:
+
+```bash
+cd episodes/2026-W36-engine-as-referee/build
+node studio.mjs selftest   # five-gate level checker + playtest bot, deterministic
+node studio.mjs tally      # rebuilds the observables table from the run state
+```
+
+A full re-run of any episode needs [Ollama](https://ollama.com) with the models each build-log lists (W36 used `gemma3:12b` + `qwen3:8b`, all local, INR 0).
 
 ## Repository layout
 
@@ -44,11 +59,11 @@ papersinthewild/
 ├── .github/workflows/deploy.yml        Auto-deploys site to GitHub Pages
 ├── site/                               Next.js 15 + MDX static site
 │   ├── app/                            Routes: home, episodes/[slug], about
-│   ├── components/                     Owned shadcn-style components
+│   ├── components/                     Owned components (world tier: CastBoard, ChronicleTimeline, ...)
 │   ├── content/
 │   │   ├── episodes.ts                 Episode metadata registry
 │   │   └── episodes/*.mdx              Canonical episode content
-│   ├── public/                         seal.svg, favicon.svg, wordmark.svg
+│   ├── public/og/                      Per-episode social cards
 │   └── next.config.mjs                 Static export + basePath for Pages
 └── episodes/
     └── {year}-w{week}-{slug}/          Per-episode artifacts (see above)
@@ -68,17 +83,14 @@ npm run build                     # static export to site/out/
 
 The `--legacy-peer-deps` flag is needed because `framer-motion@11` peer-deps React 18 while the project is on React 19. The lockfile is already resolved correctly; this flag just unblocks `npm install`'s strict peer check.
 
-## Replicate an episode
-
-Each episode folder is self-contained. A good starting point: [`episodes/2026-w33-prompt-induced-waste/`](./episodes/2026-w33-prompt-induced-waste/). Read `build-log.md` first, then poke around `build-deeper/` for the trial data.
-
 ## Tech stack
 
 - **[Next.js 15](https://nextjs.org/)** (App Router, static export) on GitHub Pages
-- **[shadcn/ui](https://ui.shadcn.com/)** patterns (owned, copy-paste components, no UI kit dependency)
 - **[MDX](https://mdxjs.com/)** via `@next/mdx` for episode content
+- **[Observable Plot](https://observablehq.com/plot/)** + Motion for the data beats
 - **[Fraunces](https://fonts.google.com/specimen/Fraunces)** (display) + **[Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4)** (body) + **[IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono)** (numbers, code)
 - **[Tailwind CSS](https://tailwindcss.com/)** with CSS-variable design tokens
+- Experiments run on **[Ollama](https://ollama.com)** (local models, ₹0) with [OpenRouter](https://openrouter.ai) as the paid fallback
 
 ## Submit a paper
 
