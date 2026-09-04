@@ -1,0 +1,18 @@
+{
+  "engine-b1-a1": { "accept": false, "reason": "Tables pinned to the left wall, two pillars doing nothing, a huge empty middle. Reads like a lobby, not a cozy cafe." },
+  "fuzzy-b1-a2": { "accept": true, "reason": "A busy, readable cafe floor: tables, counters, plants, and an obvious walk from the door to the counter." },
+  "full-b1-a2": { "accept": false, "reason": "Nook walls overcomplicate a cozy cafe; a customer needs the floor plan explained to find the counter." },
+  "full-b2-a3": { "accept": false, "reason": "Four shelves and one table is a pamphlet rack in an empty hall. This is not a library yet." },
+  "fuzzy-b2-a2": { "accept": false, "reason": "The stacks work, but counters parked mid-floor do not belong in a library." },
+  "engine-b2-a2": { "accept": true, "reason": "Dense shelf stacks with three reading tables; walks like a real library." },
+  "full-b3-a2": { "accept": true, "reason": "A cover field of pillars and crates between two clean lanes. Reads as a dungeon entry hall." },
+  "full-b4-a3": { "accept": false, "reason": "Counters scattered mid-floor read cafe, not flower shop; the buckets clump in one column." },
+  "engine-b4-a2": { "accept": true, "reason": "Bucket rows read as display shelves, a counter right at the door, and a clean aisle to the bouquet counter." },
+  "fuzzy-b5-a1": { "accept": true, "reason": "Stalls lined along one side, crates opposite, one wide lane to the food stall. Reads as a market street." },
+  "full-b5-a1": { "accept": false, "reason": "Stall-and-crate stripes read as warehouse racking, not a night market." },
+  "engine-b5-a2": { "accept": false, "reason": "Stalls ring the walls while crates squat in the middle; the market has no lane to walk." },
+  "full-b6-a3": { "accept": false, "reason": "I count one dead end. The brief asked for at least two; this is a corridor with an alcove, not a maze." },
+  "full-b1-rev": { "accept": true, "reason": "Fixed the complaint: open floor, clear route to the counter. It is the accepted cafe with the furniture rearranged, which is exactly what it was told to study." },
+  "full-b2-rev": { "accept": true, "reason": "Went from pamphlet rack to full stacks; shelves line two walls now, tables by the nook." },
+  "engine-b5-rev": { "accept": false, "reason": "Stalls and crates in a uniform checker grid. Still no row, no lane. More storage than market." }
+}

@@ -63,6 +63,21 @@ export const episodes: Episode[] = [
     teaser:
       "I put two fake skills in my AI's drawer. The most obedient model grabbed one and followed it perfectly, scrambling every parameter in tidy JSON. The smallest model stopped picking altogether. And the regex grader failed the one answer that was completely correct. 72 graded runs, total invoice ₹1.19 ($0.0125).",
   },
+  {
+    slug: "2026-w36-engine-as-referee",
+    episode: 4,
+    title: "The judge who never looked gave my AI's broken levels 8 out of 10.",
+    subtitle:
+      "Three AI desks designed game levels for a week. The judge who read only the pitches scored every broken level 8 out of 10. The judge who opened the files answered in coordinates, and taught the only desk that listened.",
+    hook: "The judge who never opened a file gave ten broken levels a cheerful 8 out of 10. The judge that opened everything never used an adjective in its life.",
+    date: "2026-09-04",
+    paper: "Agentic Game Development as a Verifiable Trajectory Data Engine for Scaling World Models",
+    paperUrl: "https://arxiv.org/abs/2608.25518",
+    tags: ["llm-agents", "reinforcement-learning", "local-models"],
+    readingTime: "11 min read",
+    teaser:
+      "I ran an AI game studio with two judges: one opened every file and answered in coordinates, one read only the pitches and scored every broken level 8 out of 10. The desk that listened to the coordinates learned to build. The desk that listened to the praise learned to write better praise. 49 submissions, 16 verdicts, ₹0 ($0).",
+  },
 
 ];
 

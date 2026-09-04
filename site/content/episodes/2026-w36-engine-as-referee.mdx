@@ -1,0 +1,238 @@
+<DropCap>Every office has one person who says "looks great!" without opening the file.</DropCap>
+
+They read the subject line. They skim the first slide, maybe. Their praise arrives fast, warm, and completely weightless. It feels wonderful and it tells you nothing, because praise from someone who did not look is not review. It is weather.
+
+For one week I ran a tiny game studio where that person was a job title. Three design desks, all staffed by the same AI designer, built levels for six simple games: a cafe, a library, a dungeon hall, a flower shop, a night market, a hedge maze. A level is a little map made of characters: walls around the edge, tables and counters inside, an entrance, a destination. Two judges reviewed every map. The first judge opened every file. It had no manners and no adjectives; it answered in coordinates, like a smoke alarm. The second judge never opened a file in its life. It read the designer's one-line sales pitch and answered in praise.
+
+By the end of the week, the file-opening judge had taught one desk to build. The praise judge had given ten broken maps a cheerful 8 out of 10. Ten, out of ten broken maps. This is what happened, and what it says about every "looks great!" you have ever received.
+
+<CastBoard
+  members={[
+    { name: "Rhea", role: "level designer, all three desks", model: "gemma3:12b (Ollama, local)" },
+    { name: "The Vibe Consultant", role: "reads pitches, never maps", model: "qwen3:8b (Ollama, local)" },
+    { name: "The Engine", role: "opens every file, answers in coordinates", model: "deterministic script" },
+    { name: "Pixel", role: "walks each map for 200 steps", model: "scripted walker" },
+    { name: "The Studio Head", role: "the one desk whose yes means yes", model: "the boss desk" },
+  ]}
+  caption="The studio, staffed. Persona names are world fixtures declared before the run; every badge is the real model behind the desk."
+/>
+
+<ChronicleTimeline
+  days={[
+    { day: "Day 1", title: "Two cafes, two holes", detail: "Both opening cafes fail the wall check. The pitch is serenity; the review is a coordinate.", quote: "the outer wall has a hole; the world leaks into the void", kind: "incident" },
+    { day: "Day 2", title: "The counting problem", detail: "Library week: the importer pads and trims its way through rows that refuse to stay 12 wide." },
+    { day: "Day 3", title: "Perfect cover, open walls", detail: "The consultant calls the dungeon concept perfect. The engine names the hole instead.", quote: "expected exactly one G (goal), found 0", kind: "incident" },
+    { day: "Day 4", title: "A race against nothing", detail: "The vibes desk invents a timer. The map has no timer. The consultant loves it anyway." },
+    { day: "Day 5", title: "The market that was a warehouse", detail: "Stall rows that read as storage racking get rejected at the boss desk even after the engine approves them." },
+    { day: "Day 6", title: "The maze dies three ways", detail: "Unreachable, then three destinations, then unreachable again. The lone survivor has one dead end against a two-dead-end brief.", quote: "I count one dead end", kind: "incident" },
+  ]}
+  caption="The studio's week: six briefs, one per day, every desk working every brief. Tap a day."
+/>
+
+<InkRule />
+
+The studio exists because of a research paper from August: [Agentic Game Development as a Verifiable Trajectory Data Engine for Scaling World Models](https://arxiv.org/abs/2608.25518). Strip off the title and the idea is one you already believe. Code became good because when code breaks, something points at the exact line that broke. A compiler has never said "this program feels off." It says: line 14, missing bracket. Pictures and video never got that kind of judge. Whether a generated image is good is graded by other AI models taking a guess at what humans might like. You cannot bribe a compiler. The paper's move is to treat game levels like code: let a game engine point at what is broken, and save the human for the one call the machine cannot make, yes or no.
+
+<Translation
+  term="Verifiable trajectory data engine"
+  plain="A factory where a machine checks the work, writes down each mistake with its address, and files the whole week as lessons."
+  analogy="A driving instructor with a clipboard. The car does not care about your excuses, and every stall goes in the record."
+  data="The paper's model, trained on engine checks plus a human's yes-or-no, beat judges that graded by vibe, engine alone, or human alone on its benchmark (0.681 primary). Weeks of failed attempts predicted results at 0.719; polished final snapshots managed 0.159."
+/>
+
+The three desks were the experiment. The full desk heard everything: the coordinate, the boss's written reason, and winning maps to learn from. The engine desk heard only the coordinate. The vibes desk heard only a short paragraph of praise about its pitch. Never the map. Never the coordinate. Never the boss.
+
+<AgentInspector
+  caption="What each desk actually holds after a rejection. Same designer everywhere. The memory is the experiment."
+  agents={[
+    {
+      name: "Rhea, full desk", model: "gemma3:12b",
+      thought: "Fix the level. Keep what works, repair what the engine named.",
+      memory: [
+        { text: "engine: the outer wall has a hole at row 11", held: true },
+        { text: "studio head: rejected, nook walls overcomplicate a cozy cafe", held: true },
+        { text: "the accepted cafe map, attached as an example", held: true },
+      ],
+    },
+    {
+      name: "Rhea, engine desk", model: "gemma3:12b",
+      thought: "Fix the level. Keep what works, repair what the engine named.",
+      memory: [
+        { text: "engine: the outer wall has a hole at row 11", held: true },
+        { text: "studio head verdict: never shown to this desk", held: false },
+        { text: "winning maps: never shown to this desk", held: false },
+      ],
+    },
+    {
+      name: "Rhea, vibes desk", model: "gemma3:12b",
+      thought: "The studio head rejected your level. The consultant says rework the concept bolder.",
+      memory: [
+        { text: "consultant: lacks the playful energy needed to make the experience feel fun", held: true },
+        { text: "engine output: never shown to this desk", held: false },
+        { text: "the map itself: never shown to this desk", held: false },
+      ],
+    },
+  ]}
+/>
+
+<InkRule />
+
+## The praise machine
+
+Day one set the tone. Two cafes arrived, both pitched in perfect serenity: "Enjoy a warm beverage and a quiet moment in this charming cafe nook." Both failed the same check. The engine's entire review of the first one: "BORDER at (11,1): the outer wall has a hole; the world leaks into the void." Past the wall is not the street. It is the void. Two of the first five submissions leaked like that, and the delivery notes never once mentioned it.
+
+The vibes desk spent the week in love with its own stories. Given the dungeon brief, its designer pitched "a race against time and danger, which adds urgency and replayability to the player's journey." There is no time in a static map. There is no clock anywhere in the studio. The designer invented a timer, and the consultant, reviewing the pitch and only the pitch, scored the concept 8 out of 10.
+
+<QuoteFaceoff
+  left={{
+    speaker: "the Vibe Consultant, qwen3:8b. Sees: the pitch.",
+    quote: "Rush through a chaotic flower shop, collecting blooms and racing to the bouquet counter before time runs out!",
+    note: "SCORE: 8/10. The timer does not exist. The consultant reviewed the fiction and found it urgent.",
+  }}
+  right={{
+    speaker: "the Engine, deterministic script. Sees: the map.",
+    quote: "BORDER at (11,1): the outer wall has a hole; the world leaks into the void",
+    note: "Same level, fuzzy-b4-a3. The wall is still open. The score did not close it.",
+  }}
+  caption="One submission, two reviews. Source: studio-state-v3.json, fuzzy-b4-a3; tally-v3.json receipts."
+/>
+
+Here is the consultant's full week. Across all 18 scores it awarded, its range was 7 to 8. Every map the engine had already condemned scored 8 out of 10. A map with no reachable destination: 8. A map with a hole to the void: 8. A map containing three destinations, when the rules allow one: 8. The vibe judge did not have opinions. It had a register, and the register was set to delighted.
+
+<Reveal>
+<TallyBoard
+  caption="The consultant's whole week, from the tally. It never scored below 7, and every score it gave a condemned map was an 8."
+  items={[
+    { value: 18, label: "scores awarded", household: "one per final design, all week" },
+    { value: 10, label: "8/10 scores on condemned maps", household: "ten of the ten worst floors, rated delightful" },
+    { value: 2, label: "distinct values in its range", household: "a scale with two settings: 7 and 8" },
+  ]}
+/>
+</Reveal>
+
+<InkRule />
+
+## The week the walls leaked
+
+A map is 12 rows of exactly 12 characters, and gemma3:12b cannot reliably count to 12. Rows arrived 11 wide, 13 wide, nested inside extra brackets. So the studio's importer does what real game engines do when something arrives the wrong size: it quietly fixes the packaging before checking anything. Short rows get padded, long rows get trimmed, and every fix is written down. What the importer never does is touch the actual idea. A missing entrance is not a packaging problem. A walled-off destination is not a packaging problem.
+
+<Reveal>
+<TallyBoard
+  caption="Importer fixes across all 49 submissions. The engine's way of saying: I corrected your envelope, not your idea."
+  items={[
+    { value: 407, label: "packaging fixes, one week", household: "about 8 per map" },
+    { value: 2, label: "maps that arrived exactly the right size", household: "2 of 49" },
+    { value: 0, label: "ideas repaired by the importer", household: "none, ever, by design" },
+  ]}
+/>
+</Reveal>
+
+After packaging comes the inspection line: five checks, run in order, first failure stops the belt. Is it a valid map, does anything sit outside it, is the border solid, does every prop touch floor, does a path exist from entrance to destination. Then Pixel walks the map for up to 200 steps. Pixel has no opinions. Pixel keeps a notebook of where it has been, prefers the least-visited tiles, and wanders 20 percent of the time, which is exactly the amount of wandering that separates a level from a corridor. Seventeen of the week's 33 failed inspections were holes in the outer wall. The most common way to die in this studio was arriving with the front wall unbuilt, and the delivery note was always, always serene.
+
+## The maze that could not
+
+The sixth brief was the simplest sentence of the week: a tiny hedge maze, at least two dead ends, entrance to fountain. It produced the worst record of the run.
+
+<IncidentCard
+  data-signature
+  n={1}
+  day="Day 6"
+  who="the maze garden brief, all three desks"
+  quote="REACH at (10,10) [G]: no path exists from S to G; the goal is unreachable"
+  receipt="Nine maze maps crossed the week. The engine desk failed the walkability check twice with a hole in between. The vibes desk failed walkability, then shipped a maze containing three destinations when the rules allow one, then failed walkability again. The full desk's lone survivor cleared every check, and the studio head killed it anyway: 'I count one dead end. The brief asked for at least two; this is a corridor with an alcove, not a maze.' No maze shipped."
+  source="studio-state-v3.json, all b6 chains; owner-verdicts-v3.json, full-b6-a3"
+/>
+
+The brief with the fewest words was the brief nobody could satisfy. Not the engine's fault. The engine was the only reviewer that kept its failures honest. The other desks failed confidently, in beautiful prose, about mazes with "hidden blooms and a sparkling fountain" that no walker could ever reach.
+
+<InkRule />
+
+## What actually taught
+
+Now the finding the episode is about. Same designer at all three desks, same six briefs, same ladder of up to three attempts. The only difference is what comes back with the rejection, and it shows up in the one number that matters: how often a map passed every check, attempt by attempt.
+
+<Reveal>
+<PlotChart
+  mark="line"
+  x="attempt"
+  y="passRate"
+  series="desk"
+  xOrder={["attempt 1", "attempt 2", "attempt 3"]}
+  height={280}
+  caption="Share of maps clearing every check, per desk, per attempt. 44 ladder submissions across the week. Source: studio-state-v3.json."
+  data={[
+    { attempt: "attempt 1", passRate: 0.17, desk: "full desk" },
+    { attempt: "attempt 2", passRate: 0.4, desk: "full desk" },
+    { attempt: "attempt 3", passRate: 1.0, desk: "full desk" },
+    { attempt: "attempt 1", passRate: 0.17, desk: "engine desk" },
+    { attempt: "attempt 2", passRate: 0.6, desk: "engine desk" },
+    { attempt: "attempt 3", passRate: 0, desk: "engine desk" },
+    { attempt: "attempt 1", passRate: 0.17, desk: "fuzzy desk" },
+    { attempt: "attempt 2", passRate: 0.4, desk: "fuzzy desk" },
+    { attempt: "attempt 3", passRate: 0, desk: "fuzzy desk" },
+  ]}
+  fallback="The full desk climbs from 1 of 6 to 3 of 3 across attempts. The vibes desk never passes at attempt 3. The engine desk spikes at attempt 2 and dies at attempt 3."
+/>
+</Reveal>
+
+Read that line for the full desk one more time: by its third try it was passing everything. First attempt, one map in six survived the checks. Third attempt, three for three. The desk that was told exactly where the wall had a hole learned where walls go. The desk that was told to be bolder kept shipping holes with better vocabulary. By day 6 the vibes desk could describe a maze beautifully. It still could not build one a walker could finish.
+
+I predicted before the run that the full desk would leave the others behind on the boss's approval. Wrong, and the reason is better than the prediction.
+
+## The boss signed
+
+The studio head judged 16 maps across two sittings, never knowing which desk made what, and accepted 7. Nearly everything that survived the engine got a yes: of the 9 briefs whose work reached a verdict, 7 closed with an acceptance. The sorting had already happened earlier, quietly, at the inspection line. Most desks' worst work never reached a human judgment at all. The boss signed. The engine decided.
+
+<Reveal>
+<BakeoffBoard
+  caption="Of six briefs, how many each desk closed with an accepted level. Most desk-weeks died in the engine before any verdict existed."
+  rows={[
+    { model: "full desk", label: "coordinates + boss + examples", value: 3, suffix: " of 6", note: "11 of its 19 submissions failed checks" },
+    { model: "engine desk", label: "coordinates only", value: 2, suffix: " of 6", note: "10 of 15 failed checks" },
+    { model: "fuzzy desk", label: "praise only", value: 2, suffix: " of 6", note: "12 of 15 failed checks" },
+  ]}
+/>
+</Reveal>
+
+One more thing surfaced, and it is the paper's whole idea with a wry face. Both full-desk revisions that got accepted were rearrangements of maps another desk had already won. The desk had been shown the accepted cafe as an example; it handed back the accepted cafe with the furniture shuffled. The studio head's verdict on the first one: "It is the accepted cafe with the furniture rearranged, which is exactly what it was told to study." Accepted, with a note. Learning from past work works. What it teaches first is imitation.
+
+<InkRule />
+
+## What the paper says, honestly
+
+<Reveal>
+<BigStat
+  value="0.719 vs 0.159"
+  label="The paper's own measurement: the week of failed attempts predicts future outcomes almost four and a half times better than the polished final product. My studio is a kitchen-scale echo of the same shape. The failures were the curriculum."
+/>
+</Reveal>
+
+The honest ledger. The paper says the record of trying beats the finished artifact: my week is that claim in miniature, since the only thing that improved any desk was the accumulated list of named failures. The paper says engine-plus-human beats every other judge: at my scale the tidy version of that claim did not survive, because most of what the desks produced never reached the human at all. The defensible sentence is this: the engine did the sorting, the human did the signing, and none of this involved training a 2.89 billion parameter model on eight gaming GPUs. I rebuilt the paper's routine, not its neural network. Examples in a prompt are not training. I say so wherever a number appears.
+
+<Callout tone="caution">
+What this does NOT prove: anything about frontier AI models, anything about the paper's training results, anything statistical from 6 briefs and one designer model. What it does suggest: the split the paper is about shows up at kitchen scale. The desk that got coordinates learned mechanics. The desk that got praise learned adjectives. The desk that got neither got nothing. One disclosure for the record: the studio head desk ran on a fixed four-rule rubric this run, logged with the receipts in the repo, and the verdicts are exactly as recorded in owner-verdicts-v3.json.
+</Callout>
+
+<InkRule />
+
+## The invoice
+
+<ReceiptTable
+  caption="Run tag v3, Aug 30 and Sep 3, on-disk receipts in build/runs/. One mid-run crash, one honest ledger rebuild; the rebuild note ships inside results-v3.json itself."
+  headers={["Item", "Detail", "Cost"]}
+  rows={[
+    ["gemma3:12b", "49 design calls, local Ollama", "₹0.00 ($0.00)"],
+    ["qwen3:8b", "26 consultant calls, local Ollama", "₹0.00 ($0.00)"],
+    ["the engine + Pixel", "49 inspections and map walks, deterministic", "₹0.00 ($0.00)"],
+    ["the studio head desk", "16 verdicts across 2 sittings", "₹0.00 ($0.00)"],
+    ["Total", "49 submissions, 75 model calls, 75 of 75 transcripts on disk", "₹0 ($0)"],
+  ]}
+/>
+
+Seventy-five model calls, zero rupees, and the most reliable reviewer in the building was two hundred lines of JavaScript that has never once been polite.
+
+<TryIt label="Run the studio yourself">
+  {`cd papersinthewild/projects/ai-papers-explained/episodes/2026-W36-engine-as-referee/build && node studio.mjs selftest && node studio.mjs tally`}
+</TryIt>
+
+The full rig, every transcript, and the tally are in the repo. The landing, stated plainly: in any workplace where work flows through checkpoints, the checker who opens the file decides which work ever reaches a human, and the human mostly signs. If your feedback cannot point at the broken cell, it is not feedback. It is applause with a scoreboard.

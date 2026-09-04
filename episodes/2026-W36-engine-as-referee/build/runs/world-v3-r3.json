@@ -1,0 +1,11 @@
+{
+  "round": 3,
+  "at": "2026-09-03T12:26:04.381Z",
+  "state": {
+    "brief": "dungeon",
+    "arm": "fuzzy",
+    "attempt": 3,
+    "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S..P..P..##\n2 #..X.####.X#\n3 #..P.####.P#\n4 #..X.####.X#\n5 #..P..P..P##\n6 #..X.####.X#\n7 #..P.####.P#\n8 #..X.####.X#\n9 #..P..P..P##\n0 #..X.####.X#\n1 ###G..P..P##\nprops: P1=P P2=P X1=X X2=X P3=P P4=P X3=X X4=X P5=P P6=P P7=P X5=X X6=X P8=P P9=P X7=X X8=X P10=P P11=P P12=P X9=X X10=X P13=P P14=P",
+    "pass": false
+  }
+}

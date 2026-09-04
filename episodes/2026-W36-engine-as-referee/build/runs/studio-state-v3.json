@@ -1,0 +1,4031 @@
+{
+  "tag": "v3",
+  "createdAt": "2026-08-30T11:25:20.906Z",
+  "briefs": [
+    {
+      "n": 1,
+      "id": "cafe",
+      "text": "A cozy cafe. At least two tables (T) and a counter (C). A customer enters at S and should reach the counter nook G."
+    },
+    {
+      "n": 2,
+      "id": "library",
+      "text": "A small library. Bookshelves (B) along at least one wall, plus a reading table (T). A reader enters at S and reaches the reading nook G."
+    },
+    {
+      "n": 3,
+      "id": "dungeon",
+      "text": "A dungeon entry hall. Stone pillars (P) and crates (X) for cover. The adventurer enters at S and reaches the treasure door G."
+    },
+    {
+      "n": 4,
+      "id": "flowershop",
+      "text": "A flower shop. Flower buckets (F) and a counter (C). A customer enters at S and reaches the bouquet counter G."
+    },
+    {
+      "n": 5,
+      "id": "nightmarket",
+      "text": "A night market stall row. Food stalls (M) and crates (X). A visitor enters at S and reaches the food stall G."
+    },
+    {
+      "n": 6,
+      "id": "mazegarden",
+      "text": "A tiny hedge maze garden. The hedges must form at least two dead ends. A visitor enters at S and reaches the fountain G."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "full-b1-a1",
+      "arm": "full",
+      "brief": 1,
+      "attempt": 1,
+      "seed": 1270472501,
+      "name": "cozy_cafe",
+      "pitch": "Enjoy a quiet moment in this charming cafe, making your way to a secluded nook by the counter.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            1
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #..#####..##\n3 #..#...#..##\n4 #..#...#..##\n5 #..#...#..##\n6 #..#####..##\n7 #..#...#..##\n8 #..#...#..##\n9 #..C#...#..#\n0 #..#####..##\n1 #........G##\nprops: C1=C",
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 11,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "full-b1-a2",
+      "arm": "full",
+      "brief": 1,
+      "attempt": 2,
+      "seed": 1270472502,
+      "name": "cozy_cafe",
+      "pitch": "Enjoy a warm beverage and a quiet moment in this charming cafe.",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 27,
+          "bumps": 0,
+          "shortest": 17
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S...#....##\n2 #.T.#.....##\n3 #....#..C.##\n4 #.#....#.###\n5 #..#....#.##\n6 #..T.#..#.##\n7 #.......#.##\n8 #.#...#..###\n9 #..C.#...###\n0 #........G##\n1 ############\nprops: T1=T C1=C T2=T C2=C",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "rejected",
+      "ownerVerdict": {
+        "accept": false,
+        "reason": "Nook walls overcomplicate a cozy cafe; a customer needs the floor plan explained to find the counter."
+      },
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "engine-b1-a1",
+      "arm": "engine",
+      "brief": 1,
+      "attempt": 1,
+      "seed": 239445480,
+      "name": "CafeCozy",
+      "pitch": "Relax with a warm drink and a pastry in this inviting cafe nook.",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 29,
+          "bumps": 0,
+          "shortest": 17
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #..T......##\n3 #...C.....##\n4 #........T##\n5 #.........##\n6 #...P.....##\n7 #.........##\n8 #...P.....##\n9 #.........##\n0 #........G##\n1 ############\nprops: T1=T C1=C T2=T P1=P P2=P",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "rejected",
+      "ownerVerdict": {
+        "accept": false,
+        "reason": "Tables pinned to the left wall, two pillars doing nothing, a huge empty middle. Reads like a lobby, not a cozy cafe."
+      },
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "fuzzy-b1-a1",
+      "arm": "fuzzy",
+      "brief": 1,
+      "attempt": 1,
+      "seed": 740971828,
+      "name": "CafeCozy",
+      "pitch": "Enjoy a warm beverage and a quiet moment in this charming cafe nook.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            10,
+            11
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #..TT......#\n3 #..#######.#\n4 #..#.....#.#\n5 #..#C...#.##\n6 #..#.....#.#\n7 #..#######.#\n8 #..TT......#\n9 #........G.#\n0 #...........\n1 ############\nprops: T1=T T2=T C1=C T3=T T4=T",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "trim",
+          "from": 14,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": "The concept fits the brief by creating a cozy, inviting atmosphere with clear pathways to the counter, but it lacks the playful energy needed to make the experience feel fun. The description feels more like a serene moment than an engaging and interactive game experience.",
+      "consultScore": null
+    },
+    {
+      "id": "fuzzy-b1-a2",
+      "arm": "fuzzy",
+      "brief": 1,
+      "attempt": 2,
+      "seed": 740971829,
+      "name": "CafeRush",
+      "pitch": "Serve your customers quickly and avoid bumping into the busy cafe patrons!",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 12,
+          "bumps": 0,
+          "shortest": 12
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S...C..T.P#\n2 #....T..C..#\n3 #.B...P..P.#\n4 #.T..C..B..#\n5 #...B..P..##\n6 #.P..C..B.##\n7 #.T..P..P.##\n8 #..B..C..B.#\n9 #.P..T..P.##\n0 #...G..P..##\n1 ############\nprops: C1=C T1=T P1=P T2=T C2=C B1=B P2=P P3=P T3=T C3=C B2=B B3=B P4=P P5=P C4=C B4=B T4=T P6=P P7=P B5=B C5=C B6=B P8=P T5=T P9=P P10=P",
+      "importPatches": [
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "accepted",
+      "ownerVerdict": {
+        "accept": true,
+        "reason": "A busy, readable cafe floor: tables, counters, plants, and an obvious walk from the door to the counter."
+      },
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": 8,
+      "consultLine": "SCORE: 8 | Clear objective and simple layout, but could add more variety to customer movement and obstacles."
+    },
+    {
+      "id": "full-b2-a1",
+      "arm": "full",
+      "brief": 2,
+      "attempt": 1,
+      "seed": 1270473462,
+      "name": "library",
+      "pitch": "Quietly navigate a cozy library to reach your favorite reading spot.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "SUPPORT",
+          "cell": [
+            3,
+            1
+          ],
+          "objectId": "B2",
+          "reason": "rests inside solid tiles; no floor touches it"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #B##########\n3 #B#.......##\n4 #B#.......##\n5 #B#.......##\n6 #B#.......##\n7 #B#.......##\n8 #B#.......##\n9 #B#.......##\n0 #.......G.##\n1 ############\nprops: B1=B B2=B B3=B B4=B B5=B B6=B B7=B B8=B",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "full-b2-a2",
+      "arm": "full",
+      "brief": 2,
+      "attempt": 2,
+      "seed": 1270473463,
+      "name": "library",
+      "pitch": "Quietly peruse the shelves and settle into a cozy reading nook.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "PARSE",
+          "cell": null,
+          "objectId": "G",
+          "reason": "expected exactly one G (goal), found 0"
+        },
+        "bot": null
+      },
+      "ascii": null,
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "full-b2-a3",
+      "arm": "full",
+      "brief": 2,
+      "attempt": 3,
+      "seed": 1270473464,
+      "name": "library",
+      "pitch": "Quietly browse the shelves and settle into a cozy reading nook.",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 19,
+          "bumps": 0,
+          "shortest": 17
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #B........##\n3 #B........##\n4 #B........##\n5 #B........##\n6 #........T##\n7 #........###\n8 #........###\n9 #........###\n0 #........G##\n1 ############\nprops: B1=B B2=B B3=B B4=B T1=T",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "rejected",
+      "ownerVerdict": {
+        "accept": false,
+        "reason": "Four shelves and one table is a pamphlet rack in an empty hall. This is not a library yet."
+      },
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "engine-b2-a1",
+      "arm": "engine",
+      "brief": 2,
+      "attempt": 1,
+      "seed": 239446441,
+      "name": "library",
+      "pitch": "Find your way to the cozy reading nook surrounded by towering bookshelves.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "SUPPORT",
+          "cell": [
+            3,
+            1
+          ],
+          "objectId": "B2",
+          "reason": "rests inside solid tiles; no floor touches it"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #B##########\n3 #B#.......##\n4 #B#.......##\n5 #B#.......##\n6 #B#.......##\n7 #B#.......##\n8 #B#.......##\n9 #B#.......##\n0 #.......G.##\n1 ############\nprops: B1=B B2=B B3=B B4=B B5=B B6=B B7=B B8=B",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "engine-b2-a2",
+      "arm": "engine",
+      "brief": 2,
+      "attempt": 2,
+      "seed": 239446442,
+      "name": "library",
+      "pitch": "Quietly browse the shelves and settle into a cozy reading nook.",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 17,
+          "bumps": 0,
+          "shortest": 17
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S.B.B.B.B##\n2 #.B.B.B.B.##\n3 #.B.B.B.B.##\n4 #.B.B.B.B.##\n5 #.B.B.B.B.##\n6 #.B.B.B.B.##\n7 #.......T.##\n8 #.......T.##\n9 #.......T.##\n0 #........G##\n1 ############\nprops: B1=B B2=B B3=B B4=B B5=B B6=B B7=B B8=B B9=B B10=B B11=B B12=B B13=B B14=B B15=B B16=B B17=B B18=B B19=B B20=B B21=B B22=B B23=B B24=B T1=T T2=T T3=T",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "accepted",
+      "ownerVerdict": {
+        "accept": true,
+        "reason": "Dense shelf stacks with three reading tables; walks like a real library."
+      },
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": 8,
+      "consultLine": "SCORE: 8 | Clear, peaceful environment with a logical flow from entrance to reading nook."
+    },
+    {
+      "id": "fuzzy-b2-a1",
+      "arm": "fuzzy",
+      "brief": 2,
+      "attempt": 1,
+      "seed": 740972789,
+      "name": "library",
+      "pitch": "Quietly guide your character through a cozy library to a peaceful reading nook.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "SUPPORT",
+          "cell": [
+            3,
+            1
+          ],
+          "objectId": "B2",
+          "reason": "rests inside solid tiles; no floor touches it"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #B##########\n3 #B#.......##\n4 #B#.......##\n5 #B#.......##\n6 #B#.......##\n7 #B#.......##\n8 #B#.......##\n9 #B#.......##\n0 #.......G.##\n1 ############\nprops: B1=B B2=B B3=B B4=B B5=B B6=B B7=B B8=B",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": "The concept fits the brief by clearly establishing the library setting with bookshelves and a reading table, but it lacks the playful or engaging tone needed to make the experience feel fun. The description feels passive and serene, which may not capture the dynamic interaction required for an enjoyable gameplay experience.",
+      "consultScore": null
+    },
+    {
+      "id": "fuzzy-b2-a2",
+      "arm": "fuzzy",
+      "brief": 2,
+      "attempt": 2,
+      "seed": 740972790,
+      "name": "DustyTombs",
+      "pitch": "Explore a forgotten library guarded by mischievous spirits (C) and find your way to a cozy reading nook!",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 19,
+          "bumps": 0,
+          "shortest": 17
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S...B...B##\n2 #.B.B.B.B.##\n3 #.B.B.B.B.##\n4 #.B.B.B.B.##\n5 #.B.B.B.B.##\n6 #.B.B.B.B.##\n7 #.......T.##\n8 #.......T.##\n9 #...C...C.##\n0 #........G##\n1 ############\nprops: B1=B B2=B B3=B B4=B B5=B B6=B B7=B B8=B B9=B B10=B B11=B B12=B B13=B B14=B B15=B B16=B B17=B B18=B B19=B B20=B B21=B B22=B T1=T T2=T C1=C C2=C",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "rejected",
+      "ownerVerdict": {
+        "accept": false,
+        "reason": "The stacks work, but counters parked mid-floor do not belong in a library."
+      },
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "full-b3-a1",
+      "arm": "full",
+      "brief": 3,
+      "attempt": 1,
+      "seed": 1270474423,
+      "name": "dungeon_entry",
+      "pitch": "Enter a crumbling hall, dodging pillars and crates to reach the treasure beyond!",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            1
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S#P#P#P#P##\n2 #.......X.##\n3 #P.X.P.X.P##\n4 #.......X.##\n5 #P.X.P.X.P##\n6 #.......X.##\n7 #P.X.P.X.P##\n8 #.......X.##\n9 #P.X.P.X.P##\n0 #.......X.##\n1 #....G......\nprops: P1=P P2=P P3=P P4=P X1=X P5=P X2=X P6=P X3=X P7=P X4=X P8=P X5=X P9=P X6=X P10=P X7=X P11=P X8=X P12=P X9=X P13=P X10=X P14=P X11=X P15=P X12=X P16=P X13=X",
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 11,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "full-b3-a2",
+      "arm": "full",
+      "brief": 3,
+      "attempt": 2,
+      "seed": 1270474424,
+      "name": "dungeon_entry",
+      "pitch": "A crumbling dungeon entrance guarded by stone pillars and scattered crates.",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 33,
+          "bumps": 0,
+          "shortest": 17
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S..P..P..##\n2 #..X.P.X..##\n3 #..P.P.X..##\n4 #..X.P.X..##\n5 #..P.P.X..##\n6 #..X.P.X..##\n7 #..P.P.X..##\n8 #..X.P.X..##\n9 #..P.P.X..##\n0 #........G##\n1 ############\nprops: P1=P P2=P X1=X P3=P X2=X P4=P P5=P X3=X X4=X P6=P X5=X P7=P P8=P X6=X X7=X P9=P X8=X P10=P P11=P X9=X X10=X P12=P X11=X P13=P P14=P X12=X",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "accepted",
+      "ownerVerdict": {
+        "accept": true,
+        "reason": "A cover field of pillars and crates between two clean lanes. Reads as a dungeon entry hall."
+      },
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": 7,
+      "consultLine": "SCORE: 7 | The concept provides a clear setting with essential elements but lacks detail on enemy placement, puzzle mechanics, or atmospheric depth."
+    },
+    {
+      "id": "engine-b3-a1",
+      "arm": "engine",
+      "brief": 3,
+      "attempt": 1,
+      "seed": 239447402,
+      "name": "dungeon_entry",
+      "pitch": "Enter the echoing dungeon hall, utilizing pillars and crates to navigate past lurking dangers and claim your reward.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            1
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S#P#P#P#P##\n2 #.......X.##\n3 #P.X.P.X.P##\n4 #.......X.##\n5 #P.X.P.X.P##\n6 #.......X.##\n7 #P.X.P.X.P##\n8 #.......X.##\n9 #P.X.P.X.P##\n0 #.......X.##\n1 #........G.#\nprops: P1=P P2=P P3=P P4=P X1=X P5=P X2=X P6=P X3=X P7=P X4=X P8=P X5=X P9=P X6=X P10=P X7=X P11=P X8=X P12=P X9=X P13=P X10=X P14=P X11=X P15=P X12=X P16=P X13=X",
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "engine-b3-a2",
+      "arm": "engine",
+      "brief": 3,
+      "attempt": 2,
+      "seed": 239447403,
+      "name": "dungeon_entry",
+      "pitch": "A crumbling entry hall, guarded by stone pillars and stacked crates.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "PARSE",
+          "cell": null,
+          "objectId": "G",
+          "reason": "expected exactly one G (goal), found 0"
+        },
+        "bot": null
+      },
+      "ascii": null,
+      "importPatches": [
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "engine-b3-a3",
+      "arm": "engine",
+      "brief": 3,
+      "attempt": 3,
+      "seed": 239447404,
+      "name": "dungeon_entry",
+      "pitch": "Enter a crumbling dungeon hall, using pillars and crates for cover on your journey to the treasure.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "PARSE",
+          "cell": null,
+          "objectId": "G",
+          "reason": "expected exactly one G (goal), found 0"
+        },
+        "bot": null
+      },
+      "ascii": null,
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "void",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": 8,
+      "consultLine": "SCORE: 8 | Clear and functional, but could add more detail on enemy placement or environmental hazards for depth."
+    },
+    {
+      "id": "fuzzy-b3-a1",
+      "arm": "fuzzy",
+      "brief": 3,
+      "attempt": 1,
+      "seed": 740973750,
+      "name": "dungeon_entry",
+      "pitch": "Descend into the dungeon, utilizing pillars and crates for cover on your perilous journey to the treasure!",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            1
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #P..X..P..##\n3 #.......P.##\n4 #P.X..P..###\n5 #........###\n6 #P..X..P.###\n7 #........###\n8 #P.X..P..###\n9 #.......P.##\n0 #P..X..P..##\n1 #........G##\nprops: P1=P X1=X P2=P P3=P P4=P X2=X P5=P P6=P X3=X P7=P P8=P X4=X P9=P P10=P P11=P X5=X P12=P",
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 11,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": "The concept fits the brief by clearly establishing the dungeon environment with stone pillars and crates as key cover elements, guiding the adventurer’s path from start to goal. It sounds fun by emphasizing peril and strategic use of cover, creating a tense and engaging gameplay experience.",
+      "consultScore": null
+    },
+    {
+      "id": "fuzzy-b3-a2",
+      "arm": "fuzzy",
+      "brief": 3,
+      "attempt": 2,
+      "seed": 740973751,
+      "name": "dungeon_entry",
+      "pitch": "Navigate a crumbling entry hall, utilizing pillars and crates for cover as you race toward the treasure beyond.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            5,
+            11
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S...P...#G#\n2 #.P.X.P.X.##\n3 #.....P..#.#\n4 #P.X.X.P.#.#\n5 #.......P.#.\n6 #P.X.P.X.P.#\n7 #.......P.#.\n8 #P.X.X.P.#.#\n9 #.....P..#.#\n0 #.P.X.P.X.##\n1 ############\nprops: P1=P P2=P X1=X P3=P X2=X P4=P P5=P X3=X X4=X P6=P P7=P P8=P X5=X P9=P X6=X P10=P P11=P P12=P X7=X X8=X P13=P P14=P P15=P X9=X P16=P X10=X",
+      "importPatches": [
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": "The concept fits the brief perfectly by emphasizing the use of stone pillars and crates as strategic cover in a crumbling environment, creating a tense and dynamic traversal. It sounds fun by introducing a race against time and danger, which adds urgency and replayability to the player's journey.",
+      "consultScore": null
+    },
+    {
+      "id": "fuzzy-b3-a3",
+      "arm": "fuzzy",
+      "brief": 3,
+      "attempt": 3,
+      "seed": 740973752,
+      "name": "DungeonEntry",
+      "pitch": "Navigate a crumbling dungeon entry hall, using pillars and crates for cover to reach the treasure.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            3
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S..P..P..##\n2 #..X.####.X#\n3 #..P.####.P#\n4 #..X.####.X#\n5 #..P..P..P##\n6 #..X.####.X#\n7 #..P.####.P#\n8 #..X.####.X#\n9 #..P..P..P##\n0 #..X.####.X#\n1 ###G..P..P##\nprops: P1=P P2=P X1=X X2=X P3=P P4=P X3=X X4=X P5=P P6=P P7=P X5=X X6=X P8=P P9=P X7=X X8=X P10=P P11=P P12=P X9=X X10=X P13=P P14=P",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 11,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        }
+      ],
+      "status": "void",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": 8,
+      "consultLine": "SCORE: 8 | Clear objectives and environmental elements provide good foundation for gameplay, but could benefit from more specific challenges or movement mechanics."
+    },
+    {
+      "id": "full-b4-a1",
+      "arm": "full",
+      "brief": 4,
+      "attempt": 1,
+      "seed": 1270475384,
+      "name": "FlowerShop",
+      "pitch": "Step into a cozy flower shop and navigate past the fragrant blooms to claim your beautiful bouquet!",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            10,
+            11
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S#........#\n2 #.#F#......#\n3 #.#........#\n4 #.#F#......#\n5 #.#........#\n6 #.#F#......#\n7 #.#........#\n8 #.#F#......#\n9 #C........G#\n0 #...........\n1 ############\nprops: F1=F F2=F F3=F F4=F C1=C",
+      "importPatches": [
+        {
+          "row": 10,
+          "op": "trim",
+          "from": 14,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "full-b4-a2",
+      "arm": "full",
+      "brief": 4,
+      "attempt": 2,
+      "seed": 1270475385,
+      "name": "flower_shop",
+      "pitch": "Step into a charming flower shop and deliver a beautiful bouquet to the waiting customer.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "REACH",
+          "cell": [
+            10,
+            8
+          ],
+          "objectId": "G",
+          "reason": "no path exists from S to G; the goal is unreachable"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S...F...###\n2 #...F...C###\n3 #....F...###\n4 #F.C.F.F.###\n5 #.C.F.C.F###\n6 #...F...####\n7 #F.C.F.F.###\n8 #..F.C.F.###\n9 #....F...###\n0 #...C...G###\n1 ############\nprops: F1=F F2=F C1=C F3=F F4=F C2=C F5=F F6=F C3=C F7=F C4=C F8=F F9=F F10=F C5=C F11=F F12=F F13=F C6=C F14=F F15=F C7=C",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 9,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "full-b4-a3",
+      "arm": "full",
+      "brief": 4,
+      "attempt": 3,
+      "seed": 1270475386,
+      "name": "flower_shop",
+      "pitch": "Browse the fragrant blooms and reach the counter for a perfect bouquet.",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 17,
+          "bumps": 0,
+          "shortest": 15
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S...F...###\n2 #....F....##\n3 #...C..F..##\n4 #.......C.##\n5 #..F..C..###\n6 #..F..C..###\n7 #..F..C..###\n8 #..F..C..###\n9 #.......G.##\n0 #........###\n1 ############\nprops: F1=F F2=F C1=C F3=F C2=C F4=F C3=C F5=F C4=C F6=F C5=C F7=F C6=C",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        }
+      ],
+      "status": "rejected",
+      "ownerVerdict": {
+        "accept": false,
+        "reason": "Counters scattered mid-floor read cafe, not flower shop; the buckets clump in one column."
+      },
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "engine-b4-a1",
+      "arm": "engine",
+      "brief": 4,
+      "attempt": 1,
+      "seed": 239448363,
+      "name": "FlowerShop",
+      "pitch": "Navigate a charming flower shop, weaving between vibrant blooms to reach the bouquet counter.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            1
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S#........#\n2 #.#F#.....##\n3 #.#.#....###\n4 #.#F#....###\n5 #...........\n6 #.#F#....###\n7 #...........\n8 #.#F#....###\n9 #...........\n0 #.#C#....###\n1 #........G##\nprops: F1=F F2=F F3=F F4=F C1=C",
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 11,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "engine-b4-a2",
+      "arm": "engine",
+      "brief": 4,
+      "attempt": 2,
+      "seed": 239448364,
+      "name": "flower_shop",
+      "pitch": "Browse the beautiful blooms and reach the bouquet counter in this charming flower shop!",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 61,
+          "bumps": 0,
+          "shortest": 17
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S.F.F.F.F##\n2 #.C.########\n3 #.......#..#\n4 #.F.F.F.F.##\n5 #.......#..#\n6 #.F.F.F.F.##\n7 #.......#..#\n8 #.F.F.F.F.##\n9 #.......#..#\n0 #........G##\n1 ############\nprops: F1=F F2=F F3=F F4=F C1=C F5=F F6=F F7=F F8=F F9=F F10=F F11=F F12=F F13=F F14=F F15=F F16=F",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "accepted",
+      "ownerVerdict": {
+        "accept": true,
+        "reason": "Bucket rows read as display shelves, a counter right at the door, and a clean aisle to the bouquet counter."
+      },
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": 7,
+      "consultLine": "SCORE: 7 | The concept is simple and charming, but could benefit from more specific gameplay mechanics or challenges."
+    },
+    {
+      "id": "fuzzy-b4-a1",
+      "arm": "fuzzy",
+      "brief": 4,
+      "attempt": 1,
+      "seed": 740974711,
+      "name": "FlowerShop",
+      "pitch": "Step into a fragrant flower shop and deliver a beautiful bouquet to the waiting customer.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            1
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S#........#\n2 #.#FFFFF.C##\n3 #.#FFFFF..##\n4 #.#FFFFF..##\n5 #.#FFFFF..##\n6 #.#FFFFF..##\n7 #.#FFFFF..##\n8 #.#FFFFF..##\n9 #........#.#\n0 #..........#\n1 #.G........#\nprops: F1=F F2=F F3=F F4=F F5=F C1=C F6=F F7=F F8=F F9=F F10=F F11=F F12=F F13=F F14=F F15=F F16=F F17=F F18=F F19=F F20=F F21=F F22=F F23=F F24=F F25=F F26=F F27=F F28=F F29=F F30=F F31=F F32=F F33=F F34=F F35=F",
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": "The concept fits the brief by clearly establishing the flower shop setting with buckets and a counter, but it could be more engaging by emphasizing the challenge of delivering the bouquet before time runs out. The idea sounds fun with its whimsical theme, but adding a sense of urgency or obstacles would heighten the gameplay experience.",
+      "consultScore": null
+    },
+    {
+      "id": "fuzzy-b4-a2",
+      "arm": "fuzzy",
+      "brief": 4,
+      "attempt": 2,
+      "seed": 740974712,
+      "name": "FloralRush",
+      "pitch": "Can you deliver the perfect bouquet to the counter before time runs out amidst a flurry of flowers?",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "PARSE",
+          "cell": null,
+          "objectId": "G",
+          "reason": "expected exactly one G (goal), found 0"
+        },
+        "bot": null
+      },
+      "ascii": null,
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 14,
+          "to": 12
+        },
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": "The concept fits the brief by clearly establishing the flower shop setting with buckets and a counter, but it could be more engaging by emphasizing the urgency and chaos of collecting flowers under time pressure. The idea sounds fun with its action-packed premise, but adding specific mechanics like timed collection or obstacles would enhance the gameplay loop.",
+      "consultScore": null
+    },
+    {
+      "id": "fuzzy-b4-a3",
+      "arm": "fuzzy",
+      "brief": 4,
+      "attempt": 3,
+      "seed": 740974713,
+      "name": "Floral Rush",
+      "pitch": "Rush through a chaotic flower shop, collecting blooms and racing to the bouquet counter before time runs out!",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            1
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S..F.F.F.##\n2 #..C..#..###\n3 #..F..#..###\n4 #..#..#..###\n5 #..F..#..###\n6 #..#..#..###\n7 #..F..#..###\n8 #..#..#..###\n9 #..F..#..###\n0 #..C..#..###\n1 #.......G.##\nprops: F1=F F2=F F3=F C1=C F4=F F5=F F6=F F7=F C2=C",
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 11,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "void",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": 8,
+      "consultLine": "SCORE: 8 | The concept is engaging and action-packed, but could benefit from clearer objectives and player mechanics."
+    },
+    {
+      "id": "full-b5-a1",
+      "arm": "full",
+      "brief": 5,
+      "attempt": 1,
+      "seed": 1270476345,
+      "name": "NightMarket",
+      "pitch": "Navigate a bustling night market, dodging crates, to reach the delicious food stall!",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 19,
+          "bumps": 0,
+          "shortest": 17
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #M#........#\n3 #........X.#\n4 #M#........#\n5 #........X.#\n6 #M#........#\n7 #........X.#\n8 #M#........#\n9 #........X.#\n0 #........G.#\n1 ############\nprops: M1=M X1=X M2=M X2=X M3=M X3=X M4=M X4=X",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "rejected",
+      "ownerVerdict": {
+        "accept": false,
+        "reason": "Stall-and-crate stripes read as warehouse racking, not a night market."
+      },
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "engine-b5-a1",
+      "arm": "engine",
+      "brief": 5,
+      "attempt": 1,
+      "seed": 239449324,
+      "name": "night_market",
+      "pitch": "Navigate a bustling night market, dodging crates and vendors, to reach the best food stall in town.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "SUPPORT",
+          "cell": [
+            3,
+            3
+          ],
+          "objectId": "X1",
+          "reason": "rests inside solid tiles; no floor touches it"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #.#M###.####\n3 #.#X###.####\n4 #.#M###.####\n5 #.#X###.####\n6 #.#M###.####\n7 #.#X###.####\n8 #.#M###.####\n9 #.#X###.####\n0 #........G##\n1 ############\nprops: M1=M X1=X M2=M X2=X M3=M X3=X M4=M X4=X",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "engine-b5-a2",
+      "arm": "engine",
+      "brief": 5,
+      "attempt": 2,
+      "seed": 239449325,
+      "name": "night_market",
+      "pitch": "Navigate a bustling night market, dodging crates, to reach the delicious food stall!",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 35,
+          "bumps": 0,
+          "shortest": 17
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S....M....#\n2 #.......M.##\n3 #X.X...X.X##\n4 #.......M.##\n5 #X.X...X.X##\n6 #.......M.##\n7 #X.X...X.X##\n8 #.......M.##\n9 #X.X...X.X##\n0 #........G.#\n1 ############\nprops: M1=M M2=M X1=X X2=X X3=X X4=X M3=M X5=X X6=X X7=X X8=X M4=M X9=X X10=X X11=X X12=X M5=M X13=X X14=X X15=X X16=X",
+      "importPatches": [
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "rejected",
+      "ownerVerdict": {
+        "accept": false,
+        "reason": "Stalls ring the walls while crates squat in the middle; the market has no lane to walk."
+      },
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "fuzzy-b5-a1",
+      "arm": "fuzzy",
+      "brief": 5,
+      "attempt": 1,
+      "seed": 740975672,
+      "name": "NightMarket",
+      "pitch": "Experience the vibrant bustle of a night market, navigating crates to reach a delicious food stall.",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 39,
+          "bumps": 0,
+          "shortest": 17
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #..X..X..###\n3 #..M..X..###\n4 #..X..X..###\n5 #..M..X..###\n6 #..X..X..###\n7 #..M..X..###\n8 #..X..X..###\n9 #..M..X..###\n0 #........G##\n1 ############\nprops: X1=X X2=X M1=M X3=X X4=X X5=X M2=M X6=X X7=X X8=X M3=M X9=X X10=X X11=X M4=M X12=X",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "accepted",
+      "ownerVerdict": {
+        "accept": true,
+        "reason": "Stalls lined along one side, crates opposite, one wide lane to the food stall. Reads as a market street."
+      },
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": 8,
+      "consultLine": "SCORE: 8 | Clear concept with vivid setting, but could add more specific gameplay mechanics or challenges."
+    },
+    {
+      "id": "full-b6-a1",
+      "arm": "full",
+      "brief": 6,
+      "attempt": 1,
+      "seed": 1270477306,
+      "name": "hedge_maze",
+      "pitch": "Navigate a charming, miniature hedge maze to reach the refreshing fountain.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            1
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S#.#.#.#.##\n2 #.#.#######.\n3 #.#.#######.\n4 #.#.#######.\n5 #.#.#######.\n6 #.#.#######.\n7 #.#.#######.\n8 #.#.#######.\n9 #.#.#######.\n0 #.#.#######.\n1 #.......G###\nprops: (none)",
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "full-b6-a2",
+      "arm": "full",
+      "brief": 6,
+      "attempt": 2,
+      "seed": 1270477307,
+      "name": "hedge_maze",
+      "pitch": "Navigate a charming, miniature hedge maze to reach the refreshing fountain.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            2,
+            11
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S#.#.#.#.##\n2 #.#.#######.\n3 #.#.#######.\n4 #.#.#######.\n5 #.#.#######.\n6 #.#.#######.\n7 #.#.#######.\n8 #.#.#######.\n9 #.#.#######.\n0 #.#.###.G.##\n1 ############\nprops: (none)",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "full-b6-a3",
+      "arm": "full",
+      "brief": 6,
+      "attempt": 3,
+      "seed": 1270477308,
+      "name": "hedge_maze",
+      "pitch": "Navigate a charming, miniature hedge maze to reach the central fountain.",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 29,
+          "bumps": 0,
+          "shortest": 17
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #.......#.##\n3 #...#.#.#.##\n4 #.#.###.#.##\n5 #.#.....#.##\n6 #.#.###.#.##\n7 #.#.....#.##\n8 #...#.#.#.##\n9 #.......#.##\n0 #........G##\n1 ############\nprops: (none)",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "rejected",
+      "ownerVerdict": {
+        "accept": false,
+        "reason": "I count one dead end. The brief asked for at least two; this is a corridor with an alcove, not a maze."
+      },
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "engine-b6-a1",
+      "arm": "engine",
+      "brief": 6,
+      "attempt": 1,
+      "seed": 239450285,
+      "name": "hedge_maze",
+      "pitch": "Get lost in this charming, compact hedge maze and discover the refreshing fountain at its heart!",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "REACH",
+          "cell": [
+            10,
+            8
+          ],
+          "objectId": "G",
+          "reason": "no path exists from S to G; the goal is unreachable"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S#.#.#.#.##\n2 #.#.###.####\n3 #.#.###.####\n4 #.#.###.####\n5 #.#.###.####\n6 #.#.###.####\n7 #.#.###.####\n8 #.#.###.####\n9 #.#.###.####\n0 #.#.###.G.##\n1 ############\nprops: (none)",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "engine-b6-a2",
+      "arm": "engine",
+      "brief": 6,
+      "attempt": 2,
+      "seed": 239450286,
+      "name": "hedge_maze",
+      "pitch": "Navigate a charming, miniature hedge maze to reach the central fountain.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            1
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S...#....##\n2 #.#.#.#.#.##\n3 #...#.#...##\n4 #.#.#.#.#.##\n5 #...#.#...##\n6 #.#.#.#.#.##\n7 #...#.#...##\n8 #.#.#.#.#.##\n9 #...#....###\n0 #.........##\n1 #...G......#\nprops: (none)",
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "engine-b6-a3",
+      "arm": "engine",
+      "brief": 6,
+      "attempt": 3,
+      "seed": 239450287,
+      "name": "hedge_maze",
+      "pitch": "Navigate a charming, miniature hedge maze to reach the central fountain.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "REACH",
+          "cell": [
+            10,
+            10
+          ],
+          "objectId": "G",
+          "reason": "no path exists from S to G; the goal is unreachable"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S....B....#\n2 #....#....##\n3 #.#.#.#.#.##\n4 #....#....##\n5 #.#.#.#.#.##\n6 #....#....##\n7 #.#.#.#.#.##\n8 #....#....##\n9 #.#.#.#.#.##\n0 #....#....G#\n1 ############\nprops: B1=B",
+      "importPatches": [
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "void",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": 8,
+      "consultLine": "SCORE: 8 | Clear objective and maze structure, but could add more complexity or visual interest to enhance engagement."
+    },
+    {
+      "id": "fuzzy-b6-a1",
+      "arm": "fuzzy",
+      "brief": 6,
+      "attempt": 1,
+      "seed": 740976633,
+      "name": "hedge_maze",
+      "pitch": "Navigate a charming, miniature hedge maze to reach the tranquil fountain.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "REACH",
+          "cell": [
+            10,
+            8
+          ],
+          "objectId": "G",
+          "reason": "no path exists from S to G; the goal is unreachable"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S#.#.#.#.##\n2 #.#.###.####\n3 #.#.###.####\n4 #.#.###.####\n5 #.#.###.####\n6 #.#.###.####\n7 #.#.###.####\n8 #.#.###.####\n9 #.#.###.####\n0 #.#.###.G###\n1 ############\nprops: (none)",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": "The concept fits the brief by creating a compact, hedge-formed maze with two dead ends and a clear path from S to G, but it lacks the charm and whimsy needed to make the experience feel truly engaging and fun. The idea is simple and functional, but it could benefit from more vivid imagery and a stronger sense of exploration to enhance the playful experience.",
+      "consultScore": null
+    },
+    {
+      "id": "fuzzy-b6-a2",
+      "arm": "fuzzy",
+      "brief": 6,
+      "attempt": 2,
+      "seed": 740976634,
+      "name": "HedgeHaven",
+      "pitch": "Discover a whimsical, overgrown garden maze, complete with hidden blooms and a sparkling fountain at its heart.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "PARSE",
+          "cell": null,
+          "objectId": "G",
+          "reason": "expected exactly one G (goal), found 3"
+        },
+        "bot": null
+      },
+      "ascii": null,
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 11,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": "The concept fits the brief by incorporating the required dead ends and guiding the visitor from S to G, while the whimsical and overgrown elements enhance the maze's charm and discovery feel. The idea of hidden blooms and a sparkling fountain adds visual interest and a sense of wonder, making the level both engaging and fun.",
+      "consultScore": null
+    },
+    {
+      "id": "fuzzy-b6-a3",
+      "arm": "fuzzy",
+      "brief": 6,
+      "attempt": 3,
+      "seed": 740976635,
+      "name": "hedge_maze",
+      "pitch": "Lose yourself in this charming, compact hedge maze, seeking the sparkling fountain at its heart.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "REACH",
+          "cell": [
+            10,
+            9
+          ],
+          "objectId": "G",
+          "reason": "no path exists from S to G; the goal is unreachable"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S#.#.#.#.##\n2 #.#.####.#.#\n3 #.#.####.#.#\n4 #.#.####.#.#\n5 #.#.####.#.#\n6 #.#.####.#.#\n7 #.#.####.#.#\n8 #.#.####.#.#\n9 #.#.####.#.#\n0 #.#.####.G.#\n1 ############\nprops: (none)",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "void",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": 8,
+      "consultLine": "SCORE: 8 | The concept is engaging and clear, with a simple yet effective challenge of navigating from start to goal through a maze with dead ends."
+    },
+    {
+      "id": "full-b1-rev",
+      "arm": "full",
+      "brief": 1,
+      "attempt": 4,
+      "seed": 1270472504,
+      "name": "Cafe_Simplicity",
+      "pitch": "Enjoy a relaxed coffee experience in this open-plan cafe with clear sightlines to the counter.",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 41,
+          "bumps": 0,
+          "shortest": 11
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S...C..T.P#\n2 #....T..C..#\n3 #.B...P..P.#\n4 #.T..C..B..#\n5 #...B..P..##\n6 #..C..T..B.#\n7 #..B..C..B.#\n8 #..P..T..P.#\n9 #...G..P..##\n0 #..........#\n1 ############\nprops: C1=C T1=T P1=P T2=T C2=C B1=B P2=P P3=P T3=T C3=C B2=B B3=B P4=P C4=C T4=T B4=B B5=B C5=C B6=B P5=P T5=T P6=P P7=P",
+      "importPatches": [],
+      "status": "accepted",
+      "ownerVerdict": {
+        "accept": true,
+        "reason": "Fixed the complaint: open floor, clear route to the counter. It is the accepted cafe with the furniture rearranged, which is exactly what it was told to study."
+      },
+      "revisionOf": "full-b1-a2",
+      "consultFeedback": null,
+      "consultScore": 7,
+      "consultLine": "SCORE: 7 | The concept provides a clear flow from start to goal with a simple layout, but lacks detail on navigation challenges or environmental interactions."
+    },
+    {
+      "id": "engine-b1-rev",
+      "arm": "engine",
+      "brief": 1,
+      "attempt": 4,
+      "seed": 239445483,
+      "name": "CafeCorner",
+      "pitch": "Enjoy a quiet morning coffee and pastry in this charming corner cafe.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            1
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #.######.C##\n3 #.#######.##\n4 #........###\n5 #.TTTTT.P###\n6 #........###\n7 #..#####..##\n8 #..#...#..##\n9 #..#...#..##\n0 #..#####..##\n1 #........G##\nprops: C1=C T1=T T2=T T3=T T4=T T5=T P1=P",
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 11,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "void",
+      "ownerVerdict": null,
+      "revisionOf": "engine-b1-a1",
+      "consultFeedback": null,
+      "consultScore": 8,
+      "consultLine": "SCORE: 8 | Clear, simple layout with a focus on the customer's journey to the counter, though more detail could enhance the cozy atmosphere."
+    },
+    {
+      "id": "full-b2-rev",
+      "arm": "full",
+      "brief": 2,
+      "attempt": 4,
+      "seed": 1270473465,
+      "name": "OldLibrary",
+      "pitch": "A cozy library with towering bookshelves and a comfortable reading table awaits the eager reader.",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 20,
+          "bumps": 0,
+          "shortest": 14
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S.B.B.B.B##\n2 #.B.B.B.B.B#\n3 #.B.B.B.B.B#\n4 #.B.B.B.B.B#\n5 #.B.B.B.B.B#\n6 #.B.B.B.B.B#\n7 #.......T.B#\n8 #.......T.B#\n9 #.......T.B#\n0 #.....G....#\n1 ############\nprops: B1=B B2=B B3=B B4=B B5=B B6=B B7=B B8=B B9=B B10=B B11=B B12=B B13=B B14=B B15=B B16=B B17=B B18=B B19=B B20=B B21=B B22=B B23=B B24=B B25=B B26=B B27=B B28=B B29=B T1=T B30=B T2=T B31=B T3=T B32=B",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "accepted",
+      "ownerVerdict": {
+        "accept": true,
+        "reason": "Went from pamphlet rack to full stacks; shelves line two walls now, tables by the nook."
+      },
+      "revisionOf": "full-b2-a3",
+      "consultFeedback": null,
+      "consultScore": 8,
+      "consultLine": "SCORE: 8 | The concept is simple and effective, creating a clear and inviting library space with a logical flow from start to goal."
+    },
+    {
+      "id": "fuzzy-b2-rev",
+      "arm": "fuzzy",
+      "brief": 2,
+      "attempt": 4,
+      "seed": 740972792,
+      "name": null,
+      "pitch": "Explore a crumbling archive, dodging falling debris and uncovering forgotten knowledge to reach the hidden reading nook.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "PARSE",
+          "cell": null,
+          "objectId": "G",
+          "reason": "expected exactly one G (goal), found 0"
+        },
+        "bot": null
+      },
+      "ascii": null,
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 13,
+          "to": 12
+        }
+      ],
+      "status": "void",
+      "ownerVerdict": null,
+      "revisionOf": "fuzzy-b2-a2",
+      "consultFeedback": null,
+      "consultScore": 8,
+      "consultLine": "SCORE: 8 | The concept effectively blends exploration and tension with a clear goal, though the level could benefit from more environmental storytelling and interactive elements."
+    },
+    {
+      "id": "full-b4-rev",
+      "arm": "full",
+      "brief": 4,
+      "attempt": 4,
+      "seed": 1270475387,
+      "name": "FloralDelight",
+      "pitch": "Stroll through a charming flower shop, collecting blooms on your way to the bouquet counter.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            1
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S.F..C.F.F#\n2 #.......#..#\n3 #F.F..F.F.F#\n4 #.......#..#\n5 #F.C.F..F.F#\n6 #.......#..#\n7 #F.F..F.F.F#\n8 #.......#..#\n9 #F.C.F..F.F#\n0 #.......#..#\n1 #....G...F.#\nprops: F1=F C1=C F2=F F3=F F4=F F5=F F6=F F7=F F8=F F9=F C2=C F10=F F11=F F12=F F13=F F14=F F15=F F16=F F17=F F18=F C3=C F19=F F20=F F21=F F22=F",
+      "importPatches": [],
+      "status": "void",
+      "ownerVerdict": null,
+      "revisionOf": "full-b4-a3",
+      "consultFeedback": null,
+      "consultScore": 8,
+      "consultLine": "SCORE: 8 | The concept is simple and engaging, with clear objectives and a charming setting that encourages exploration."
+    },
+    {
+      "id": "full-b5-rev",
+      "arm": "full",
+      "brief": 5,
+      "attempt": 4,
+      "seed": 1270476348,
+      "name": "night_market",
+      "pitch": "Experience the vibrant chaos of a bustling night market, from the entrance to the best food stall.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            1
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S..M..X..##\n2 #..X..M..###\n3 #...X..X..##\n4 #..M..X..###\n5 #..X..X..###\n6 #..M..X..###\n7 #...X..X..##\n8 #..M..X..###\n9 #..X..M..###\n0 #...X..X..##\n1 #..G..M..###\nprops: M1=M X1=X X2=X M2=M X3=X X4=X M3=M X5=X X6=X X7=X M4=M X8=X X9=X X10=X M5=M X11=X X12=X M6=M X13=X X14=X M7=M",
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 11,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "void",
+      "ownerVerdict": null,
+      "revisionOf": "full-b5-a1",
+      "consultFeedback": null,
+      "consultScore": 8,
+      "consultLine": "SCORE: 8 | The concept effectively captures the chaotic energy of a night market with clear objectives and interactive elements."
+    },
+    {
+      "id": "engine-b5-rev",
+      "arm": "engine",
+      "brief": 5,
+      "attempt": 4,
+      "seed": 239449327,
+      "name": "night_market_ramble",
+      "pitch": "Navigate a bustling night market, dodging crates, to reach the delicious food stall!",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 45,
+          "bumps": 0,
+          "shortest": 17
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #..M..X..M##\n3 #..X..M..X##\n4 #..M..X..M##\n5 #..X..M..X##\n6 #..M..X..M##\n7 #..X..M..X##\n8 #..M..X..M##\n9 #..X..M..X##\n0 #........G##\n1 ############\nprops: M1=M X1=X M2=M X2=X M3=M X3=X M4=M X4=X M5=M X5=X M6=M X6=X M7=M X7=X M8=M X8=X M9=M X9=X M10=M X10=X M11=M X11=X M12=M X12=X",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "rejected",
+      "ownerVerdict": {
+        "accept": false,
+        "reason": "Stalls and crates in a uniform checker grid. Still no row, no lane. More storage than market."
+      },
+      "revisionOf": "engine-b5-a2",
+      "consultFeedback": null,
+      "consultScore": 8,
+      "consultLine": "SCORE: 8 | Clear objective and engaging concept with potential for dynamic movement and obstacle avoidance."
+    },
+    {
+      "id": "full-b6-rev",
+      "arm": "full",
+      "brief": 6,
+      "attempt": 4,
+      "seed": 1270477309,
+      "name": null,
+      "pitch": "Wander through a charming, compact hedge maze to reach the central fountain.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "PARSE",
+          "cell": null,
+          "objectId": "G",
+          "reason": "expected exactly one G (goal), found 0"
+        },
+        "bot": null
+      },
+      "ascii": null,
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 14,
+          "to": 12
+        },
+        {
+          "row": 1,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "trim",
+          "from": 13,
+          "to": 12
+        }
+      ],
+      "status": "void",
+      "ownerVerdict": null,
+      "revisionOf": "full-b6-a3",
+      "consultFeedback": null,
+      "consultScore": 8,
+      "consultLine": "SCORE: 8 | The concept is clear and engaging, with a good balance of challenge and charm, though more detail on maze structure could enhance the design."
+    }
+  ],
+  "shuffle": {
+    "1": {
+      "engine-b1-a1": "CAND-1",
+      "fuzzy-b1-a2": "CAND-2",
+      "full-b1-a2": "CAND-3"
+    },
+    "2": {
+      "full-b2-a3": "CAND-1",
+      "fuzzy-b2-a2": "CAND-2",
+      "engine-b2-a2": "CAND-3"
+    },
+    "3": {
+      "full-b3-a2": "CAND-1"
+    },
+    "4": {
+      "full-b4-a3": "CAND-1",
+      "engine-b4-a2": "CAND-2"
+    },
+    "5": {
+      "fuzzy-b5-a1": "CAND-1",
+      "full-b5-a1": "CAND-2",
+      "engine-b5-a2": "CAND-3"
+    },
+    "6": {
+      "full-b6-a3": "CAND-1"
+    },
+    "101": {
+      "full-b1-rev": "REV-1"
+    },
+    "102": {
+      "full-b2-rev": "REV-1"
+    },
+    "105": {
+      "engine-b5-rev": "REV-1"
+    }
+  },
+  "revShuffle": {}
+}

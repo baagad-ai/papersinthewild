@@ -1,0 +1,11 @@
+{
+  "round": 1,
+  "at": "2026-08-30T11:26:51.453Z",
+  "state": {
+    "brief": "cafe",
+    "arm": "fuzzy",
+    "attempt": 2,
+    "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S...C..T.P#\n2 #....T..C..#\n3 #.B...P..P.#\n4 #.T..C..B..#\n5 #...B..P..##\n6 #.P..C..B.##\n7 #.T..P..P.##\n8 #..B..C..B.#\n9 #.P..T..P.##\n0 #...G..P..##\n1 ############\nprops: C1=C T1=T P1=P T2=T C2=C B1=B P2=P P3=P T3=T C3=C B2=B B3=B P4=P P5=P C4=C B4=B T4=T P6=P P7=P B5=B C5=C B6=B P8=P T5=T P9=P P10=P",
+    "pass": true
+  }
+}

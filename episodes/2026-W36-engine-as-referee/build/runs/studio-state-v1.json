@@ -1,0 +1,718 @@
+{
+  "tag": "v1",
+  "createdAt": "2026-08-30T10:40:17.272Z",
+  "briefs": [
+    {
+      "n": 1,
+      "id": "cafe",
+      "text": "A cozy cafe. At least two tables (T) and a counter (C). A customer enters at S and should reach the counter nook G."
+    },
+    {
+      "n": 2,
+      "id": "library",
+      "text": "A small library. Bookshelves (B) along at least one wall, plus a reading table (T). A reader enters at S and reaches the reading nook G."
+    },
+    {
+      "n": 3,
+      "id": "dungeon",
+      "text": "A dungeon entry hall. Stone pillars (P) and crates (X) for cover. The adventurer enters at S and reaches the treasure door G."
+    },
+    {
+      "n": 4,
+      "id": "flowershop",
+      "text": "A flower shop. Flower buckets (F) and a counter (C). A customer enters at S and reaches the bouquet counter G."
+    },
+    {
+      "n": 5,
+      "id": "nightmarket",
+      "text": "A night market stall row. Food stalls (M) and crates (X). A visitor enters at S and reaches the food stall G."
+    },
+    {
+      "n": 6,
+      "id": "mazegarden",
+      "text": "A tiny hedge maze garden. The hedges must form at least two dead ends. A visitor enters at S and reaches the fountain G."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "full-b1-a1",
+      "arm": "full",
+      "brief": 1,
+      "attempt": 1,
+      "seed": 1270472501,
+      "name": "CafeCozy",
+      "pitch": "Step into a warm and inviting cafe, winding your way through tables to reach the cozy corner counter.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BOT",
+          "cell": [
+            10,
+            9
+          ],
+          "objectId": "G",
+          "reason": "the playtest bot wandered for 200 steps and never reached the goal (shortest path is 17)"
+        },
+        "bot": {
+          "reached": false,
+          "steps": 200,
+          "bumps": 0,
+          "shortest": 17
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #.######..##\n3 #.T#######.#\n4 #........C##\n5 #.######..##\n6 #.T#######.#\n7 #........###\n8 #.#######.##\n9 #........###\n0 #........G##\n1 ############\nprops: T1=T C1=C T2=T",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "full-b1-a2",
+      "arm": "full",
+      "brief": 1,
+      "attempt": 2,
+      "seed": 1270472502,
+      "name": "cafe_fix",
+      "pitch": "Enjoy a warm beverage and a quiet moment in this charming cafe.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            8
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S...#....##\n2 #.C.#.....##\n3 #...#...T.##\n4 #.#.#....#.#\n5 #...#...T.##\n6 #.#.#....#.#\n7 #...#.....##\n8 #.......#.##\n9 #.......#.##\n0 #.........##\n1 ########G#.#\nprops: C1=C T1=T T2=T",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 11,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "full-b1-a3",
+      "arm": "full",
+      "brief": 1,
+      "attempt": 3,
+      "seed": 1270472503,
+      "name": "cozy_cafe",
+      "pitch": "Relax and enjoy a warm drink at this charming cafe, complete with tables and a cozy nook at the counter.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BOT",
+          "cell": [
+            10,
+            9
+          ],
+          "objectId": "G",
+          "reason": "the playtest bot wandered for 200 steps and never reached the goal (shortest path is 17)"
+        },
+        "bot": {
+          "reached": false,
+          "steps": 200,
+          "bumps": 0,
+          "shortest": 17
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S....C....#\n2 #.T.....T.##\n3 #.......C.##\n4 #........#.#\n5 #..#....#.##\n6 #..#....#.##\n7 #........#.#\n8 #........#.#\n9 #.......C.##\n0 #........G.#\n1 ############\nprops: C1=C T1=T T2=T C2=C C3=C",
+      "importPatches": [
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "void",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "engine-b1-a1",
+      "arm": "engine",
+      "brief": 1,
+      "attempt": 1,
+      "seed": 239445480,
+      "name": "CafeCozy",
+      "pitch": "Enjoy a warm beverage and a quiet moment in this inviting cafe nook.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BOT",
+          "cell": [
+            10,
+            8
+          ],
+          "objectId": "G",
+          "reason": "the playtest bot wandered for 200 steps and never reached the goal (shortest path is 16)"
+        },
+        "bot": {
+          "reached": false,
+          "steps": 200,
+          "bumps": 0,
+          "shortest": 16
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #.T.######.#\n3 #.......C.##\n4 #.#.######.#\n5 #.T.#.....##\n6 #.......#.##\n7 #.#.######.#\n8 #.......#.##\n9 #.#.######.#\n0 #.......G.##\n1 ############\nprops: T1=T C1=C T2=T",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "engine-b1-a2",
+      "arm": "engine",
+      "brief": 1,
+      "attempt": 2,
+      "seed": 239445481,
+      "name": "cafe_fix",
+      "pitch": "Enjoy a warm drink and pastry in this charming cafe, winding your way to a cozy corner nook.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            4
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S...#....##\n2 #.T.#....#.#\n3 #...#...C#.#\n4 #.#.#....#.#\n5 #...#...#.##\n6 #.#.T.#...##\n7 #...#...#.##\n8 #.#.....#.##\n9 #...#...#.##\n0 #..........#\n1 ####G####.##\nprops: T1=T C1=C T2=T",
+      "importPatches": [
+        {
+          "row": -1,
+          "op": "trim-rows",
+          "from": 13,
+          "to": 12
+        },
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 11,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "engine-b1-a3",
+      "arm": "engine",
+      "brief": 1,
+      "attempt": 3,
+      "seed": 239445482,
+      "name": "cafe",
+      "pitch": "Enjoy a relaxing coffee and pastry in this charming cafe.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "PARSE",
+          "cell": null,
+          "objectId": "G",
+          "reason": "expected exactly one G (goal), found 0"
+        },
+        "bot": null
+      },
+      "ascii": null,
+      "importPatches": [
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "void",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    },
+    {
+      "id": "fuzzy-b1-a1",
+      "arm": "fuzzy",
+      "brief": 1,
+      "attempt": 1,
+      "seed": 740971828,
+      "name": "CafeCozy",
+      "pitch": "Enjoy a warm drink and a quiet corner in this inviting cafe level.",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "BORDER",
+          "cell": [
+            11,
+            1
+          ],
+          "objectId": null,
+          "reason": "the outer wall has a hole; the world leaks into the void"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #..######..#\n3 #..#....#..#\n4 #..#....#..#\n5 #..######..#\n6 #..#....#..#\n7 #..#....#..#\n8 #..######..#\n9 #..T....#..#\n0 #..#....#..#\n1 #..C..G#####\nprops: T1=T C1=C",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 11,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": "The concept fits the brief by clearly establishing the cafe environment with tables and a counter, but it lacks the playful energy needed to make the level feel engaging and fun. The description feels warm and inviting, but it doesn't highlight the interactive or challenging elements that would make the customer's journey to the counter exciting.",
+      "consultScore": null
+    },
+    {
+      "id": "fuzzy-b1-a2",
+      "arm": "fuzzy",
+      "brief": 1,
+      "attempt": 2,
+      "seed": 740971829,
+      "name": "CozyCornerCafe",
+      "pitch": "Navigate a bustling cafe, dodging tables and finding the perfect nook at the counter!",
+      "rawOk": true,
+      "engine": {
+        "pass": false,
+        "failure": {
+          "gate": "REACH",
+          "cell": [
+            4,
+            8
+          ],
+          "objectId": "G",
+          "reason": "no path exists from S to G; the goal is unreachable"
+        },
+        "bot": null
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S....#....#\n2 #.#.T.#.T.##\n3 #.#....#.#.#\n4 #.#.C.#.G.##\n5 #.#....#.#.#\n6 #.#.T.#.T.##\n7 #.#....#.#.#\n8 #.#.T.#.T.##\n9 #.#....#.#.#\n0 #..........#\n1 ############\nprops: T1=T T2=T C1=C T3=T T4=T T5=T T6=T",
+      "importPatches": [
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "repairing",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": "The concept fits the brief by clearly incorporating two tables and a counter, with a clear goal of reaching the counter nook, making it visually and mechanically aligned with the requirements. The idea of navigating a bustling cafe while dodging tables adds a dynamic and engaging layer of challenge, making the concept both fun and immersive.",
+      "consultScore": null
+    },
+    {
+      "id": "fuzzy-b1-a3",
+      "arm": "fuzzy",
+      "brief": 1,
+      "attempt": 3,
+      "seed": 740971830,
+      "name": "CafeCozy",
+      "pitch": "Enjoy a leisurely stroll through a charming cafe, carefully avoiding tables and reaching the cozy nook at the counter.",
+      "rawOk": true,
+      "engine": {
+        "pass": true,
+        "failure": null,
+        "bot": {
+          "reached": true,
+          "steps": 125,
+          "bumps": 0,
+          "shortest": 17
+        }
+      },
+      "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #.TT......##\n3 #........C##\n4 #........###\n5 #..P..T..###\n6 #........###\n7 #..P..C..###\n8 #........###\n9 #........###\n0 #........G##\n1 ############\nprops: T1=T T2=T C1=C P1=P T3=T P2=P C2=C",
+      "importPatches": [
+        {
+          "row": 1,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 2,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 3,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        },
+        {
+          "row": 4,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 5,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 6,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 7,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 8,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 9,
+          "op": "pad",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "row": 10,
+          "op": "pad",
+          "from": 11,
+          "to": 12
+        }
+      ],
+      "status": "review",
+      "ownerVerdict": null,
+      "revisionOf": null,
+      "consultFeedback": null,
+      "consultScore": null
+    }
+  ],
+  "shuffle": {},
+  "revShuffle": {}
+}

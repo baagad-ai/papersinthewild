@@ -1,0 +1,93 @@
+{
+  "rows": [
+    {
+      "arm": "full",
+      "briefsReachingReview": 7,
+      "briefsAccepted": 3,
+      "acceptanceRate": 0.43,
+      "firstAttemptGatePass": 1,
+      "voidedBriefs": 8,
+      "ownerReviews": 8,
+      "importPatches": 124,
+      "consultScores": [
+        7,
+        7,
+        8,
+        8,
+        8,
+        7,
+        7,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "arm": "engine",
+      "briefsReachingReview": 6,
+      "briefsAccepted": 2,
+      "acceptanceRate": 0.33,
+      "firstAttemptGatePass": 1,
+      "voidedBriefs": 9,
+      "ownerReviews": 5,
+      "importPatches": 124,
+      "consultScores": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        7,
+        7,
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "arm": "fuzzy",
+      "briefsReachingReview": 3,
+      "briefsAccepted": 2,
+      "acceptanceRate": 0.67,
+      "firstAttemptGatePass": 1,
+      "voidedBriefs": 11,
+      "ownerReviews": 3,
+      "importPatches": 113,
+      "consultScores": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    }
+  ],
+  "receipts": [
+    "engine-b3-a3",
+    "fuzzy-b3-a3",
+    "fuzzy-b4-a3",
+    "engine-b6-a3",
+    "fuzzy-b6-a3",
+    "engine-b1-rev",
+    "fuzzy-b2-rev",
+    "full-b4-rev",
+    "full-b5-rev",
+    "full-b6-rev"
+  ]
+}

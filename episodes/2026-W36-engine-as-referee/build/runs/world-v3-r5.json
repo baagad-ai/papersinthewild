@@ -1,0 +1,11 @@
+{
+  "round": 5,
+  "at": "2026-09-03T12:28:03.089Z",
+  "state": {
+    "brief": "nightmarket",
+    "arm": "fuzzy",
+    "attempt": 1,
+    "ascii": "  0 1 2 3 4 5 6 7 8 9 0 1\n0 ############\n1 #S........##\n2 #..X..X..###\n3 #..M..X..###\n4 #..X..X..###\n5 #..M..X..###\n6 #..X..X..###\n7 #..M..X..###\n8 #..X..X..###\n9 #..M..X..###\n0 #........G##\n1 ############\nprops: X1=X X2=X M1=M X3=X X4=X X5=X M2=M X6=X X7=X X8=X M3=M X9=X X10=X X11=X M4=M X12=X",
+    "pass": true
+  }
+}

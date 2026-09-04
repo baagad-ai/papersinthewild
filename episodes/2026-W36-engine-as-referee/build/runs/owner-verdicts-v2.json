@@ -1,0 +1,5 @@
+{
+  "engine-b1-a3": { "accept": false, "reason": "everything is just stuck together, cafe real estate is heavily under utilized, all things are too close together" },
+  "fuzzy-b1-a1": { "accept": true, "reason": "clean cafe layout" },
+  "full-b1-a1": { "accept": true, "reason": "open floor, good use of space" }
+}

@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "name": "studio",
+    "tag": "smoke",
+    "models": [
+      "local:gemma3:12b",
+      "local:qwen3:8b"
+    ],
+    "startedAt": "2026-08-30T08:16:38.042Z",
+    "finishedAt": "2026-08-30T08:16:56.601Z",
+    "wallMs": 18559,
+    "inrPerUsd": 95.76,
+    "chronicleEvents": 1,
+    "worldSnapshots": 1
+  },
+  "models": [
+    {
+      "model": "local:gemma3:12b",
+      "calls": 1,
+      "tokens": 421,
+      "promptTokens": 314,
+      "completionTokens": 107,
+      "usd": 0,
+      "inr": 0,
+      "unpricedCalls": 0
+    }
+  ],
+  "warnings": [],
+  "calls": [
+    {
+      "engine": "local",
+      "model": "local:gemma3:12b",
+      "promptTokens": 314,
+      "completionTokens": 107,
+      "usd": 0,
+      "ms": 18504,
+      "ok": true,
+      "retries": 0,
+      "meta": {
+        "kind": "design",
+        "label": "full-b1-a1-design"
+      },
+      "inr": 0
+    }
+  ]
+}

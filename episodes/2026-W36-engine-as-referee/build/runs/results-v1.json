@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "name": "studio",
+    "tag": "v1",
+    "models": [
+      "local:gemma3:12b",
+      "local:qwen3:8b"
+    ],
+    "startedAt": "2026-08-30T10:41:30.031Z",
+    "finishedAt": "2026-08-30T10:42:44.801Z",
+    "wallMs": 74770,
+    "inrPerUsd": 95.76,
+    "chronicleEvents": 3,
+    "worldSnapshots": 3
+  },
+  "models": [
+    {
+      "model": "local:gemma3:12b",
+      "calls": 3,
+      "tokens": 1450,
+      "promptTokens": 1097,
+      "completionTokens": 353,
+      "usd": 0,
+      "inr": 0,
+      "unpricedCalls": 0
+    },
+    {
+      "model": "local:qwen3:8b",
+      "calls": 2,
+      "tokens": 345,
+      "promptTokens": 218,
+      "completionTokens": 127,
+      "usd": 0,
+      "inr": 0,
+      "unpricedCalls": 0
+    }
+  ],
+  "warnings": [],
+  "calls": [
+    {
+      "engine": "local",
+      "model": "local:gemma3:12b",
+      "promptTokens": 314,
+      "completionTokens": 123,
+      "usd": 0,
+      "ms": 18286,
+      "ok": true,
+      "retries": 0,
+      "meta": {
+        "kind": "design",
+        "label": "fuzzy-b1-a1-design"
+      },
+      "inr": 0
+    },
+    {
+      "engine": "local",
+      "model": "local:qwen3:8b",
+      "promptTokens": 107,
+      "completionTokens": 63,
+      "usd": 0,
+      "ms": 7304,
+      "ok": true,
+      "retries": 0,
+      "meta": {
+        "kind": "consult",
+        "label": "fuzzy-b1-a1-fb"
+      },
+      "inr": 0
+    },
+    {
+      "engine": "local",
+      "model": "local:gemma3:12b",
+      "promptTokens": 393,
+      "completionTokens": 124,
+      "usd": 0,
+      "ms": 25343,
+      "ok": true,
+      "retries": 0,
+      "meta": {
+        "kind": "design",
+        "label": "fuzzy-b1-a2-design"
+      },
+      "inr": 0
+    },
+    {
+      "engine": "local",
+      "model": "local:qwen3:8b",
+      "promptTokens": 111,
+      "completionTokens": 64,
+      "usd": 0,
+      "ms": 6171,
+      "ok": true,
+      "retries": 0,
+      "meta": {
+        "kind": "consult",
+        "label": "fuzzy-b1-a2-fb"
+      },
+      "inr": 0
+    },
+    {
+      "engine": "local",
+      "model": "local:gemma3:12b",
+      "promptTokens": 390,
+      "completionTokens": 106,
+      "usd": 0,
+      "ms": 17534,
+      "ok": true,
+      "retries": 0,
+      "meta": {
+        "kind": "design",
+        "label": "fuzzy-b1-a3-design"
+      },
+      "inr": 0
+    }
+  ]
+}

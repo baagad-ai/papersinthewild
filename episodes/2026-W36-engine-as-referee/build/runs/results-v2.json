@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "name": "studio",
+    "tag": "v2",
+    "models": [
+      "local:gemma3:12b",
+      "local:qwen3:8b"
+    ],
+    "startedAt": "2026-08-30T11:19:42.704Z",
+    "finishedAt": "2026-08-30T11:20:01.246Z",
+    "wallMs": 18542,
+    "inrPerUsd": 95.76,
+    "chronicleEvents": 1,
+    "worldSnapshots": 0
+  },
+  "models": [
+    {
+      "model": "local:gemma3:12b",
+      "calls": 1,
+      "tokens": 437,
+      "promptTokens": 331,
+      "completionTokens": 106,
+      "usd": 0,
+      "inr": 0,
+      "unpricedCalls": 0
+    }
+  ],
+  "warnings": [],
+  "calls": [
+    {
+      "engine": "local",
+      "model": "local:gemma3:12b",
+      "promptTokens": 331,
+      "completionTokens": 106,
+      "usd": 0,
+      "ms": 18525,
+      "ok": true,
+      "retries": 0,
+      "meta": {
+        "kind": "design",
+        "label": "engine-b1-rev-design"
+      },
+      "inr": 0
+    }
+  ]
+}
