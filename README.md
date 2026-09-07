@@ -1,9 +1,21 @@
-# Papers in the Wild
+<div align="center">
+  <img src="site/public/og-default.png" alt="Papers in the Wild" width="720">
+</div>
 
-> Real AI research papers, taken far too literally, once a week. Then the receipts get published.
+<div align="center">
+
+**Real AI research papers, taken far too literally, once a week. Then the receipts get published.**
+
+[![Deploy](https://github.com/baagad-ai/papersinthewild/actions/workflows/deploy.yml/badge.svg)](https://github.com/baagad-ai/papersinthewild/actions/workflows/deploy.yml)
+![License](https://img.shields.io/badge/content_CC_BY_4.0-code_MIT-grey)
 
 **Read:** <https://baagad-ai.github.io/papersinthewild/>
+
+<!-- LATEST:START -->
 **Latest episode:** [The judge who never looked gave my AI's broken levels 8 out of 10.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w36-engine-as-referee)
+<!-- LATEST:END -->
+
+</div>
 
 ---
 
@@ -11,50 +23,31 @@ Every week: pick one recent paper, build something small and real against it, an
 
 ## The season so far
 
-**04 · [The judge who never looked gave my AI's broken levels 8 out of 10.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w36-engine-as-referee)**
+<!-- EPISODE-INDEX:START -->
+| # | Episode | The one line | Paper |
+|---|---------|--------------|-------|
+| 04 | [The judge who never looked gave my AI's broken levels 8 out of 10.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w36-engine-as-referee) | The judge who never opened a file gave ten broken levels a cheerful 8 out of 10. The judge that opened everything never used an adjective in its life. | [Agentic Game Development as a Verifiable Trajectory Data Engine for Scaling World Models](https://arxiv.org/abs/2608.25518) |
+| 03 | [I built a drawer of lies for my AI. The obedient one reached for a fake.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w35-agent-skills-decay) | The most obedient model read two nearly identical skills, picked the counterfeit, and followed its instructions with total confidence. The tidy JSON scrambled all three parameters. | [Demystifying Agent Skills](https://arxiv.org/abs/2608.14036) |
+| 02 | [I wrote a mind virus. It makes AI agents love geese.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w34-mind-viruses) | The heartfelt virus infected nobody, twice. The copy-exact version escaped patient zero seven times out of seven. The difference is one line of instructions. | [Mind Viruses: Self-Propagating Ideas in Multi-Agent LLM Systems](https://arxiv.org/abs/2608.10218) |
+| 01 | [My AI has an anxiety problem.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w33-prompt-induced-waste) | Tell your AI to 'be absolutely certain' and it will check the locked door six times. Same code. Four times the invoice. | [Same Task, Different Work: Prompt-Induced Waste in Coding Agents](https://arxiv.org/abs/2608.01347) |
+<!-- EPISODE-INDEX:END -->
 
-The judge who never opened a file gave ten broken levels a cheerful 8 out of 10. The judge that opened everything never used an adjective in its life.
+## How an episode happens
 
-Three AI desks designed game levels for a week under three kinds of feedback: coordinates, silence, and praise. One of them learned to build. Guess which feedback taught it.
+1. Pick one recent paper, usually from [dair-ai's weekly shortlist](https://github.com/dair-ai/AI-Papers-of-the-Week).
+2. Build something small and real against it. Reproduce a result, stress one claim, or run the paper's loop at kitchen scale.
+3. Publish the receipts: the maps, the transcripts, the tally, the parts that did not work. Especially those.
 
-Paper: *Agentic Game Development as a Verifiable Trajectory Data Engine* · [arXiv 2608.25518](https://arxiv.org/abs/2608.25518) · [replicate it](./episodes/2026-W36-engine-as-referee/) · bill: ₹0 ($0)
+## Start here
 
----
+- **Read the latest episode** (the pointer at the top of this page)
+- **Open the receipts**: `episodes/{week}-{slug}/build-log.md` tells the week honestly; `build/runs/` holds every transcript, event, verdict, and tally behind every claim
+- **Rerun a rig**: each episode folder is self-contained; the newest one runs its referee with no models installed
 
-**03 · [I built a drawer of lies for my AI. The obedient one reached for a fake.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w35-agent-skills-decay)**
+<details>
+<summary><b>Run the rigs yourself</b></summary>
 
-The most obedient model read two nearly identical skills, picked the counterfeit, and followed its instructions with total confidence. The tidy JSON scrambled all three parameters.
-
-Paper: *Demystifying Agent Skills* · [arXiv 2608.14036](https://arxiv.org/abs/2608.14036) · [replicate it](./episodes/2026-W35-agent-skills-decay/) · bill: ₹1.19 ($0.0125)
-
----
-
-**02 · [I wrote a mind virus. It makes AI agents love geese.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w34-mind-viruses)**
-
-The heartfelt virus infected nobody, twice. The copy-exact version escaped patient zero seven times out of seven. The difference is one line of instructions.
-
-Paper: *Mind Viruses: Self-Propagating Ideas in Multi-Agent LLM Systems* · [arXiv 2608.10218](https://arxiv.org/abs/2608.10218) · [replicate it](./episodes/2026-W34-mind-viruses/)
-
----
-
-**01 · [My AI has an anxiety problem.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w33-prompt-induced-waste)**
-
-Tell your AI to "be absolutely certain" and it will check the locked door six times. Same code. Four times the invoice.
-
-Paper: *Prompt-Induced Waste* · [arXiv 2608.01347](https://arxiv.org/abs/2608.01347) · [replicate it](./episodes/2026-W33-prompt-induced-waste/)
-
----
-
-## What lives where
-
-- `site/` · the publication itself. Next.js, static, fast.
-- `episodes/{week}-{slug}/` · each episode's receipts, self-contained.
-  - `build-log.md` · the week told honestly: attempts, failures, amendments, costs.
-  - `blog-post.md` · the published piece as plain markdown.
-  - `build/runs/` · every transcript, event, verdict, and tally behind every claim.
-  - `build/*.mjs` · the actual rigs. Small, readable, rerunnable.
-
-## Run the rigs yourself
+<br>
 
 The W36 referee needs no models at all. It just judges:
 
@@ -65,7 +58,27 @@ node studio.mjs selftest   # the five gates + the playtest bot, deterministic
 node studio.mjs tally      # the week's scoreboard, rebuilt from the run state
 ```
 
-Full reruns need [Ollama](https://ollama.com) with the models each build-log lists. The site runs with `cd site && npm install --legacy-peer-deps && npm run dev`.
+Full reruns need [Ollama](https://ollama.com) with the models each build-log lists. The site runs with:
+
+```bash
+cd site && npm install --legacy-peer-deps && npm run dev
+```
+
+</details>
+
+<details>
+<summary><b>What lives where</b></summary>
+
+<br>
+
+- `site/` · the publication itself. Next.js, static export, fast.
+- `episodes/{week}-{slug}/` · each episode's receipts, self-contained.
+  - `build-log.md` · the week told honestly: attempts, failures, amendments, costs.
+  - `blog-post.md` · the published piece as plain markdown.
+  - `build/runs/` · every transcript, event, verdict, and tally behind every claim.
+  - `build/*.mjs` · the actual rigs. Small, readable, rerunnable.
+
+</details>
 
 ## Submit a paper
 
@@ -80,4 +93,8 @@ Full text in [`LICENSE`](./LICENSE).
 
 ---
 
+<div align="center">
+
 *Made by [Baagad](https://github.com/baagad-ai), in the wild.*
+
+</div>
