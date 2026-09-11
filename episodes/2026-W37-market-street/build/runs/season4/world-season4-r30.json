@@ -1,0 +1,240 @@
+{
+  "round": 30,
+  "at": "2026-09-11T10:42:50.062Z",
+  "state": {
+    "kettle": {
+      "bank": -24237,
+      "wallet": 11509.6,
+      "escrow": 0,
+      "rep": 0.15,
+      "stock": {
+        "drinks-cola": 143,
+        "drinks-lemon": 95,
+        "drinks-icedtea": 92,
+        "drinks-water": 84,
+        "drinks-orange": 84,
+        "drinks-buttermilk": 140
+      },
+      "prices": {
+        "drinks-cola": 230,
+        "drinks-lemon": 180,
+        "drinks-icedtea": 270,
+        "drinks-water": 180,
+        "drinks-orange": 160,
+        "drinks-buttermilk": 150
+      },
+      "closed": true
+    },
+    "coldcorner": {
+      "bank": -22410,
+      "wallet": 4328.8,
+      "escrow": 0,
+      "rep": 0.46,
+      "stock": {
+        "drinks-cola": 797
+      },
+      "prices": {
+        "drinks-cola": 300,
+        "drinks-lemon": 275,
+        "drinks-icedtea": 350,
+        "drinks-water": 250,
+        "drinks-orange": 225,
+        "drinks-buttermilk": 200
+      },
+      "closed": true
+    },
+    "sunbeam": {
+      "bank": 98500,
+      "wallet": 0,
+      "escrow": 0,
+      "rep": 0.7,
+      "stock": {},
+      "prices": {},
+      "closed": false
+    },
+    "pocket": {
+      "bank": -19797,
+      "wallet": 7324.12,
+      "escrow": 0,
+      "rep": 0.15,
+      "stock": {
+        "drinks-cola": 188,
+        "drinks-lemon": 127,
+        "drinks-water": 196
+      },
+      "prices": {
+        "drinks-cola": 220,
+        "drinks-lemon": 200,
+        "drinks-icedtea": 168,
+        "drinks-water": 200,
+        "drinks-orange": 102,
+        "drinks-buttermilk": 84
+      },
+      "closed": true
+    },
+    "halfpint": {
+      "bank": 81661,
+      "wallet": 4770.4,
+      "escrow": 956.8,
+      "rep": 0.6,
+      "stock": {
+        "drinks-cola": 0
+      },
+      "prices": {
+        "drinks-cola": 130
+      },
+      "closed": false
+    },
+    "longcounter": {
+      "bank": 47774.04,
+      "wallet": 0,
+      "escrow": 312.8,
+      "rep": 0.26,
+      "stock": {
+        "drinks-cola": 14,
+        "drinks-lemon": 213
+      },
+      "prices": {
+        "drinks-cola": 170,
+        "drinks-lemon": 275,
+        "drinks-icedtea": 176,
+        "drinks-water": 116,
+        "drinks-orange": 108,
+        "drinks-buttermilk": 96
+      },
+      "closed": false
+    },
+    "lantern": {
+      "bank": 55801.9,
+      "wallet": 22.2,
+      "escrow": 4889.8,
+      "rep": 0.64,
+      "stock": {
+        "drinks-lemon": 75,
+        "drinks-water": 13,
+        "drinks-cola": 102,
+        "drinks-icedtea": 11,
+        "rain-umbrella": 0,
+        "rain-towel": 0,
+        "rain-poncho": 0
+      },
+      "prices": {
+        "drinks-cola": 100,
+        "drinks-lemon": 95,
+        "drinks-icedtea": 95,
+        "drinks-water": 55,
+        "rain-umbrella": 150,
+        "rain-poncho": 200,
+        "rain-towel": 180
+      },
+      "closed": false
+    },
+    "highstreet": {
+      "bank": 1387,
+      "wallet": 0,
+      "escrow": 8031.6,
+      "rep": 0.83,
+      "stock": {
+        "snacks-namkeen": 129,
+        "drinks-water": 268,
+        "drinks-lemon": 322,
+        "drinks-buttermilk": 58,
+        "snacks-biscuits": 0
+      },
+      "prices": {
+        "snacks-namkeen": 95,
+        "drinks-water": 65,
+        "drinks-lemon": 85,
+        "drinks-buttermilk": 80,
+        "snacks-biscuits": 105
+      },
+      "closed": false
+    },
+    "garden": {
+      "bank": -1105.2,
+      "wallet": 0,
+      "escrow": 2173.04,
+      "rep": 0.64,
+      "stock": {
+        "drinks-cola": 424,
+        "drinks-lemon": 134,
+        "drinks-icedtea": 132
+      },
+      "prices": {
+        "drinks-cola": 100,
+        "drinks-lemon": 90,
+        "drinks-icedtea": 100
+      },
+      "closed": false
+    },
+    "lucky": {
+      "bank": -10687,
+      "wallet": 3696.56,
+      "escrow": 0,
+      "rep": 0.43,
+      "stock": {
+        "drinks-lemon": 101,
+        "drinks-icedtea": 99,
+        "drinks-orange": 0,
+        "drinks-buttermilk": 10,
+        "drinks-cola": 402,
+        "drinks-water": 220
+      },
+      "prices": {
+        "drinks-cola": 90,
+        "drinks-lemon": 80,
+        "drinks-icedtea": 100,
+        "drinks-water": 70,
+        "drinks-orange": 60,
+        "drinks-buttermilk": 50
+      },
+      "closed": true
+    },
+    "mystall": {
+      "bank": 104628.04,
+      "wallet": 0,
+      "escrow": 11839.08,
+      "rep": 0.41,
+      "stock": {
+        "acc-cable": 25,
+        "acc-case": 0,
+        "acc-earbuds": 3,
+        "acc-powerbank": 0,
+        "acc-charger": 0,
+        "acc-screen": 0
+      },
+      "prices": {
+        "acc-case": 185,
+        "acc-screen": 180,
+        "acc-cable": 139,
+        "acc-earbuds": 399,
+        "acc-powerbank": 850,
+        "acc-charger": 500
+      },
+      "closed": false
+    },
+    "highnoon": {
+      "bank": 86814.46,
+      "wallet": 0,
+      "escrow": 372.6,
+      "rep": 0.5,
+      "stock": {
+        "acc-case": 0,
+        "acc-screen": 0,
+        "acc-cable": 6,
+        "acc-charger": 5,
+        "acc-powerbank": 13,
+        "acc-earbuds": 0
+      },
+      "prices": {
+        "acc-case": 60,
+        "acc-screen": 45,
+        "acc-cable": 75,
+        "acc-earbuds": 210,
+        "acc-powerbank": 270,
+        "acc-charger": 135
+      },
+      "closed": false
+    }
+  }
+}

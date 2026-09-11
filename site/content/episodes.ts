@@ -78,6 +78,19 @@ export const episodes: Episode[] = [
     teaser:
       "I ran an AI game studio with two judges: one opened every file and answered in coordinates, one read only the pitches and scored every broken level 8 out of 10. The desk that listened to the coordinates learned to build. The desk that listened to the praise learned to write better praise. 49 submissions, 16 verdicts, ₹0 ($0).",
   },
+  {
+    slug: "2026-w37-market-street",
+    episode: 5,
+    title: "I ran an AI street market for 30 days. The winner's favorite supplier was a scammer.",
+    hook: "Twelve AI models each got a stall with ₹100,000 on one shopping street. The winner bought 30 of its 34 orders from a supplier that keeps 20% of every order. It did the math.",
+    date: "2026-09-16",
+    paper: "E-Commerce Bench: Evaluating LLM Agents on Long-Horizon Autonomous Business Operation",
+    paperUrl: "https://arxiv.org/abs/2608.30730",
+    tags: ["multi-agent", "e-commerce", "long-horizon", "local-models"],
+    readingTime: "14 min read",
+    teaser:
+      "I rebuilt a research paper's AI marketplace at street scale: twelve stalls, ten suppliers, three scammers, one festival, one strike, and a 30-day clock. Four shops went bankrupt, a stall that never opened took third, and the winner's favorite supplier was a scammer that keeps 20% of every order. It did the math and shopped there anyway.",
+  },
 
 ];
 
