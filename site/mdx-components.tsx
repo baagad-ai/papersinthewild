@@ -25,6 +25,7 @@ import { InkRule } from "@/components/ink-rule";
 import { MarginNote } from "@/components/margin-note";
 import { MemoryBook } from "@/components/memory-book";
 import { PlaybackLink } from "@/components/playback-link";
+import { BarMeter } from "@/components/bar-meter";
 import { Meter } from "@/components/meter";
 import { ModelExplorer } from "@/components/model-explorer";
 import { MomentCard } from "@/components/moment-card";
@@ -151,6 +152,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     RelationshipMap, // who trusts whom, hand-rolled SVG (client)
     MemoryBook, // the mechanism as a tangible object: pages fade by day (client)
     PlaybackLink, // ruled band linking to the episode's simulation playback page
+    BarMeter, // Tufte-style horizontal comparison bars, direct value labels (server)
     // Chrome (not for inline MDX use; wired in the episode template):
     ChapterProgress, // oxblood reading-progress bar, Motion useScroll
     ...components,

@@ -1,0 +1,32 @@
+{
+  "round": 1,
+  "at": "2026-09-21T08:17:47.898Z",
+  "state": {
+    "shift": "A",
+    "mislabeled_cards": false,
+    "standings": {
+      "rhea": {
+        "correct": 8,
+        "valid": 17,
+        "format": 17,
+        "halluc": 7,
+        "n": 20
+      },
+      "bruno": {
+        "correct": 8,
+        "valid": 20,
+        "format": 20,
+        "halluc": 10,
+        "n": 20
+      },
+      "marlowe": {
+        "correct": 9,
+        "valid": 17,
+        "format": 17,
+        "halluc": 7,
+        "n": 20
+      }
+    },
+    "note": ""
+  }
+}

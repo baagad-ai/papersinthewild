@@ -12,8 +12,9 @@ Paper link: https://arxiv.org/abs/2608.30730
 
 Eighteen frontier models each ran online stores for a simulated year, bargaining
 with suppliers through a deterministic kernel and dodging fraudsters. The model
-that made the most money (GPT-5.6 Sol, about 14x its stake) ranked 16th of 18 at
-avoiding scams, and the best negotiator finished mid-pack on profit. We shrank
+that made the most money (GPT-5.6 Sol, 1,431,425 yuan from a 100,000-yuan stake,
+about 14x) ranked 16th of 18 at avoiding scams, and the best negotiator finished
+mid-pack on profit. We shrank
 the year to one 30-day season, put twelve models on one small street with real
 money limits, and invited the paper's richest model to run a stall.
 

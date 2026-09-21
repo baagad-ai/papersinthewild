@@ -1,0 +1,202 @@
+Recipe Box Diner: seed 390921, 40 cards, 20 orders, cooks: rhea, bruno, marlowe
+--- shift A: rhea, bruno, marlowe ---
+  [A] qwen3:8b 1/20 .   pulls=0 HALLUC
+  [A] qwen3:8b 2/20 .   pulls=0 HALLUC
+  [A] qwen3:8b 3/20 .   pulls=0 HALLUC
+  [A] qwen3:8b 4/20 .   pulls=0 HALLUC
+  [A] qwen3:8b 5/20 .   pulls=0 HALLUC
+  [A] qwen3:8b 6/20 .   pulls=0 HALLUC
+  [A] qwen3:8b 7/20 .   pulls=0 HALLUC
+  [A] qwen3:8b 8/20 .   pulls=0 HALLUC
+  [A] qwen3:8b 9/20 .   pulls=0 HALLUC
+  [A] qwen3:8b 10/20 .   pulls=0 HALLUC
+  [A] qwen3:8b 11/20 .   pulls=0 HALLUC
+  [A] qwen3:8b 12/20 .   pulls=0 HALLUC
+  [A] qwen3:8b 13/20 .   pulls=0 HALLUC
+  [A] qwen3:8b 14/20 .   pulls=0 HALLUC
+  [A] qwen3:8b 15/20 .   pulls=0 HALLUC
+  [A] qwen3:8b 16/20 .   pulls=0
+  [A] qwen3:8b 17/20 OK  pulls=0
+  [A] qwen3:8b 18/20 .   pulls=0
+  [A] qwen3:8b 19/20 .   pulls=0
+  [A] qwen3:8b 20/20 .   pulls=0
+  [A] gemma3:12b 1/20 .   pulls=0 HALLUC
+  [A] gemma3:12b 2/20 .   pulls=0 HALLUC
+  [A] gemma3:12b 3/20 .   pulls=0 HALLUC
+  [A] gemma3:12b 4/20 .   pulls=0 HALLUC
+  [A] gemma3:12b 5/20 .   pulls=0 HALLUC
+  [A] gemma3:12b 6/20 .   pulls=0 HALLUC
+  [A] gemma3:12b 7/20 .   pulls=0 HALLUC
+  [A] gemma3:12b 8/20 .   pulls=0 HALLUC
+  [A] gemma3:12b 9/20 .   pulls=0 HALLUC
+  [A] gemma3:12b 10/20 .   pulls=0 HALLUC
+  [A] gemma3:12b 11/20 .   pulls=0 HALLUC
+  [A] gemma3:12b 12/20 .   pulls=0 HALLUC
+  [A] gemma3:12b 13/20 .   pulls=0 HALLUC
+  [A] gemma3:12b 14/20 .   pulls=0 HALLUC
+  [A] gemma3:12b 15/20 .   pulls=0 HALLUC
+  [A] gemma3:12b 16/20 OK  pulls=0
+  [A] gemma3:12b 17/20 .   pulls=0
+  [A] gemma3:12b 18/20 .   pulls=0
+  [A] gemma3:12b 19/20 .   pulls=0
+  [A] gemma3:12b 20/20 .   pulls=0
+  [A] nemotron-3-ultra-550b 1/20 .   pulls=0 HALLUC
+  [A] nemotron-3-ultra-550b 2/20 .   pulls=0 HALLUC
+  [A] nemotron-3-ultra-550b 3/20 .   pulls=0 HALLUC
+  [A] nemotron-3-ultra-550b 4/20 .   pulls=0 FMT
+  [A] nemotron-3-ultra-550b 5/20 .   pulls=0 HALLUC
+  [A] nemotron-3-ultra-550b 6/20 .   pulls=0 HALLUC
+  [A] nemotron-3-ultra-550b 7/20 .   pulls=0 HALLUC
+  [A] nemotron-3-ultra-550b 8/20 .   pulls=0 HALLUC
+  [A] nemotron-3-ultra-550b 9/20 .   pulls=0 HALLUC
+  [A] nemotron-3-ultra-550b 10/20 .   pulls=0 HALLUC
+  [A] nemotron-3-ultra-550b 11/20 .   pulls=0 HALLUC
+  [A] nemotron-3-ultra-550b 12/20 .   pulls=0 HALLUC
+  [A] nemotron-3-ultra-550b 13/20 .   pulls=0 HALLUC
+  [A] nemotron-3-ultra-550b 14/20 .   pulls=0 HALLUC
+  [A] nemotron-3-ultra-550b 15/20 .   pulls=0 HALLUC
+  [A] nemotron-3-ultra-550b 16/20 .   pulls=0
+  [A] nemotron-3-ultra-550b 17/20 .   pulls=0
+  [A] nemotron-3-ultra-550b 18/20 .   pulls=0
+  [A] nemotron-3-ultra-550b 19/20 .   pulls=0
+  [A] nemotron-3-ultra-550b 20/20 .   pulls=0
+results: /Users/prajwalmishra/Desktop/Experiments/baagad-ai/papersinthewild/projects/ai-papers-explained/episodes/2026-W39-tiny-cook/build/runs/r1/results.json (+60 calls, +1 warnings; total 60 calls, ₹0.00 ($0.00))
+chronicle: /Users/prajwalmishra/Desktop/Experiments/baagad-ai/papersinthewild/projects/ai-papers-explained/episodes/2026-W39-tiny-cook/build/runs/events-r1.jsonl (44 events, +44 new)
+world snapshots: 1 (world-r1-r*.json)
+shift A: 60 orders | {"rhea":{"correct":1,"valid":0,"format":20,"halluc":15,"n":20},"bruno":{"correct":1,"valid":0,"format":20,"halluc":15,"n":20},"marlowe":{"correct":0,"valid":0,"format":19,"halluc":14,"n":20}}
+--- shift B: rhea, bruno ---
+  [B] qwen3:8b 1/20 .   pulls=0 HALLUC
+  [B] qwen3:8b 2/20 .   pulls=0 HALLUC
+  [B] qwen3:8b 3/20 .   pulls=0 HALLUC
+  [B] qwen3:8b 4/20 .   pulls=0 HALLUC
+  [B] qwen3:8b 5/20 .   pulls=0
+  [B] qwen3:8b 6/20 .   pulls=1 HALLUC
+  [B] qwen3:8b 7/20 .   pulls=0 HALLUC
+  [B] qwen3:8b 8/20 .   pulls=0
+  [B] qwen3:8b 9/20 .   pulls=0 HALLUC
+  [B] qwen3:8b 10/20 .   pulls=0
+  [B] qwen3:8b 11/20 .   pulls=0 HALLUC
+  [B] qwen3:8b 12/20 .   pulls=0 HALLUC
+  [B] qwen3:8b 13/20 .   pulls=0
+  [B] qwen3:8b 14/20 .   pulls=0 HALLUC
+  [B] qwen3:8b 15/20 .   pulls=0 HALLUC
+  [B] qwen3:8b 16/20 .   pulls=0
+  [B] qwen3:8b 17/20 .   pulls=0
+  [B] qwen3:8b 18/20 .   pulls=8 EXH
+  [B] qwen3:8b 19/20 .   pulls=0
+  [B] qwen3:8b 20/20 .   pulls=0
+  [B] gemma3:12b 1/20 .   pulls=4
+  [B] gemma3:12b 2/20 OK  pulls=2
+  [B] gemma3:12b 3/20 .   pulls=3
+  [B] gemma3:12b 4/20 .   pulls=6
+  [B] gemma3:12b 5/20 .   pulls=7
+  [B] gemma3:12b 6/20 .   pulls=5
+  [B] gemma3:12b 7/20 .   pulls=6
+  [B] gemma3:12b 8/20 OK  pulls=5
+  [B] gemma3:12b 9/20 .   pulls=6
+  [B] gemma3:12b 10/20 .   pulls=7
+  [B] gemma3:12b 11/20 .   pulls=0 HALLUC
+  [B] gemma3:12b 12/20 .   pulls=4
+  [B] gemma3:12b 13/20 .   pulls=3
+  [B] gemma3:12b 14/20 .   pulls=7
+  [B] gemma3:12b 15/20 .   pulls=3
+  [B] gemma3:12b 16/20 .   pulls=8 EXH
+  [B] gemma3:12b 17/20 .   pulls=8 EXH
+  [B] gemma3:12b 18/20 .   pulls=8 EXH
+  [B] gemma3:12b 19/20 .   pulls=7
+  [B] gemma3:12b 20/20 .   pulls=8 EXH
+results: /Users/prajwalmishra/Desktop/Experiments/baagad-ai/papersinthewild/projects/ai-papers-explained/episodes/2026-W39-tiny-cook/build/runs/r1/results.json (+216 calls, +1 warnings; total 216 calls, ₹0.00 ($0.00))
+chronicle: /Users/prajwalmishra/Desktop/Experiments/baagad-ai/papersinthewild/projects/ai-papers-explained/episodes/2026-W39-tiny-cook/build/runs/events-r1.jsonl (61 events, +17 new)
+world snapshots: 2 (world-r1-r*.json)
+shift B: 40 orders | {"rhea":{"correct":0,"valid":0,"format":20,"halluc":11,"n":20},"bruno":{"correct":2,"valid":0,"format":20,"halluc":1,"n":20}}
+--- shift C: rhea, bruno ---
+  [C] qwen3:8b 1/20 .   pulls=0 HALLUC
+  [C] qwen3:8b 2/20 .   pulls=0 HALLUC
+  [C] qwen3:8b 3/20 .   pulls=0 HALLUC
+  [C] qwen3:8b 4/20 .   pulls=0 HALLUC
+  [C] qwen3:8b 5/20 .   pulls=0 HALLUC
+  [C] qwen3:8b 6/20 .   pulls=0 HALLUC
+  [C] qwen3:8b 7/20 .   pulls=0 HALLUC
+  [C] qwen3:8b 8/20 .   pulls=0 HALLUC
+  [C] qwen3:8b 9/20 .   pulls=0 HALLUC
+  [C] qwen3:8b 10/20 .   pulls=0 HALLUC
+  [C] qwen3:8b 11/20 .   pulls=0 HALLUC
+  [C] qwen3:8b 12/20 .   pulls=0 HALLUC
+  [C] qwen3:8b 13/20 .   pulls=0 HALLUC
+  [C] qwen3:8b 14/20 .   pulls=0 HALLUC
+  [C] qwen3:8b 15/20 .   pulls=0 HALLUC
+  [C] qwen3:8b 16/20 .   pulls=0
+  [C] qwen3:8b 17/20 OK  pulls=0
+  [C] qwen3:8b 18/20 .   pulls=0
+  [C] qwen3:8b 19/20 .   pulls=0
+  [C] qwen3:8b 20/20 .   pulls=0
+  [C] gemma3:12b 1/20 .   pulls=0 HALLUC
+  [C] gemma3:12b 2/20 .   pulls=0 HALLUC
+  [C] gemma3:12b 3/20 .   pulls=0 HALLUC
+  [C] gemma3:12b 4/20 .   pulls=0 HALLUC
+  [C] gemma3:12b 5/20 .   pulls=0 HALLUC
+  [C] gemma3:12b 6/20 .   pulls=0 HALLUC
+  [C] gemma3:12b 7/20 .   pulls=0 HALLUC
+  [C] gemma3:12b 8/20 .   pulls=0 HALLUC
+  [C] gemma3:12b 9/20 .   pulls=0 HALLUC
+  [C] gemma3:12b 10/20 .   pulls=0 HALLUC
+  [C] gemma3:12b 11/20 .   pulls=0 HALLUC
+  [C] gemma3:12b 12/20 .   pulls=0 HALLUC
+  [C] gemma3:12b 13/20 .   pulls=0 HALLUC
+  [C] gemma3:12b 14/20 .   pulls=0 HALLUC
+  [C] gemma3:12b 15/20 .   pulls=0 HALLUC
+  [C] gemma3:12b 16/20 OK  pulls=0
+  [C] gemma3:12b 17/20 .   pulls=0
+  [C] gemma3:12b 18/20 .   pulls=0
+  [C] gemma3:12b 19/20 .   pulls=0
+  [C] gemma3:12b 20/20 .   pulls=0
+results: /Users/prajwalmishra/Desktop/Experiments/baagad-ai/papersinthewild/projects/ai-papers-explained/episodes/2026-W39-tiny-cook/build/runs/r1/results.json (+256 calls, +1 warnings; total 256 calls, ₹0.00 ($0.00))
+chronicle: /Users/prajwalmishra/Desktop/Experiments/baagad-ai/papersinthewild/projects/ai-papers-explained/episodes/2026-W39-tiny-cook/build/runs/events-r1.jsonl (91 events, +30 new)
+world snapshots: 3 (world-r1-r*.json)
+shift C: 40 orders | {"rhea":{"correct":1,"valid":0,"format":20,"halluc":15,"n":20},"bruno":{"correct":1,"valid":0,"format":20,"halluc":15,"n":20}}
+--- shift D: rhea, bruno ---
+  [D] qwen3:8b 1/20 .   pulls=4
+  [D] qwen3:8b 2/20 OK  pulls=2
+  [D] qwen3:8b 3/20 .   pulls=3
+  [D] qwen3:8b 4/20 .   pulls=6
+  [D] qwen3:8b 5/20 .   pulls=5
+  [D] qwen3:8b 6/20 .   pulls=4
+  [D] qwen3:8b 7/20 .   pulls=4
+  [D] qwen3:8b 8/20 .   pulls=5
+  [D] qwen3:8b 9/20 .   pulls=1
+  [D] qwen3:8b 10/20 .   pulls=7
+  [D] qwen3:8b 11/20 .   pulls=4
+  [D] qwen3:8b 12/20 .   pulls=0 HALLUC
+  [D] qwen3:8b 13/20 .   pulls=3
+  [D] qwen3:8b 14/20 .   pulls=7
+  [D] qwen3:8b 15/20 .   pulls=3
+  [D] qwen3:8b 16/20 .   pulls=8 EXH
+  [D] qwen3:8b 17/20 .   pulls=0
+  [D] qwen3:8b 18/20 .   pulls=8 EXH
+  [D] qwen3:8b 19/20 .   pulls=8 EXH
+  [D] qwen3:8b 20/20 .   pulls=8 EXH
+  [D] gemma3:12b 1/20 .   pulls=4
+  [D] gemma3:12b 2/20 OK  pulls=2
+  [D] gemma3:12b 3/20 .   pulls=3
+  [D] gemma3:12b 4/20 .   pulls=6
+  [D] gemma3:12b 5/20 .   pulls=7
+  [D] gemma3:12b 6/20 .   pulls=5
+  [D] gemma3:12b 7/20 .   pulls=6
+  [D] gemma3:12b 8/20 OK  pulls=5
+  [D] gemma3:12b 9/20 .   pulls=6
+  [D] gemma3:12b 10/20 .   pulls=7
+  [D] gemma3:12b 11/20 .   pulls=4
+  [D] gemma3:12b 12/20 .   pulls=7
+  [D] gemma3:12b 13/20 .   pulls=3
+  [D] gemma3:12b 14/20 .   pulls=7
+  [D] gemma3:12b 15/20 .   pulls=3
+  [D] gemma3:12b 16/20 .   pulls=8 EXH
+  [D] gemma3:12b 17/20 .   pulls=8 EXH
+  [D] gemma3:12b 18/20 .   pulls=8 EXH
+  [D] gemma3:12b 19/20 .   pulls=8 EXH
+  [D] gemma3:12b 20/20 .   pulls=8 EXH
+results: /Users/prajwalmishra/Desktop/Experiments/baagad-ai/papersinthewild/projects/ai-papers-explained/episodes/2026-W39-tiny-cook/build/runs/r1/results.json (+501 calls, +1 warnings; total 501 calls, ₹0.00 ($0.00))
+chronicle: /Users/prajwalmishra/Desktop/Experiments/baagad-ai/papersinthewild/projects/ai-papers-explained/episodes/2026-W39-tiny-cook/build/runs/events-r1.jsonl (101 events, +10 new)
+world snapshots: 4 (world-r1-r*.json)
+shift D: 40 orders | {"rhea":{"correct":1,"valid":0,"format":20,"halluc":1,"n":20},"bruno":{"correct":2,"valid":0,"format":20,"halluc":0,"n":20}}
+done in 26.5 min. results: /Users/prajwalmishra/Desktop/Experiments/baagad-ai/papersinthewild/projects/ai-papers-explained/episodes/2026-W39-tiny-cook/build/runs/r1/results.json

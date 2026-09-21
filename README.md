@@ -12,7 +12,7 @@
 **Read:** <https://baagad-ai.github.io/papersinthewild/>
 
 <!-- LATEST:START -->
-**Latest episode:** [I ran an AI street market for 30 days. The winner's favorite supplier was a scammer.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w37-market-street)
+**Latest episode:** [I gave my smallest AI a recipe box and it reached dishes a 550-billion-parameter chef could not.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w39-tiny-cook)
 <!-- LATEST:END -->
 
 </div>
@@ -26,6 +26,7 @@ Every week: pick one recent paper, build something small and real against it, an
 <!-- EPISODE-INDEX:START -->
 | # | Episode | The one line | Paper |
 |---|---------|--------------|-------|
+| 06 | [I gave my smallest AI a recipe box and it reached dishes a 550-billion-parameter chef could not.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w39-tiny-cook) | I gave my smallest AI a recipe box. It reached what a 550-billion-parameter chef could not. | [ZGCM-1](https://arxiv.org/abs/2609.13356) |
 | 05 | [I ran an AI street market for 30 days. The winner's favorite supplier was a scammer.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w37-market-street) | Twelve AI models each got a stall with ₹100,000 on one shopping street. The winner bought 30 of its 34 orders from a supplier that keeps 20% of every order. It did the math. | [E-Commerce Bench: Evaluating LLM Agents on Long-Horizon Autonomous Business Operation](https://arxiv.org/abs/2608.30730) |
 | 04 | [The judge who never looked gave my AI's broken levels 8 out of 10.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w36-engine-as-referee) | The judge who never opened a file gave ten broken levels a cheerful 8 out of 10. The judge that opened everything never used an adjective in its life. | [Agentic Game Development as a Verifiable Trajectory Data Engine for Scaling World Models](https://arxiv.org/abs/2608.25518) |
 | 03 | [I built a drawer of lies for my AI. The obedient one reached for a fake.](https://baagad-ai.github.io/papersinthewild/episodes/2026-w35-agent-skills-decay) | The most obedient model read two nearly identical skills, picked the counterfeit, and followed its instructions with total confidence. The tidy JSON scrambled all three parameters. | [Demystifying Agent Skills](https://arxiv.org/abs/2608.14036) |

@@ -1,0 +1,25 @@
+{
+  "round": 5,
+  "at": "2026-09-21T09:23:37.783Z",
+  "state": {
+    "shift": "N",
+    "mislabeled_cards": true,
+    "standings": {
+      "rhea": {
+        "correct": 7,
+        "valid": 20,
+        "format": 20,
+        "halluc": 4,
+        "n": 20
+      },
+      "bruno": {
+        "correct": 6,
+        "valid": 20,
+        "format": 20,
+        "halluc": 8,
+        "n": 20
+      }
+    },
+    "note": "paired noise shift: same menu under D rules, every card returned mislabeled (schema noise, content intact)"
+  }
+}

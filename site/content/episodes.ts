@@ -23,7 +23,7 @@ export const episodes: Episode[] = [
       "I typed four words into a prompt. My AI took seven minutes to write four lines of code. So I ran 36 trials to find out why.",
     hook:
       "Tell your AI to 'be absolutely certain' and it will check the locked door six times. Same code. Four times the invoice.",
-    date: "2026-08-12",
+    date: "2026-08-14",
     paper:
       "Same Task, Different Work: Prompt-Induced Waste in Coding Agents",
     paperUrl: "https://arxiv.org/abs/2608.01347",
@@ -83,13 +83,26 @@ export const episodes: Episode[] = [
     episode: 5,
     title: "I ran an AI street market for 30 days. The winner's favorite supplier was a scammer.",
     hook: "Twelve AI models each got a stall with ₹100,000 on one shopping street. The winner bought 30 of its 34 orders from a supplier that keeps 20% of every order. It did the math.",
-    date: "2026-09-16",
+    date: "2026-09-11",
     paper: "E-Commerce Bench: Evaluating LLM Agents on Long-Horizon Autonomous Business Operation",
     paperUrl: "https://arxiv.org/abs/2608.30730",
     tags: ["multi-agent", "e-commerce", "long-horizon", "local-models"],
     readingTime: "14 min read",
     teaser:
       "I rebuilt a research paper's AI marketplace at street scale: twelve stalls, ten suppliers, three scammers, one festival, one strike, and a 30-day clock. Four shops went bankrupt, a stall that never opened took third, and the winner's favorite supplier was a scammer that keeps 20% of every order. It did the math and shopped there anyway.",
+  },
+  {
+    slug: "2026-w39-tiny-cook",
+    episode: 6,
+    title: "I gave my smallest AI a recipe box and it reached dishes a 550-billion-parameter chef could not.",
+    subtitle: "A diner with a menu from a country that does not exist, two tiny local models, and a 550-billion-parameter guest who never opened the drawer. The chained orders the giant scored zero on, the small cooks with a recipe box solved five of ten. The drawer also taxed everything they already knew.",
+    hook: "I gave my smallest AI a recipe box. It reached what a 550-billion-parameter chef could not.",
+    date: "2026-09-21",
+    paper: "ZGCM-1",
+    paperUrl: "https://arxiv.org/abs/2609.13356",
+    tags: ["ai", "agents", "tool-use", "small-models", "papers-in-the-wild"],
+    readingTime: "8 min read",
+    teaser: "A diner where the menu is from a country that does not exist: the 550-billion-parameter chef invented his ingredients from memory, and the two tiny cooks with a recipe box solved the chained orders he could not. Five shifts, 2,038 calls, ₹0.",
   },
 
 ];

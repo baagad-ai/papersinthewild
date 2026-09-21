@@ -1,0 +1,25 @@
+{
+  "round": 4,
+  "at": "2026-09-21T08:43:14.441Z",
+  "state": {
+    "shift": "D",
+    "mislabeled_cards": true,
+    "standings": {
+      "rhea": {
+        "correct": 7,
+        "valid": 20,
+        "format": 20,
+        "halluc": 1,
+        "n": 20
+      },
+      "bruno": {
+        "correct": 7,
+        "valid": 18,
+        "format": 18,
+        "halluc": 1,
+        "n": 20
+      }
+    },
+    "note": "orders 16-20 ran on mislabeled-card days (schema noise, content intact)"
+  }
+}

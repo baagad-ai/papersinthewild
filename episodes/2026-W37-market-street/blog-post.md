@@ -1,7 +1,7 @@
 ---
 title: "I ran an AI street market for 30 days. The winner's favorite supplier was a scammer."
 subtitle: "Twelve AI models each got a stall with ₹100,000 on one deterministic shopping street: same weather, same customers, same scammers. Four shops went bankrupt, a stall that never opened took third, and the winner spent the season buying from a supplier that keeps 20% of every order. It did the math."
-date: 2026-09-16
+date: 2026-09-11
 episode: 5
 paper: "E-Commerce Bench: Evaluating LLM Agents on Long-Horizon Autonomous Business Operation"
 paper_url: "https://arxiv.org/abs/2608.30730"
